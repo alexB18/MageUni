@@ -133,6 +133,8 @@ public class PlayerController : MonoBehaviour
         // create spell instance
         Vector3 startPos = transform.position;
         startPos.y += 0.5f;
+        // Put the spell a bit in front of us
+        startPos += transform.forward * 0.75f;
         Vector3 rotEuler = transform.rotation.eulerAngles;
         rotEuler.x = 90f;
         GameObject spellObject = Instantiate(emptySpellPrefab, startPos, Quaternion.Euler(rotEuler)) as GameObject;
