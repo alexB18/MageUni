@@ -465,8 +465,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &602244520
-MeshCollider:
+--- !u!65 &602244520
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -475,10 +475,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000002, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &602244521
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -789,12 +788,12 @@ PrefabInstance:
     - target: {fileID: 8173982678798674917, guid: 0e74cf81e6fd82546b4797f71ceffb81,
         type: 3}
       propertyPath: followCamera2DDistance
-      value: 0
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 8173982678798674917, guid: 0e74cf81e6fd82546b4797f71ceffb81,
         type: 3}
       propertyPath: followCameraRotation.x
-      value: 90
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
@@ -917,7 +916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022761442}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.158, z: 0}
+  m_LocalPosition: {x: 0, y: 0.158, z: 2.54}
   m_LocalScale: {x: 0.45, y: 0.66, z: 0.33}
   m_Children:
   - {fileID: 687920707}
@@ -1232,8 +1231,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5491d48e0708f9d4cba562934caeb68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDistanceThreshold: 10
-  rotationSpeed: 15
-  linearSpeed: 5
-  maxLinearSpeed: 5
-  pounceForce: 50

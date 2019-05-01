@@ -5,31 +5,36 @@ using UnityEngine;
 public class EnemyTestRatAI : MonoBehaviour
 {
     // The distance at which this rat will go after the player
-    public float playerDistanceThreshold = 10f;
-    // How fast rat boy rotates
-    public float rotationSpeed = 0.4f;
-    public float linearSpeed = 2f;
-    public float maxLinearSpeed = 5f;
-    public float pounceForce = 50f;
-    private static Vector3 pounceUps = new Vector3(0, 25, 0);
-    private float pdThresholdSq;
-    private const float pounceDistanceSq = 0f;
+    public const float playerDistanceThreshold = 10f;
+    private const float pdThresholdSq = playerDistanceThreshold * playerDistanceThreshold;
+
+    // How fast rat boy rotates and translates
+    private const float minRotationSpeed = 2f;
+    private const float maxRotationSpeed = 15f;
+    public const float linearSpeed = 2f;
+    public const float maxLinearSpeed = 5f;
+    public const float maxLinearSpeedSq = maxLinearSpeed * maxLinearSpeed;
+
     // Angle after which we start to move
     private const float moveAngle = 30f;
     private const float moveAngleDeviation = 15f;
     private const float MAX_ANGLE = 180f;
-    private GameObject target;
-    private bool grounded = true;
 
-    private void Awake()
-    {
-        pdThresholdSq = playerDistanceThreshold * playerDistanceThreshold;
-    }
+    // Pounce attack consts
+    public const float pounceForce = 50f;
+    private static Vector3 pounceUps = new Vector3(0, 75, 0);
+    private const float pounceDistanceSq = 7f;
+    private bool grounded = true; // If this is true, rat boy can pounce
+    private bool hitGround = false;
+
+    private GameObject target;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -50,7 +55,12 @@ public class EnemyTestRatAI : MonoBehaviour
                 //*
                 Quaternion toLook = new Quaternion();
                 toLook.SetFromToRotation(ratPos, targetPos);
-                float t = rotationSpeed / MAX_ANGLE;
+
+                // Calculate rotation speed based on the velocity
+                float v2 = Vector3.SqrMagnitude(rb.velocity);
+                float rotationSpeed = Mathf.Lerp(minRotationSpeed, maxRotationSpeed, v2 / maxLinearSpeed);
+                float _totalAngleDiff = toLook.eulerAngles.y - transform.rotation.eulerAngles.y;
+                float t = Mathf.Abs(rotationSpeed / _totalAngleDiff);
                 Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, toLook, t);
                 transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0));
                 //*/
@@ -67,7 +77,8 @@ public class EnemyTestRatAI : MonoBehaviour
 
                 transform.rotation = Quaternion.Euler(rot);
                 //*/
-
+                if (_angle > 180f)
+                    _angle -= 360f;
                 // If we are now within the angle threshold, lets start moving
                 if (_angle < moveAngle)
                 {
@@ -80,20 +91,20 @@ public class EnemyTestRatAI : MonoBehaviour
                     // Get the Vector3 angle
                     Vector3 moveAngle = (angle == 0) ? transform.rotation.eulerAngles : Vector3.Lerp(ratPos, targetPos, angle / _angle).normalized;
 
-                    // Get rigidbody for movement
-                    Rigidbody rb = gameObject.GetComponent<Rigidbody>();
 
                     // If within pouncing range, pounce. Otherwise move towards
                     if (grounded)
                         if (sqd < pounceDistanceSq)
                         {
                             grounded = false;
-                            //rb.AddForce(moveAngle * pounceForce + pounceUps);
+                            hitGround = false;
+                            //rb.AddForce(moveAngle * pounceForce);
+                            //rb.AddForce(pounceUps);
                         }
                         else
                         {
-                            rb.AddForce(moveAngle * linearSpeed);
-                            //rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxLinearSpeed);
+                            //rb.AddForce(moveAngle * linearSpeed);
+                            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxLinearSpeed);
                         }
                 }
             }
@@ -104,7 +115,16 @@ public class EnemyTestRatAI : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-            grounded = true;
+        if (!grounded && !hitGround && collision.gameObject.CompareTag("Ground"))
+        {
+            hitGround = true;
+            StartCoroutine("JumpCooldown");
+        }
+    }
+
+    IEnumerator JumpCooldown()
+    {
+        yield return new WaitForSeconds(0.5f);
+        grounded = true;
     }
 }
