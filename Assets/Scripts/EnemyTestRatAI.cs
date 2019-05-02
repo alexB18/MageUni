@@ -18,8 +18,8 @@ public class EnemyTestRatAI : MonoBehaviour
     public const float maxLinearSpeedSq = maxLinearSpeed * maxLinearSpeed;
 
     // Angle after which we start to move
-    private const float moveAngle = 30f;
-    private const float moveAngleDeviation = 20f;
+    private const float moveAngle = 20f;
+    private const float moveAngleDeviation = 10;
 
     // Pounce attack consts
     public const float pounceForce = 50f;

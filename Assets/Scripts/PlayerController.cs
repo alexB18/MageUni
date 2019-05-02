@@ -15,10 +15,10 @@ public class PlayerController : MonoBehaviour
     private float currentVertical = 0f;
     private float currentHorizontal = 0f;
 
-    private readonly float interpConst = 10;
-    private readonly float walkScale = 0.33f;
-    private readonly float backwardsWalkScale = 0.16f;
-    private readonly float backwardsRunScale = 0.66f;
+    private static readonly float interpConst = 10;
+    private static readonly float walkScale = 0.33f;
+    private static readonly float backwardsWalkScale = 0.16f;
+    private static readonly float backwardsRunScale = 0.66f;
 
 
     private Vector3 currentDirection = Vector3.zero;    // Track players current direction
