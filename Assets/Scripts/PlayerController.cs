@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Player public variables
-    public float speed = 6f;
 
-    // Player private variables
-    private Vector3 movement;
+    /* ------------------------  Player variables   ------------------- */
+    public float moveSpeed = 2f;
+    public float turnSpeed = 200;
     private Animator anim;
     private Rigidbody playerRb;
+
+    // Track player's current vertical/horizontal movement
+    private float currentVertical = 0f;
+    private float currentHorizontal = 0f;
+
+    private readonly float interpConst = 10;
+    private readonly float walkScale = 0.33f;
+    private readonly float backwardsWalkScale = 0.16f;
+    private readonly float backwardsRunScale = 0.66f;
+
+
+    private Vector3 currentDirection = Vector3.zero;    // Track players current direction
 
     // Follow camera
     public GameObject followCamera;
@@ -58,6 +69,7 @@ public class PlayerController : MonoBehaviour
         float rotf = 0f;
         followCameraRotation.y = rotf;
         followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+
         // Orbit the camera based on rotation
         rotf *= Mathf.Deg2Rad;
         followCameraDisplacement.x = -followCamera2DDistance * Mathf.Sin(rotf);
@@ -88,16 +100,38 @@ public class PlayerController : MonoBehaviour
 
     private void Move(float h, float v)
     {
-        //Lateral movement only
-        movement.Set(h, 0f, v);
+     
+        // Track camera location
+        Transform camera = Camera.main.transform;
 
-        /*Because of how vectors work, moving in diagonal results in speed higher 
-          than h or v so we need to normalize */
-        
-        //                                       Time between each update call
-        movement = movement.normalized * speed * Time.deltaTime;
-        //Move player to current position + movement
-        playerRb.MovePosition(transform.position + movement);
+        // If leftshift, slow the heck down
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            v *= walkScale;
+            h *= walkScale;
+        }
+
+        // Recalculate current horizontal/vertical movement from input/ use interpConst to accelerate
+        currentVertical = Mathf.Lerp(currentVertical, v, Time.deltaTime * interpConst);
+        currentHorizontal = Mathf.Lerp(currentHorizontal, h, Time.deltaTime * interpConst);
+
+        // Vector describing player direction
+        Vector3 direction = camera.forward * currentVertical + camera.right * currentHorizontal;
+
+        float directionMagnitude = direction.magnitude; // Store initial direction magnitude for normalization
+        direction.y = 0f;   // Ensure lateral movement
+        direction = direction.normalized * directionMagnitude; // Normalize direction vector
+
+
+        // If player direction != 0 update player position and animator
+        if(direction != Vector3.zero)
+        {
+            anim.SetFloat("MoveSpeed", direction.magnitude);
+            currentDirection = Vector3.Slerp(currentDirection, direction, Time.deltaTime * interpConst);
+
+            transform.rotation = Quaternion.LookRotation(currentDirection);
+            transform.position += currentDirection * moveSpeed * Time.deltaTime;
+        }
     }
 
     private void Turning()
@@ -124,8 +158,8 @@ public class PlayerController : MonoBehaviour
     void Animating(float h, float v)
     {
         // If moving, walking -> true
-        bool running = h != 0f || v != 0f;
-        anim.SetBool("IsRunning", running);
+        bool moving = h != 0f || v != 0f;
+        anim.SetBool("IsMoving", moving);
     }
 
     IEnumerator StartSpell(int spellSlot)
