@@ -27,22 +27,32 @@ public class EnemyTestRatAI : MonoBehaviour
     private const float pounceDistanceSq = 7f;
     private bool grounded = true; // If this is true, rat boy can pounce
     private bool hitGround = false;
+    private bool isDead = false;
 
     private GameObject target;
     private Rigidbody rb;
+    private Subscriber deathlistener = delegate(Object[] obj) {
+        Debug.Log("Rat boi died");
+        GameObject gameObject = obj[0] as GameObject;
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, 180f);
+        EnemyTestRatAI ai = gameObject.GetComponent<EnemyTestRatAI>() as EnemyTestRatAI;
+        ai.isDead = true;
+    };
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         rb = gameObject.GetComponent<Rigidbody>();
+        HealthScript hs = gameObject.GetComponent<HealthScript>() as HealthScript;
+        hs.SubscribeToOnDeath(deathlistener);
     }
 
     // Update is called once per frame
     void Update()
     {
         // Get player sq distance from rat boy
-        if (target != null)
+        if (target != null && !isDead)
         {
 
             if (grounded)
