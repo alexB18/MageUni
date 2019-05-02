@@ -64,7 +64,6 @@ public class EnemyTestRatAI : MonoBehaviour
                     Quaternion slerpedLook = Quaternion.Slerp(transform.rotation,
                                                                 Quaternion.LookRotation(target.transform.position - transform.position),
                                                                 t);
-                    //Vector3 lookV = target.transform.position - transform.position;
                     //Quaternion slerpedLook = Quaternion.LookRotation(lookV);
                     transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0));
                     //*/

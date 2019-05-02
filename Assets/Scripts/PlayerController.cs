@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
         Transform camera = Camera.main.transform;
 
         // If leftshift, slow the heck down
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetButton("Walk"))
         {
             v *= walkScale;
             h *= walkScale;
