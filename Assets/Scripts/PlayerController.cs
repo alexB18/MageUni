@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
 
         Move(h, v);
-        Turning();
+        //Turning();
         Animating(h, v);
     }
 
