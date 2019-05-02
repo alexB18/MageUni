@@ -568,7 +568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 1, y: 5, z: -7.5}
+  m_LocalPosition: {x: 0.14, y: 3.86, z: -5.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1393,12 +1393,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ca30c36b506c64aafa127f12f968fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_moveSpeed: 2
   m_turnSpeed: 200
   m_jumpForce: 4
   m_animator: {fileID: 1139509368}
   m_rigidBody: {fileID: 1139509370}
   m_controlMode: 1
+  m_currentV: 0
+  m_currentH: 0
+  m_wasGrounded: 0
+  m_currentDirection: {x: 0, y: 0, z: 0}
+  m_jumpTimeStamp: 0
+  m_minJumpInterval: 0.25
+  m_isGrounded: 0
+  m_collisions: []
 --- !u!95 &1139509368 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95665039525092722, guid: 0e74cf81e6fd82546b4797f71ceffb81,
