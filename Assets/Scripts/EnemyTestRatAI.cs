@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyTestRatAI : MonoBehaviour
 {
     // The distance at which this rat will go after the player
-    public const float playerDistanceThreshold = 10f;
-    public const float playerBehindDistanceThreshold = 2f;
+    public const float playerDistanceThreshold = 12f;
+    public const float playerBehindDistanceThreshold = 4f;
     private const float pdThresholdSq = playerDistanceThreshold * playerDistanceThreshold;
     private const float pdBehindThresholdSq = playerBehindDistanceThreshold * playerBehindDistanceThreshold;
 

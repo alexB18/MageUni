@@ -154,7 +154,6 @@ public class PlayerController : MonoBehaviour
         
         if( currentPlayerSpeed == 0)
         {
-            transform.position = 
             transform.rotation = Quaternion.Euler(followCameraRotation);
         }
     }
