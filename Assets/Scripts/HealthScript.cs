@@ -11,12 +11,13 @@ public class HealthScript : MonoBehaviour
 
     public void Awake()
     {
-        currentHealth = maximumHealth;
+        //currentHealth = maximumHealth;
     }
 
     public void DamageHealth(float f)
     {
         currentHealth -= f;
+        OnHealthChange();
         if (currentHealth <= 0)
         {
             currentHealth = 0;
@@ -30,6 +31,7 @@ public class HealthScript : MonoBehaviour
         currentHealth += f;
         if (currentHealth > maximumHealth)
             currentHealth = maximumHealth;
+        OnHealthChange();
     }
 
     public void SubscribeToOnDeath(Subscriber sub)
@@ -54,7 +56,7 @@ public class HealthScript : MonoBehaviour
 
     public void OnDeath()
     {
-        Debug.Log("Dead");
+        //Debug.Log("Dead");
         foreach (var sub in onDeathSubscribers)
             sub(gameObject);
     }

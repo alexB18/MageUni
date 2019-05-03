@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyTestRatAI : MonoBehaviour
 {
     // The distance at which this rat will go after the player
-    public const float playerDistanceThreshold = 12f;
-    public const float playerBehindDistanceThreshold = 4f;
+    public const float playerDistanceThreshold = 6f;
+    public const float playerBehindDistanceThreshold = 3f;
     private const float pdThresholdSq = playerDistanceThreshold * playerDistanceThreshold;
     private const float pdBehindThresholdSq = playerBehindDistanceThreshold * playerBehindDistanceThreshold;
 
@@ -14,7 +14,7 @@ public class EnemyTestRatAI : MonoBehaviour
     private const float minRotationSpeed = 2f;
     private const float maxRotationSpeed = 15f;
     public const float linearSpeed = 2f;
-    public const float maxLinearSpeed = 3f;
+    public const float maxLinearSpeed = 1.5f;
     public const float maxLinearSpeedSq = maxLinearSpeed * maxLinearSpeed;
 
     // Angle after which we start to move
@@ -22,12 +22,17 @@ public class EnemyTestRatAI : MonoBehaviour
     private const float moveAngleDeviation = 10;
 
     // Pounce attack consts
-    public const float pounceForce = 50f;
-    private static Vector3 pounceUps = new Vector3(0, 40f, 0);
-    private const float pounceDistanceSq = 7f;
+    public const float pounceForce = 25f;
+    private static Vector3 pounceUps = new Vector3(0, 30f, 0);
+    private const float pounceDistanceSq = 3f;
     private bool grounded = true; // If this is true, rat boy can pounce
     private bool hitGround = false;
     private bool isDead = false;
+
+    public float damage = 10f;
+    private PlayerController pc;
+    private bool canBite = true;
+    private float biteCooldown = 2f;
 
     private GameObject target;
     private Rigidbody rb;
@@ -43,6 +48,7 @@ public class EnemyTestRatAI : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        pc = target.GetComponent<PlayerController>() as PlayerController;
         rb = gameObject.GetComponent<Rigidbody>();
         HealthScript hs = gameObject.GetComponent<HealthScript>() as HealthScript;
         hs.SubscribeToOnDeath(deathlistener);
@@ -52,7 +58,7 @@ public class EnemyTestRatAI : MonoBehaviour
     void Update()
     {
         // Get player sq distance from rat boy
-        if (target != null && !isDead)
+        if (target != null && !isDead && pc.isAlive)
         {
 
             if (grounded)
@@ -123,11 +129,37 @@ public class EnemyTestRatAI : MonoBehaviour
             hitGround = true;
             StartCoroutine("JumpCooldown");
         }
+        else if(canBite && collision.gameObject.CompareTag("Player"))
+        {
+            // Check if we hit with the head collider
+            foreach(var c in collision.contacts)
+            {
+                if(c.thisCollider.name.Equals("_head"))
+                {
+                    Bite(collision.gameObject);
+                    canBite = false;
+                    StartCoroutine("BiteCooldown");
+                    break;
+                }
+            }
+        }
+    }
+
+    public void Bite(GameObject enemy)
+    {
+        HealthScript eHS = enemy.GetComponent<HealthScript>() as HealthScript;
+        eHS.DamageHealth(damage);
     }
 
     IEnumerator JumpCooldown()
     {
         yield return new WaitForSeconds(0.5f);
         grounded = true;
+    }
+
+    private IEnumerator BiteCooldown()
+    {
+        yield return new WaitForSeconds(biteCooldown);
+        canBite = true;
     }
 }

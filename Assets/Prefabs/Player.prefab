@@ -1065,13 +1065,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 15
   turnSpeed: 10
-  cameraRotateSpeed: 10
+  cameraRotateSpeed: 3
   followCamera: {fileID: 0}
   followCamera2DDistance: 7.5
   followCameraHeight: 7.5
   followCameraRotation: {x: 45, y: 0, z: 0}
   emptySpellPrefab: {fileID: 9115242570344683285, guid: dc4d7e134ee9aa44eb039160a99ac6ae,
     type: 3}
+  maximumMana: 100
+  manaRechargeRate: 5
+  healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
+  isAlive: 1
+  deathScreen: {fileID: 0}
 --- !u!114 &1622819698989183117
 MonoBehaviour:
   m_ObjectHideFlags: 0
