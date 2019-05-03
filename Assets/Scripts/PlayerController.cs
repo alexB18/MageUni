@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 10;
     public float cameraRotateSpeed = 10f;
     private float maxPlayerSpeed = 3f;
+    private float currentPlayerSpeed;
     private Animator anim;
     private Rigidbody playerRb;
 
@@ -132,6 +133,7 @@ public class PlayerController : MonoBehaviour
         moveVector.y = 0f;   // Ensure lateral movement
         moveVector = moveVector.normalized * directionMagnitude; // Normalize direction vector
         moveVector *= moveSpeed;
+        currentPlayerSpeed = moveVector.magnitude;  //Retrieive speed of current player for global use
 
         if (moveVector != Vector3.zero)
         {
@@ -149,6 +151,12 @@ public class PlayerController : MonoBehaviour
         float degree = Input.GetAxis("Camera Horizontal");
         followCameraRotation.y += degree * cameraRotateSpeed;
         followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+        
+        if( currentPlayerSpeed == 0)
+        {
+            transform.position = 
+            transform.rotation = Quaternion.Euler(followCameraRotation);
+        }
     }
 
     private void CameraRotateMovement()
