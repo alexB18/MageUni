@@ -6,10 +6,10 @@ public class PlayerController : MonoBehaviour
 {
 
     /* ------------------------  Player variables   ------------------- */
-    public float moveSpeed = 3f;
+    public float moveSpeed = 15f;
     public float turnSpeed = 10;
     public float cameraRotateSpeed = 10f;
-    private float maxPlayerSpeed = 2.5f;
+    private float maxPlayerSpeed = 3f;
     private Animator anim;
     private Rigidbody playerRb;
 
@@ -76,21 +76,19 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine("StartSpell", i);
             }
         }
-
-        // Raw -> means player will "snap" to full speed with no acceleration
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-
-        Move(h, v);
-        //SimpleMove(h, v);
-        //CameraRotate();
-        //Turning();
-        Animating(h, v);
     }
 
     // Used primarily for physics
     private void FixedUpdate()
     {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        //Move(h, v);
+        SimpleMove(h, v);
+        //CameraRotate();
+        //Turning();
+        Animating(h, v);
     }
 
     private void Move(float h, float v)
@@ -141,8 +139,8 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("MoveSpeed", moveVector.magnitude);
 
             transform.rotation = Quaternion.LookRotation(moveVector);
+            playerRb.velocity = Vector3.ClampMagnitude(playerRb.velocity, maxPlayerSpeed);
             playerRb.AddForce(moveVector);
-            Vector3.ClampMagnitude(playerRb.velocity, maxPlayerSpeed);
         }
     }
 
