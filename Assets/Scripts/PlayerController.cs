@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
 
     private static readonly float interpConst = 10;
     private static readonly float walkScale = 0.33f;
-    private static readonly float backwardsWalkScale = 0.16f;
-    private static readonly float backwardsRunScale = 0.66f;
 
 
     private Vector3 currentDirection = Vector3.zero;    // Track players current direction
@@ -129,18 +127,20 @@ public class PlayerController : MonoBehaviour
 
     private void SimpleMove(float h, float v)
     {
-        Vector3 moveVector = new Vector3(h, 0, v) * moveSpeed;
-        if (Input.GetButton("Walk"))
-            moveVector *= walkScale;
-
+        Vector3 moveVector = followCamera.transform.forward * v + followCamera.transform.right * h;
+        float directionMagnitude = moveVector.magnitude; // Store initial direction magnitude for normalization
+        moveVector.y = 0f;   // Ensure lateral movement
+        moveVector = moveVector.normalized * directionMagnitude; // Normalize direction vector
+        moveVector *= moveSpeed;
 
         if (moveVector != Vector3.zero)
         {
-            anim.SetFloat("MoveSpeed", moveVector.magnitude);
-
             transform.rotation = Quaternion.LookRotation(moveVector);
-            playerRb.velocity = Vector3.ClampMagnitude(playerRb.velocity, maxPlayerSpeed);
+            float adjMaxSpeed = Input.GetButton("Walk") ? maxPlayerSpeed * walkScale : maxPlayerSpeed;
+            playerRb.velocity = Vector3.ClampMagnitude(playerRb.velocity, adjMaxSpeed);
             playerRb.AddForce(moveVector);
+
+            anim.SetFloat("MoveSpeed", playerRb.velocity.magnitude / maxPlayerSpeed);
         }
     }
 
