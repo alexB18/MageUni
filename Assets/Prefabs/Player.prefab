@@ -1062,10 +1062,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0aa819105956e4a9a330019d93d902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  moveSpeed: 2
+  turnSpeed: 200
   followCamera: {fileID: 0}
-  followCamera2DDistance: 7.5
-  followCameraHeight: 7.5
+  followCamera2DDistance: 3
+  followCameraHeight: 3
   followCameraRotation: {x: 45, y: 0, z: 0}
   emptySpellPrefab: {fileID: 9115242570344683285, guid: dc4d7e134ee9aa44eb039160a99ac6ae,
     type: 3}
