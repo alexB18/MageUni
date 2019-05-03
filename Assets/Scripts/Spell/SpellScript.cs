@@ -9,6 +9,14 @@ public class SpellScript : MonoBehaviour
     {
         public List<SpellEffect> effects = new List<SpellEffect>();
         public SpellShape shape;
+        public float ManaCost()
+        {
+            float cost = 0f;
+            foreach (SpellEffect e in effects)
+                cost += e.manaCost;
+            cost = shape.manaCost + shape.manaMultiplier * cost;
+            return cost;
+        }
     }
     [HideInInspector] public Spell spell;
 
@@ -34,7 +42,6 @@ public class SpellScript : MonoBehaviour
     IEnumerator Decay()
     {
         yield return new WaitForSeconds(spellTime);
-        Debug.Log("DEBUG: Spell: dead");
         Destroy(gameObject);
     }
 }

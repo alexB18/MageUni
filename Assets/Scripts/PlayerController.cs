@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class PlayerController : MonoBehaviour
     /* ------------------------  Player variables   ------------------- */
     public float moveSpeed = 15f;
     public float turnSpeed = 10;
-    public float cameraRotateSpeed = 10f;
+    public float cameraRotateSpeed = 3f;
     private float maxPlayerSpeed = 3f;
     private float currentPlayerSpeed;
     private Animator anim;
@@ -37,6 +38,32 @@ public class PlayerController : MonoBehaviour
     private int spellSlotsAvailable = 1;
     private SpellScript.Spell[] spellEffects = new SpellScript.Spell[spellMaxSpellSlots];
 
+    // Health and mana
+    private HealthScript healthScript;
+    public float maximumMana = 100;
+    public float manaRechargeRate = 5f;
+    private float currentMana;
+    public Slider healthBar;
+    public Slider manaBar;
+    [HideInInspector] public bool isAlive = true;
+    private float timeUntilReload = 5f;
+    public GameObject deathScreen;
+
+    private readonly Subscriber deathListener = delegate (Object[] obj)
+    {
+        GameObject gameObject = obj[0] as GameObject;
+        PlayerController pc = gameObject.GetComponent<PlayerController>();
+        pc.isAlive = false;
+        pc.ragdoll();
+        pc.StartCoroutine("DieAndRestart");
+    };
+    private readonly Subscriber healthChangeListener = delegate (Object[] obj)
+    {
+        HealthScript hs = obj[0] as HealthScript;
+        PlayerController pc = hs.gameObject.GetComponent<PlayerController>();
+        pc.healthBar.value = hs.currentHealth / hs.maximumHealth;
+    };
+
     // Raycasting private variables
     private int floorMask;                  // Used to tell if ray cast has hit ground
     private float camRayLength = 100;       // Length of ray cast from camera
@@ -54,25 +81,47 @@ public class PlayerController : MonoBehaviour
         fireSpell.effects.Add(new SpellEffectFire());
         fireSpell.shape = new SpellShapeBolt();
         spellEffects[0] = fireSpell;
+
+        currentMana = maximumMana;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         followCamera = Camera.main.gameObject;
+        healthScript = gameObject.GetComponent<HealthScript>() as HealthScript;
+        healthScript.SubscribeToOnDeath(deathListener);
+        healthScript.SubscribeToOnHealthChange(healthChangeListener);
+        healthScript.OnHealthChange();
     }
 
     private void Update()
     {
-        // TODO move this to a coroutine
-        CameraUpdate();
-
-        // Get spell keydowns
-        for (int i = 0; i < spellSlotsAvailable; ++i)
+        if (isAlive)
         {
-            if (Input.GetButtonDown("Spell" + (i + 1)))
+            currentMana += manaRechargeRate * Time.deltaTime;
+            if (manaBar != null)
+                manaBar.value = currentMana / maximumMana;
+            /*
+            if (healthBar != null)
+                healthBar.value = healthScript.currentHealth / healthScript.maximumHealth;
+            //*/
+            // TODO move this to a coroutine
+            CameraUpdate();
+
+            // Get spell keydowns
+            for (int i = 0; i < spellSlotsAvailable; ++i)
             {
-                StartCoroutine("StartSpell", i);
+                if (Input.GetButtonDown("Spell" + (i + 1)))
+                {
+                    SpellScript.Spell spell = spellEffects[i];
+                    float manaCost = spell.ManaCost();
+                    if (currentMana > manaCost)
+                    {
+                        currentMana -= manaCost;
+                        StartCoroutine("StartSpell", i);
+                    }
+                }
             }
         }
     }
@@ -80,14 +129,17 @@ public class PlayerController : MonoBehaviour
     // Used primarily for physics
     private void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        if (isAlive)
+        {
+            float h = Input.GetAxis("Horizontal");
+            float v = Input.GetAxis("Vertical");
 
-        //Move(h, v);
-        SimpleMove(h, v);
-        //CameraRotate();
-        //Turning();
-        Animating(h, v);
+            //Move(h, v);
+            SimpleMove(h, v);
+            //CameraRotate();
+            //Turning();
+            Animating(h, v);
+        }
     }
 
     private void Move(float h, float v)
@@ -133,7 +185,7 @@ public class PlayerController : MonoBehaviour
         moveVector.y = 0f;   // Ensure lateral movement
         moveVector = moveVector.normalized * directionMagnitude; // Normalize direction vector
         moveVector *= moveSpeed;
-        currentPlayerSpeed = moveVector.magnitude;  //Retrieive speed of current player for global use
+        //currentPlayerSpeed = moveVector.magnitude;  //Retrieive speed of current player for global use
 
         if (moveVector != Vector3.zero)
         {
@@ -152,10 +204,12 @@ public class PlayerController : MonoBehaviour
         followCameraRotation.y += degree * cameraRotateSpeed;
         followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
         
+        /*
         if( currentPlayerSpeed == 0)
         {
             transform.rotation = Quaternion.Euler(followCameraRotation);
         }
+        //*/
     }
 
     private void CameraRotateMovement()
@@ -219,5 +273,18 @@ public class PlayerController : MonoBehaviour
         SpellScript spellScript = spellObject.GetComponent<SpellScript>();
         spellScript.spell = spellEffects[spellSlot];
         yield break;
+    }
+
+    IEnumerator DieAndRestart()
+    {
+        yield return new WaitForSeconds(timeUntilReload);
+        deathScreen.SetActive(true);
+    }
+
+    public void ragdoll()
+    {
+        Animator animator = gameObject.GetComponent<Animator>() as Animator;
+        playerRb.freezeRotation = false;
+        animator.enabled = false;
     }
 }

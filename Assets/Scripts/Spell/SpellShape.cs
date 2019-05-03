@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class SpellShape
 {
+    public float manaCost = 5;
+    public float manaMultiplier = 1.0f;
     /**
      * Run at the start of the spell. This can be used to initialise a new collider
      * or trigger. It can also be used to set the locomotion

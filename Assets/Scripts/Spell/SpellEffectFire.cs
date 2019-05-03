@@ -10,6 +10,7 @@ public class SpellEffectFire : SpellEffect
     private float maxDamage = 25f;
     private float minDamage = 10f;
     private float spread = 2f;
+    public float manaCost = 10f;
     public override void Start(GameObject self)
     {
         //Debug.Log("I am in the Fire spell effect start");
