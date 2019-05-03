@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
 {
 
     /* ------------------------  Player variables   ------------------- */
-    public float moveSpeed = 2f;
-    public float turnSpeed = 200;
+    public float moveSpeed = 3f;
+    public float turnSpeed = 10;
+    public float cameraRotateSpeed = 10f;
+    private float maxPlayerSpeed = 2.5f;
     private Animator anim;
     private Rigidbody playerRb;
 
@@ -63,18 +65,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // TODO move this all to a coroutine
-        // Get the rotation
-        //float rotf = transform.rotation.eulerAngles.y;
-        float rotf = 0f;
-        followCameraRotation.y = rotf;
-        followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
-
-        // Orbit the camera based on rotation
-        rotf *= Mathf.Deg2Rad;
-        followCameraDisplacement.x = -followCamera2DDistance * Mathf.Sin(rotf);
-        followCameraDisplacement.z = -followCamera2DDistance * Mathf.Cos(rotf);
-        followCamera.transform.position = transform.position + followCameraDisplacement;
+        // TODO move this to a coroutine
+        CameraUpdate();
 
         // Get spell keydowns
         for (int i = 0; i < spellSlotsAvailable; ++i)
@@ -84,25 +76,28 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine("StartSpell", i);
             }
         }
+
+        // Raw -> means player will "snap" to full speed with no acceleration
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+
+        Move(h, v);
+        //SimpleMove(h, v);
+        //CameraRotate();
+        //Turning();
+        Animating(h, v);
     }
 
     // Used primarily for physics
     private void FixedUpdate()
     {
-        // Raw -> means player will "snap" to full speed with no acceleration
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-
-        Move(h, v);
-        //Turning();
-        Animating(h, v);
     }
 
     private void Move(float h, float v)
     {
      
         // Track camera location
-        Transform camera = Camera.main.transform;
+        Transform camera = followCamera.transform;
 
         // If leftshift, slow the heck down
         if (Input.GetButton("Walk"))
@@ -132,6 +127,48 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(currentDirection);
             transform.position += currentDirection * moveSpeed * Time.deltaTime;
         }
+    }
+
+    private void SimpleMove(float h, float v)
+    {
+        Vector3 moveVector = new Vector3(h, 0, v) * moveSpeed;
+        if (Input.GetButton("Walk"))
+            moveVector *= walkScale;
+
+
+        if (moveVector != Vector3.zero)
+        {
+            anim.SetFloat("MoveSpeed", moveVector.magnitude);
+
+            transform.rotation = Quaternion.LookRotation(moveVector);
+            playerRb.AddForce(moveVector);
+            Vector3.ClampMagnitude(playerRb.velocity, maxPlayerSpeed);
+        }
+    }
+
+    private void CameraRotateKeys()
+    {
+        float degree = Input.GetAxis("Camera Horizontal");
+        followCameraRotation.y += degree * cameraRotateSpeed;
+        followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+    }
+
+    private void CameraRotateMovement()
+    {
+        // Get the rotation
+        float rotf = transform.rotation.eulerAngles.y;
+        followCameraRotation.y = rotf;
+        followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+    }
+
+    private void CameraUpdate()
+    {
+        CameraRotateKeys();
+        // Orbit the camera based on rotation
+        float rotf = followCameraRotation.y * Mathf.Deg2Rad;
+        followCameraDisplacement.x = -followCamera2DDistance * Mathf.Sin(rotf);
+        followCameraDisplacement.z = -followCamera2DDistance * Mathf.Cos(rotf);
+        followCamera.transform.position = transform.position + followCameraDisplacement;
     }
 
     private void Turning()
