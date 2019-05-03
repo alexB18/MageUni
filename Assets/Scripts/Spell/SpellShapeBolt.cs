@@ -18,6 +18,12 @@ public class SpellShapeBolt : SpellShape
         boltBody.useGravity = false;
         boltBody.velocity = self.transform.up * forwardVelocity;
 
+        // Create Light Object
+        Light boltLight = self.AddComponent<Light>() as Light;
+        boltLight.color = Color.yellow;
+        boltLight.intensity = 2.0f;
+
+
         // Create bolt collider
         CapsuleCollider boltCollider = self.AddComponent<CapsuleCollider>() as CapsuleCollider;
         boltCollider.isTrigger = true;
