@@ -978,6 +978,7 @@ GameObject:
   - component: {fileID: 136606663363984694}
   - component: {fileID: 95665039525092722}
   - component: {fileID: 8173982678798674917}
+  - component: {fileID: 1622819698989183117}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1070,6 +1071,20 @@ MonoBehaviour:
   followCameraRotation: {x: 45, y: 0, z: 0}
   emptySpellPrefab: {fileID: 9115242570344683285, guid: dc4d7e134ee9aa44eb039160a99ac6ae,
     type: 3}
+--- !u!114 &1622819698989183117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824340380413090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275344f2268c9114d9eaa2897b321797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHealth: 100
+  currentHealth: 100
 --- !u!1 &1826566120413068
 GameObject:
   m_ObjectHideFlags: 0

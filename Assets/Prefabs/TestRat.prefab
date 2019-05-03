@@ -383,6 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6398960432743062251}
   - component: {fileID: 6398960432743062249}
+  - component: {fileID: 3012826024956622279}
   - component: {fileID: 6398960432743062248}
   m_Layer: 0
   m_Name: TestRat
@@ -418,6 +419,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5491d48e0708f9d4cba562934caeb68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3012826024956622279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6398960432743062250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275344f2268c9114d9eaa2897b321797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHealth: 100
+  currentHealth: 100
 --- !u!54 &6398960432743062248
 Rigidbody:
   m_ObjectHideFlags: 0
