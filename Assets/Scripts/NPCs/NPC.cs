@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,20 @@ public abstract class NPC : MonoBehaviour
     public float sqrInteractDistance;
     public GameObject textWindow;
     public Text dialogue;
+    public string currentState;
+    public int currentPos;
+    public GameObject playerResponsesWindow;
+    public GameObject playerChoice1;
+    public GameObject playerChoice2;
+    public GameObject playerChoice3;
+    protected List<GameObject> playerChoicesList;
+    public Text playerChoice1Text;
+    public Text playerChoice2Text;
+    public Text playerChoice3Text;
+    protected List<Text> buttonTextList;
+
+    public Dictionary<string, List<string>> dialogueLines;
+    public Dictionary<string, List<string>> playerResponses;
 
     // Update is called once per frame
     void Update()
@@ -41,6 +56,8 @@ public abstract class NPC : MonoBehaviour
     
     // GetNextLine() should return a string with the next thing that the NPC says.
     public abstract string GetNextLine();
+
+    public abstract void PlayerDialogueChoice(int playerChoice);
 
     // ResetDialogue() is called when the "Goodbye" button is pressed, and should do whatever
     // is necessary to reset the NPC's dialogue. This can be a no-op if the NPC's dialogue does not

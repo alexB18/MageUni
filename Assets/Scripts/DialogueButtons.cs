@@ -21,4 +21,17 @@ public class DialogueButtons : MonoBehaviour
     {
         dialogue.text = speaker.GetNextLine();
     }
+
+    public void PlayerChoice1()
+    {
+        speaker.PlayerDialogueChoice(1);
+    }
+    public void PlayerChoice2()
+    {
+        speaker.PlayerDialogueChoice(2);
+    }
+    public void PlayerChoice3()
+    {
+        speaker.PlayerDialogueChoice(3);
+    }
 }
