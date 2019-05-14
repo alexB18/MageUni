@@ -15,15 +15,15 @@ public abstract class NPC : MonoBehaviour
     public Text dialogue;
     public string currentState;
     public int currentPos;
-    public GameObject playerResponsesWindow;
-    public GameObject playerChoice1;
-    public GameObject playerChoice2;
-    public GameObject playerChoice3;
-    protected List<GameObject> playerChoicesList;
+    public Button playerChoice1;
+    public Button playerChoice2;
+    public Button playerChoice3;
+    protected List<Button> playerChoicesList;
     public Text playerChoice1Text;
     public Text playerChoice2Text;
     public Text playerChoice3Text;
     protected List<Text> buttonTextList;
+    public Button nextButton;
 
     public Dictionary<string, List<string>> dialogueLines;
     public Dictionary<string, List<string>> playerResponses;

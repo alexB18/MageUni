@@ -9,7 +9,7 @@ public class NPCTestScript : NPC
     
     void Start()
     {
-        playerChoicesList = new List<GameObject>();
+        playerChoicesList = new List<Button>();
         playerChoicesList.Add(playerChoice1);
         playerChoicesList.Add(playerChoice2);
         playerChoicesList.Add(playerChoice3);
@@ -41,13 +41,13 @@ public class NPCTestScript : NPC
         playerResponses.Add("state2", new List<string>());
         playerResponses.Add("state3", new List<string>());
 
-        playerResponses["state1"].Add("Can you tell me what all I can do?");
+        playerResponses["state1"].Add("What can I do?");
 
-        playerResponses["state2"].Add("Yes, I got everything. Thank you!");
-        playerResponses["state2"].Add("No, I missed some of that. Could you start over, please?");
-        playerResponses["state2"].Add("Could you just tell me about the things I can do? I got the 'how to interact' bit.");
+        playerResponses["state2"].Add("Got it!");
+        playerResponses["state2"].Add("I missed something.");
+        playerResponses["state2"].Add("Second part again.");
 
-        playerResponses["state3"].Add("That would be great!");
+        playerResponses["state3"].Add("Please do.");
     }
 
     public override string GetNextLine()
@@ -62,6 +62,7 @@ public class NPCTestScript : NPC
         else
         {
             nextLine = dialogueLines[currentState][currentPos];
+            nextButton.interactable = false;
             ShowResponses();
         }       
 
@@ -75,19 +76,26 @@ public class NPCTestScript : NPC
         {
             currentState = "state1";
         }
-        playerResponsesWindow.SetActive(false);
-        foreach (GameObject button in playerChoicesList)
+
+        foreach (Button button in playerChoicesList)
         {
-            button.SetActive(false);
+            button.interactable = false;
+        }
+        foreach (Text text in buttonTextList)
+        {
+            text.text = "";
         }
     }
 
     public override void PlayerDialogueChoice(int playerChoice)
     {
-        playerResponsesWindow.SetActive(false);
-        foreach (GameObject button in playerChoicesList)
+        foreach (Button button in playerChoicesList)
         {
-            button.SetActive(false);
+            button.interactable = false;
+        }
+        foreach (Text text in buttonTextList)
+        {
+            text.text = "";
         }
 
         currentPos = 0;
@@ -115,17 +123,17 @@ public class NPCTestScript : NPC
                 break;
         }
 
+        nextButton.interactable = true;
         dialogue.text = GetNextLine();
     }
 
     private void ShowResponses()
     {
-        playerResponsesWindow.SetActive(true);
         int numButtons = 0;
         foreach (string response in playerResponses[currentState])
         {
             buttonTextList[numButtons].text = response;
-            playerChoicesList[numButtons].SetActive(true);
+            playerChoicesList[numButtons].interactable = true;
             numButtons++;
         }
     }
