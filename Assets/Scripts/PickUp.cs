@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PickUp : MonoBehaviour
+public abstract class PickUp : Interactable
 {
     public float sqrInteractDistance;
     public string description;
@@ -20,34 +20,18 @@ public abstract class PickUp : MonoBehaviour
         playerInv = player.GetComponent<Inventory>();
         thisRigidbody = GetComponent<Rigidbody>();
     }
+    
+    public abstract void Use();
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!OpenMenu.openMenu.isPaused)
-        {
-            if (Input.GetButtonDown("Interact"))
-            {
-                // using sqrMagnitude here to cheapen this calculation--if we have a lot of
-                // interactables in a scene there could be big lag without it.
-                if ((player.transform.position - transform.position).sqrMagnitude <= sqrInteractDistance)
-                {
-                    Interact();
-                }
-            }
-        }
-    }
-
-    void Interact()
+    override public void Interact(GameObject actor)
     {
         playerInv.inventory.Add(this);
         // teleports item to space to hide it from the player
         transform.position = new Vector3(1000, 1000, 1000);
 
-        if (thisRigidbody != null) {
+        if (thisRigidbody != null)
+        {
             thisRigidbody.useGravity = false;
         }
     }
-
-    public abstract void Use();
 }

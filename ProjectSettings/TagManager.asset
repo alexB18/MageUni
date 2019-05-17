@@ -9,6 +9,8 @@ TagManager:
   - BadGuy
   - SpellMenu
   - GlyphUI
+  - Spawn
+  - Interactable
   layers:
   - Default
   - TransparentFX

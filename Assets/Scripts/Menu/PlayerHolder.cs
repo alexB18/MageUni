@@ -7,12 +7,10 @@ public class PlayerHolder : MonoBehaviour
     public GameObject player;
 
     public GameObject Player { get => player; set => player = value; }
-
-    // Start is called before the first frame update
-    void OnEnable()
+    
+    void Start()
     {
-        GameObject nPlayer =  GameObject.FindGameObjectWithTag("Player");
-        if (nPlayer != null)
-            player = nPlayer;
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
     }
 }

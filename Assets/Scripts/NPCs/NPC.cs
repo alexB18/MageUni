@@ -31,6 +31,7 @@ public abstract class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (!OpenMenu.openMenu.isPaused)
         {
             if (Input.GetButtonDown("Interact"))
@@ -43,6 +44,7 @@ public abstract class NPC : MonoBehaviour
                 }
             }
         }
+        //*/
     }
 
     public void Interact()

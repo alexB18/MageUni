@@ -1,49 +1,16 @@
 fileFormatVersion: 2
-guid: 5658bb7672aa92c44aa00134f1a3a443
+guid: 9c582c8e9dc8c5444a84c59dbc26317c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: object1
-    100002: object2
-    100004: object3
-    100006: object4
-    100008: object5
-    100010: object6
-    100012: //RootNode
-    400000: object1
-    400002: object2
-    400004: object3
-    400006: object4
-    400008: object5
-    400010: object6
-    400012: //RootNode
-    2100000: Wood_Dark
-    2100002: Wood_Light
-    2100004: Wood_Medium
-    2100006: object1Mat
-    2100008: object2Mat
-    2100010: object3Mat
-    2100012: object4Mat
-    2100014: object5Mat
-    2100016: object6Mat
-    2300000: object1
-    2300002: object2
-    2300004: object3
-    2300006: object4
-    2300008: object5
-    2300010: object6
-    3300000: object1
-    3300002: object2
-    3300004: object3
-    3300006: object4
-    3300008: object5
-    3300010: object6
-    4300000: object1
-    4300002: object2
-    4300004: object3
-    4300006: object4
-    4300008: object5
-    4300010: object6
+    100000: //RootNode
+    100002: Solid1
+    400000: //RootNode
+    400002: Solid1
+    2100000: Solid1Mat
+    2300000: Solid1
+    3300000: Solid1
+    4300000: Solid1
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -65,6 +65,11 @@ public class PlayerController : MonoBehaviour
     private int floorMask;                  // Used to tell if ray cast has hit ground
     private float camRayLength = 100;       // Length of ray cast from camera
 
+    // Interaction trigger
+    public GameObject interactionTrigger;
+    private Coroutine interactionTimer;
+    private const float interactionTime = 0.25f;
+
     // Called before first frame update regardless of script being enabled or not
     private void Awake()
     {
@@ -94,11 +99,28 @@ public class PlayerController : MonoBehaviour
         statScript.SubscribeToOnDeath(OnDeath);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Interactable"))
+        {
+            interactionTrigger.SetActive(false);
+            StopCoroutine(interactionTimer);
+            interactionTimer = null;
+
+            other.gameObject.GetComponent<Interactable>().Interact(gameObject);
+        }
+    }
+
     private void Update()
     {
         // If we're alive and 
         if (isAlive && !IsPaused())
         {
+            if(!interactionTrigger.activeSelf && Input.GetButtonDown("Interact"))
+            {
+                interactionTrigger.SetActive(true);
+                interactionTimer = StartCoroutine("InteractionTimer");
+            }
             statScript.ModifyMana(manaRechargeRate * Time.deltaTime);
             /*
             if (healthBar != null)
@@ -121,11 +143,6 @@ public class PlayerController : MonoBehaviour
             if(Input.GetButtonDown("Fire"))
                 StartCoroutine("StartSpell");
         }
-    }
-
-    // Used primarily for physics
-    private void FixedUpdate()
-    {
     }
 
     private bool IsPaused() => Time.timeScale == 0;
@@ -288,6 +305,13 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(timeUntilReload);
         deathScreen.SetActive(true);
+    }
+
+    IEnumerator InteractionTimer()
+    {
+        yield return new WaitForSeconds(interactionTime);
+        interactionTrigger.SetActive(false);
+        interactionTimer = null;
     }
 
     public void ragdoll()
