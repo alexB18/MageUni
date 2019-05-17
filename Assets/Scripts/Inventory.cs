@@ -48,4 +48,9 @@ public class Inventory : MonoBehaviour
         playerInv.inventory.Remove(item);
         inventory.Add(item);
     }
+
+    public void Use(int index)
+    {
+        inventory[index].Use();
+    }
 }
