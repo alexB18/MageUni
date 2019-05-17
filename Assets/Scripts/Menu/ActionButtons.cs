@@ -20,6 +20,6 @@ public class ActionButtons : MonoBehaviour
 
     public void Use()
     {
-        // TODO
+        playerInv.Use(selected);
     }
 }

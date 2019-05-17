@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public abstract class PickUp : MonoBehaviour
 {
     public float sqrInteractDistance;
     public string description;
@@ -11,7 +11,7 @@ public class PickUp : MonoBehaviour
     public Rigidbody thisRigidbody;
     public GameObject player;
 
-    private Inventory playerInv;
+    protected Inventory playerInv;
 
 
     // Start is called before the first frame update
@@ -48,4 +48,6 @@ public class PickUp : MonoBehaviour
             thisRigidbody.useGravity = false;
         }
     }
+
+    public abstract void Use();
 }
