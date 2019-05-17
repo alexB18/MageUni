@@ -16,8 +16,7 @@ public class MainMenuButtons : MonoBehaviour
 
     public void Resume()
     {
-        OpenMenu.isPaused = false;
-        Time.timeScale = 1f;
+        OpenMenu.openMenu.Resume();
     }
 
     public void Restart()

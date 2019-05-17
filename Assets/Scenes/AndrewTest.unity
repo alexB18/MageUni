@@ -363,6 +363,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &799360644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7351498075107330456, guid: aad6781850168e941a35044ca2419abc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1349395722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1054932564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7351498076561453344, guid: aad6781850168e941a35044ca2419abc,
@@ -675,6 +681,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7351498076461249623, guid: aad6781850168e941a35044ca2419abc,
+        type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 799360644}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad6781850168e941a35044ca2419abc, type: 3}
 --- !u!114 &1349395723 stripped
@@ -1040,31 +1051,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8192888855212381318, guid: 15876bcd534913c418626570c17822e1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8192888855212381318, guid: 15876bcd534913c418626570c17822e1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8192888855212381318, guid: 15876bcd534913c418626570c17822e1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8192888855212381318, guid: 15876bcd534913c418626570c17822e1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8192888855212381318, guid: 15876bcd534913c418626570c17822e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15876bcd534913c418626570c17822e1, type: 3}

@@ -4,18 +4,42 @@ using UnityEngine;
 
 public class OpenMenu : MonoBehaviour
 {
-    public static bool isPaused = false;
+    public bool isPaused = false;
     public GameObject menu;
+    private float startPhysicsStep;
+
+    // Singleton!
+    public static OpenMenu openMenu;
+
+    private void Awake()
+    {
+        openMenu = this;
+    }
+
+    private void Start()
+    {
+        startPhysicsStep = Time.fixedDeltaTime;
+    }
     void Update()
     {
-        if (!isPaused)
+        if (Input.GetButtonDown("Menu"))
         {
-            if (Input.GetButtonDown("Menu"))
-            {
-                menu.SetActive(true);
-                isPaused = true;
-                Time.timeScale = 0f;
-            }
+            if (!isPaused)
+                Pause();
         }
+    }
+    public void Pause()
+    {
+        isPaused = true;
+        menu.SetActive(true);
+        Time.timeScale = 0f;
+        Time.fixedDeltaTime = 0f;
+    }
+    public void Resume()
+    {
+        isPaused = false;
+        menu.SetActive(false);
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = startPhysicsStep;
     }
 }

@@ -9,10 +9,12 @@ public class RatAI : MonoBehaviour
     private enum StateEnum
     {
         Idle,
-        ContinueIdle,
+        IdleContinue,
         Wander,
-        ContinueWander,
+        WanderRotate,
+        WanderContinue,
         DetectTarget,
+        RotateTowardTarget,
         MoveTowardTarget,
         Attack,
         Airborne,
@@ -22,9 +24,11 @@ public class RatAI : MonoBehaviour
 
     // Wander Variables
     private const float maxWanderTime = 5f;
-    private const float wanderSpeedMultiplier = 0.5f;
+    private const float wanderSpeedMultiplier = 0.4f;
     private const float swivelAngleMax = 90f;
     private Coroutine wanderTimer;
+    private Quaternion newRotation;
+    private float newAngle;
 
     // Idle variables
     private const float maxIdleTime = 2.5f;
@@ -45,8 +49,8 @@ public class RatAI : MonoBehaviour
     public const float maxLinearSpeedSq = maxLinearSpeed * maxLinearSpeed;
 
     // Angle after which we start to move
-    private const float moveAngle = 20f;
-    private const float moveAngleDeviation = 10;
+    private const float moveAngle = 10f;
+    private const float moveAngleDeviation = 7f;
 
     // Pounce attack consts
     public const float pounceForce = 25f;
@@ -108,12 +112,12 @@ public class RatAI : MonoBehaviour
                 else
                 {
                     idleTimer = StartCoroutine("IdleTimer");
-                    state = StateEnum.ContinueIdle;
+                    state = StateEnum.IdleContinue;
                     // Do cute animations and squeaks, randomly switch to Wander
                 }
                 break;
 
-            case StateEnum.ContinueIdle:
+            case StateEnum.IdleContinue:
                 // See if we detect the player. If so, make a noise and switch to DetectTarget
                 if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
                 {
@@ -128,16 +132,34 @@ public class RatAI : MonoBehaviour
                     if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
                         state = StateEnum.DetectTarget;
 
-                    float angle = Random.Range(-swivelAngleMax, swivelAngleMax);
-                    transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y + angle, 0f);
+                    newAngle = Random.Range(-swivelAngleMax, swivelAngleMax);
+                    newRotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y + newAngle, 0f);
 
-                    state = StateEnum.ContinueWander;
-                    wanderTimer = StartCoroutine("WanderTimer");
-                    // Move around randomly, switch to idle
+                    state = StateEnum.WanderRotate;
                 }
                 break;
 
-            case StateEnum.ContinueWander:
+            case StateEnum.WanderRotate:
+                {
+                    // See if we detect the player. If so, make a noise and switch to DetectTarget
+                    if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                        state = StateEnum.DetectTarget;
+
+                    float t = Mathf.Abs(minRotationSpeed * Time.deltaTime / newAngle);
+
+                    Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t);
+                    //Quaternion slerpedLook = Quaternion.LookRotation(lookV);
+                    transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0));
+
+                    if (Quaternion.Angle(transform.rotation, newRotation) <= 2)
+                    {
+                        state = StateEnum.WanderContinue;
+                        wanderTimer = StartCoroutine("WanderTimer");
+                    }
+                }
+                break;
+
+            case StateEnum.WanderContinue:
                 {
                     // See if we detect the player. If so, make a noise and switch to DetectTarget
                     if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
@@ -163,16 +185,34 @@ public class RatAI : MonoBehaviour
                     state = StateEnum.MoveTowardTarget;
                 else
                 {
+                    state = StateEnum.RotateTowardTarget;
+                }
+                break;
+
+            case StateEnum.RotateTowardTarget:
+                // Check if we can still detect the target
+                // Check if target is in acceptable sight and switch to MoveTowardTarget
+                // Else rotate toward target
+                if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                    state = StateEnum.Idle;
+                else if (FacingTarget(angleBetweenTarget))
+                    state = StateEnum.MoveTowardTarget;
+                else
+                {
+                    newRotation = Quaternion.LookRotation(target.transform.position - transform.position);
                     // Calculate rotation speed based on the velocity
                     float v2 = Vector3.SqrMagnitude(rb.velocity);
                     float rotationSpeed = Mathf.Lerp(minRotationSpeed, maxRotationSpeed, v2 / maxLinearSpeed);
-                    float t = Mathf.Abs(rotationSpeed * Time.deltaTime / angleBetweenTarget);
+                    float t = Mathf.Abs(rotationSpeed * Time.deltaTime / Quaternion.Angle(transform.rotation, newRotation));
 
-                    Quaternion slerpedLook = Quaternion.Slerp(transform.rotation,
-                                                                Quaternion.LookRotation(target.transform.position - transform.position),
-                                                                t);
+                    Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t);
                     //Quaternion slerpedLook = Quaternion.LookRotation(lookV);
                     transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0));
+
+                    if (Quaternion.Angle(transform.rotation, newRotation) <= 2)
+                    {
+                        state = StateEnum.MoveTowardTarget;
+                    }
                 }
                 break;
 
@@ -248,7 +288,7 @@ public class RatAI : MonoBehaviour
     {
         if (state != StateEnum.Dead)
         {
-            if (state == StateEnum.ContinueWander)
+            if (state == StateEnum.WanderContinue)
             {
                 // We've hit a wall. Go back to idle and stop the wander timer
                 state = StateEnum.Idle;

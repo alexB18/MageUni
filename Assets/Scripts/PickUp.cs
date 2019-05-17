@@ -24,7 +24,7 @@ public abstract class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!OpenMenu.isPaused)
+        if (!OpenMenu.openMenu.isPaused)
         {
             if (Input.GetButtonDown("Interact"))
             {

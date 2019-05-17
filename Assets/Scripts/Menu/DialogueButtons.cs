@@ -11,8 +11,7 @@ public class DialogueButtons : MonoBehaviour
 
     public void Goodbye()
     {
-        OpenMenu.isPaused = false;
-        Time.timeScale = 1f;
+        OpenMenu.openMenu.Resume();
         speaker.ResetDialogue();
         speaker = null;
     }
