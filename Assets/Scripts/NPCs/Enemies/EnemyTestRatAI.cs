@@ -47,14 +47,13 @@ public class EnemyTestRatAI : MonoBehaviour
         isDead = true;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         pc = target.GetComponent<PlayerController>() as PlayerController;
         rb = gameObject.GetComponent<Rigidbody>();
         StatScript hs = gameObject.GetComponent<StatScript>();
-        hs.SubscribeToOnDeath(deathlistener);
+        hs.SubscribeToOnDeath(OnDeath);
     }
 
     // Update is called once per frame
@@ -68,7 +67,7 @@ public class EnemyTestRatAI : MonoBehaviour
                 Vector3 ratPos = transform.position;
                 Vector3 targetPos = target.transform.position;
                 Vector3 dd = targetPos - ratPos;
-                float sqd = Vector3.SqrMagnitude(dd); // Dot product but optimised since we pass one reference
+                float sqd = Vector3.SqrMagnitude(dd);
 
                 // If the player is within range of the rat and in the FOV, let's follow
                 float angle = Vector3.Angle(transform.forward, target.transform.position - transform.position);
