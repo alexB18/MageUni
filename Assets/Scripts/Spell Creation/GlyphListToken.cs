@@ -29,4 +29,9 @@ public class GlyphListToken : MonoBehaviour, IPointerClickHandler
             SpellMenu.AddGlyph(Glyph);
         }
     }
+
+    private void OnGUI()
+    {
+        
+    }
 }
