@@ -102,7 +102,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (isAlive && Time.timeScale != 0)
+        // If we're alive and 
+        if (isAlive && !IsPaused())
         {
             currentMana += manaRechargeRate * Time.deltaTime;
             if (manaBar != null)
@@ -112,7 +113,13 @@ public class PlayerController : MonoBehaviour
                 healthBar.value = healthScript.currentHealth / healthScript.maximumHealth;
             //*/
             // TODO move this to a coroutine
+            float h = Input.GetAxis("Horizontal");
+            float v = Input.GetAxis("Vertical");
+            
             CameraUpdate();
+            SimpleMove(h, v);
+            MouseTurn();
+            Animating(h, v);
 
             // Get spell keydowns to switch our spell
             for (int i = 0; i < SpellSlotsAvailable; ++i)
@@ -127,18 +134,9 @@ public class PlayerController : MonoBehaviour
     // Used primarily for physics
     private void FixedUpdate()
     {
-        if (isAlive)
-        {
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
-
-            //Move(h, v);
-            SimpleMove(h, v);
-            //CameraRotate();
-            //Turning();
-            Animating(h, v);
-        }
     }
+
+    private bool IsPaused() => Time.timeScale == 0;
 
     private void Move(float h, float v)
     {
@@ -178,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
     private void SimpleMove(float h, float v)
     {
-        Vector3 moveVector = followCamera.transform.forward * v + followCamera.transform.right * h;
+        Vector3 moveVector = transform.forward * v + transform.right * h;
         float directionMagnitude = moveVector.magnitude; // Store initial direction magnitude for normalization
         moveVector.y = 0f;   // Ensure lateral movement
         moveVector = moveVector.normalized * directionMagnitude; // Normalize direction vector
@@ -187,7 +185,7 @@ public class PlayerController : MonoBehaviour
 
         if (moveVector != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(moveVector);
+            //transform.rotation = Quaternion.LookRotation(moveVector);
             float adjMaxSpeed = Input.GetButton("Walk") ? maxPlayerSpeed * walkScale : maxPlayerSpeed;
             playerRb.velocity = Vector3.ClampMagnitude(playerRb.velocity, adjMaxSpeed);
             playerRb.AddForce(moveVector);
@@ -247,6 +245,19 @@ public class PlayerController : MonoBehaviour
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
             playerRb.MoveRotation(newRotation);
         }
+    }
+
+    private void MouseTurn()
+    {
+        // We need the direction vector from the screen where the origin is the
+        // middle of the screen
+        Vector2 screenMiddle = new Vector2(0.5f, 0.5f);
+        Vector2 mousePos = Input.mousePosition;
+        mousePos.x /= Screen.width;
+        mousePos.y /= Screen.height;
+        Vector2 direction = mousePos - screenMiddle;
+        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + followCamera.transform.rotation.eulerAngles.y;
+        transform.rotation = Quaternion.Euler(0, angle, 0);
     }
 
     void Animating(float h, float v)
