@@ -5,12 +5,12 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<PickUp> inventory;
-    public GameObject player;
+    //public GameObject player;
     private Inventory playerInv;
     // Start is called before the first frame update
     void Start()
     {
-        playerInv = player.GetComponent<Inventory>();
+        playerInv = GetComponent<Inventory>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
         PickUp item = inventory[index];
         inventory.Remove(item);
         Vector3 randomOffset = new Vector3(Random.Range(-0.5f, 0.5f), 0.5f, Random.Range(-0.5f, 0.5f));
-        item.transform.position = player.transform.position + randomOffset;
+        item.transform.position = transform.position + randomOffset;
         if (item.thisRigidbody != null)
         {
             item.thisRigidbody.useGravity = true;

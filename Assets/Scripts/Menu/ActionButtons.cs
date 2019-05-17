@@ -5,12 +5,12 @@ using UnityEngine;
 public class ActionButtons : MonoBehaviour
 {
     public static int selected;
-    public GameObject player;
+    public PlayerHolder playerHolder;
     private Inventory playerInv;
 
     void Start()
     {
-        playerInv = player.GetComponent<Inventory>();
+        playerInv = playerHolder.Player.GetComponent<Inventory>();
     }
     
     public void Drop()
