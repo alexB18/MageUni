@@ -33,6 +33,7 @@ public class SpellCreationMenu : MonoBehaviour
     private List<GameObject> _glyphs = new List<GameObject>();
 
     private Subscriber clickHandler;
+    public TMPro.TextMeshProUGUI componentName;
 
     // Saving the Spell
     public Dropdown spellSlotSelector;
@@ -65,13 +66,14 @@ public class SpellCreationMenu : MonoBehaviour
     {
         if (selected != null)
             selected.SetSelected(false);
-
+        componentName.text = "";
         selected = obj;
 
         if (selected != null)
         {
             selectedTransform = selected.GetComponent<RectTransform>();
             selected.SetSelected(true);
+            componentName.text = selected.Glyph.name;
         }
     }
 

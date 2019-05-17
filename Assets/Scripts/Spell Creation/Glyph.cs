@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Glyph
 {
+    public string name = "";
     public class Connection
     {
         private Vector2 coordinates;
@@ -76,6 +77,7 @@ public class Glyph
 
         connections = newConnections;
         connectionMap = map;
+        name = spriteResourceName;
     }
 
 }
