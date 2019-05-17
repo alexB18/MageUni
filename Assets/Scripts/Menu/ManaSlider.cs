@@ -10,19 +10,13 @@ public class ManaSlider : MonoBehaviour
 
     private void OnManaChange(Object[] obj)
     {
-        HealthScript hs = obj[0] as HealthScript;
-        mySlider.value = hs.currentHealth / hs.maximumHealth;
+        StatScript hs = obj[0] as StatScript;
+        mySlider.value = hs.CurrentMana / hs.MaximumMana;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        menuHolder.Player.GetComponent<HealthScript>().SubscribeToOnHealthChange(OnManaChange);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        menuHolder.Player.GetComponent<StatScript>().SubscribeToOnManaChange(OnManaChange);
     }
 }

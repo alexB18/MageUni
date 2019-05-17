@@ -10,19 +10,13 @@ public class HealthSlider : MonoBehaviour
     
     private void OnHealthChange(Object[] obj) 
     {
-        HealthScript hs = obj[0] as HealthScript;
-        mySlider.value = hs.currentHealth / hs.maximumHealth;
+        StatScript hs = obj[0] as StatScript;
+        mySlider.value = hs.CurrentHealth / hs.MaximumHealth;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        menuHolder.Player.GetComponent<HealthScript>().SubscribeToOnHealthChange(OnHealthChange);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        menuHolder.Player.GetComponent<StatScript>().SubscribeToOnHealthChange(OnHealthChange);
     }
 }

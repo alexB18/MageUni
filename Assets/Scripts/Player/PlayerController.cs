@@ -47,15 +47,12 @@ public class PlayerController : MonoBehaviour
     public void SetSpell(int slot, SpellScript.Spell spell) => spells[slot] = spell;
 
     // Health and mana
-    private HealthScript healthScript;
-    public float maximumMana = 100;
-    public float manaRechargeRate = 5f;
-    private float currentMana;
-    public Slider healthBar;
-    public Slider manaBar;
+    private StatScript statScript;
+    public float manaRechargeRate = 5;
+
     [HideInInspector] public bool isAlive = true;
-    private float timeUntilReload = 5f;
     public GameObject deathScreen;
+    private float timeUntilReload = 5f;
 
     private void OnDeath(Object[] obj)
     {
@@ -87,17 +84,14 @@ public class PlayerController : MonoBehaviour
         // TODO remove test effects
         spellInventory.AddGlyph(AllSpellsAndGlyphs.boltGlyph);
         spellInventory.AddGlyph(AllSpellsAndGlyphs.fireGlyph);
-
-        currentMana = maximumMana;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         followCamera = Camera.main.gameObject;
-        healthScript = gameObject.GetComponent<HealthScript>() as HealthScript;
-        healthScript.SubscribeToOnDeath(OnDeath);
-        healthScript.OnHealthChange();
+        statScript = gameObject.GetComponent<StatScript>() as StatScript;
+        statScript.SubscribeToOnDeath(OnDeath);
     }
 
     private void Update()
@@ -105,9 +99,7 @@ public class PlayerController : MonoBehaviour
         // If we're alive and 
         if (isAlive && !IsPaused())
         {
-            currentMana += manaRechargeRate * Time.deltaTime;
-            if (manaBar != null)
-                manaBar.value = currentMana / maximumMana;
+            statScript.ModifyMana(manaRechargeRate * Time.deltaTime);
             /*
             if (healthBar != null)
                 healthBar.value = healthScript.currentHealth / healthScript.maximumHealth;
@@ -176,7 +168,7 @@ public class PlayerController : MonoBehaviour
 
     private void SimpleMove(float h, float v)
     {
-        Vector3 moveVector = transform.forward * v + transform.right * h;
+        Vector3 moveVector = followCamera.transform.forward * v + followCamera.transform.right * h;
         float directionMagnitude = moveVector.magnitude; // Store initial direction magnitude for normalization
         moveVector.y = 0f;   // Ensure lateral movement
         moveVector = moveVector.normalized * directionMagnitude; // Normalize direction vector
@@ -272,10 +264,9 @@ public class PlayerController : MonoBehaviour
         SpellScript.Spell spell = spells[activeSpellSlot];
         if (spell != null)
         {
-            float manaCost = spell.ManaCost();
-            if (currentMana > manaCost)
+            float manaCost = -spell.ManaCost();
+            if (statScript.ModifyMana(manaCost))
             {
-                currentMana -= manaCost;
                 // create spell instance
                 Vector3 startPos = transform.position;
                 startPos.y += 0.5f;

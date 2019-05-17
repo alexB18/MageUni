@@ -26,7 +26,7 @@ public class SpellEffectFire : SpellEffect
         // Damage enemies
         // First, find the object with the health script
         
-        HealthScript hs = other.GetComponentInParent<HealthScript>();
+        StatScript hs = other.GetComponentInParent<StatScript>();
         if (hs != null)
             hs.DamageHealth(Random.Range(minDamage, maxDamage));
 

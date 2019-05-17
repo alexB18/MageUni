@@ -9,7 +9,7 @@ public class HealthPotion : PickUp
     public override void Use()
     {
         playerInv.inventory.Remove(this);
-        HealthScript playerHealth = player.GetComponent<HealthScript>();
-        playerHealth.RestoreHealth(healAmount);
+        StatScript playerStats = player.GetComponent<StatScript>();
+        playerStats.RestoreHealth(healAmount);
     }
 }

@@ -37,12 +37,15 @@ public class EnemyTestRatAI : MonoBehaviour
     private GameObject target;
     private Rigidbody rb;
     private Subscriber deathlistener = delegate(Object[] obj) {
-        Debug.Log("Rat boi died");
-        GameObject gameObject = obj[0] as GameObject;
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, 180f);
-        EnemyTestRatAI ai = gameObject.GetComponent<EnemyTestRatAI>() as EnemyTestRatAI;
-        ai.isDead = true;
     };
+
+    private void OnDeath(Object[] obj)
+    {
+        Vector3 deadRot = transform.rotation.eulerAngles;
+        deadRot.z = 180f;
+        transform.rotation = Quaternion.Euler(deadRot);
+        isDead = true;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +53,7 @@ public class EnemyTestRatAI : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         pc = target.GetComponent<PlayerController>() as PlayerController;
         rb = gameObject.GetComponent<Rigidbody>();
-        HealthScript hs = gameObject.GetComponent<HealthScript>() as HealthScript;
+        StatScript hs = gameObject.GetComponent<StatScript>();
         hs.SubscribeToOnDeath(deathlistener);
     }
 
@@ -60,7 +63,6 @@ public class EnemyTestRatAI : MonoBehaviour
         // Get player sq distance from rat boy
         if (target != null && !isDead && pc.isAlive)
         {
-
             if (grounded)
             {
                 Vector3 ratPos = transform.position;
@@ -124,22 +126,25 @@ public class EnemyTestRatAI : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (!grounded && !hitGround && collision.gameObject.CompareTag("Ground"))
+        if (!isDead)
         {
-            hitGround = true;
-            StartCoroutine("JumpCooldown");
-        }
-        else if(canBite && collision.gameObject.CompareTag("Player"))
-        {
-            // Check if we hit with the head collider
-            foreach(var c in collision.contacts)
+            if (!grounded && !hitGround && collision.gameObject.CompareTag("Ground"))
             {
-                if(c.thisCollider.name.Equals("_head"))
+                hitGround = true;
+                StartCoroutine("JumpCooldown");
+            }
+            else if (canBite && collision.gameObject.CompareTag("Player"))
+            {
+                // Check if we hit with the head collider
+                foreach (var c in collision.contacts)
                 {
-                    Bite(collision.gameObject);
-                    canBite = false;
-                    StartCoroutine("BiteCooldown");
-                    break;
+                    if (c.thisCollider.name.Equals("_head"))
+                    {
+                        Bite(collision.gameObject);
+                        canBite = false;
+                        StartCoroutine("BiteCooldown");
+                        break;
+                    }
                 }
             }
         }
@@ -147,7 +152,7 @@ public class EnemyTestRatAI : MonoBehaviour
 
     public void Bite(GameObject enemy)
     {
-        HealthScript eHS = enemy.GetComponent<HealthScript>() as HealthScript;
+        StatScript eHS = enemy.GetComponent<StatScript>();
         eHS.DamageHealth(damage);
     }
 
