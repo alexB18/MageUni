@@ -4,8 +4,14 @@ using UnityEngine;
 
 public abstract class SpellShape : SpellComponent
 {
+    public GameObject parent;
     public override bool IsShape => true;
     public override AllSpellsAndGlyphs.SpellComponentEnum ComponentType => AllSpellsAndGlyphs.SpellComponentEnum.SCShape;
+
+    public override void Start(SpellScript self)
+    {
+        parent = self.gameObject;
+    }
 
     private List<SpellScript.Spell> childSpells = new List<SpellScript.Spell>();
     public void AddChildSpell(SpellScript.Spell spell) => childSpells.Add(spell);
@@ -21,4 +27,5 @@ public abstract class SpellShape : SpellComponent
         }
         GameObject.Destroy(self);
     }
+    
 }

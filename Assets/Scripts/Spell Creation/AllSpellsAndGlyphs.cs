@@ -12,7 +12,9 @@ public static class AllSpellsAndGlyphs
     }
 
     public static readonly SpellShape spellShapeBolt = new SpellShapeBolt();
+    public static readonly SpellShape spellShapeBall = new SpellShapeBall();
     public static readonly SpellEffect spellEffectFire = new SpellEffectFire();
+    public static readonly SpellEffect spellEffectHeal = new SpellEffectHeal();
     public static readonly SpellModifier spellModifierSpeedIncrease = new SpellModifierSpeedIncrease();
 
     public static readonly Glyph boltGlyph = new Glyph(
@@ -27,6 +29,19 @@ public static class AllSpellsAndGlyphs
             new bool[] { true, true, true },
             new bool[] { true, true, true } })
         );
+    // Todo change connections
+    public static readonly Glyph ballGlyph = new Glyph(
+         spellShapeBall,
+         "ShapeBall",
+         new List<Glyph.Connection> {
+            new Glyph.Connection(64f/128f, 118f/128f),
+            new Glyph.Connection(32/128f, 64/128f),
+            new Glyph.Connection(96/128f, 64/128f) },
+         new Glyph.ConnectionMap(new bool[][] {
+            new bool[] { true, true, true },
+            new bool[] { true, true, true },
+            new bool[] { true, true, true } })
+         );
     public static readonly Glyph fireGlyph = new Glyph(
         spellEffectFire,
         "EffectFire",
@@ -34,6 +49,16 @@ public static class AllSpellsAndGlyphs
         {
             new Glyph.Connection(0f/128f, 96f/128f),
             new Glyph.Connection(128f/128f, 96/128f)
+        },
+        null
+        );
+    public static readonly Glyph healGlyph = new Glyph(
+        spellEffectHeal,
+        "EffectHeal",
+        new List<Glyph.Connection>
+        {
+            new Glyph.Connection(0f/128f, 86f/128f),
+            new Glyph.Connection(128f/128f, 86f/128f)
         },
         null
         );

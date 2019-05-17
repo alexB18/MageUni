@@ -212,6 +212,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802ee26a76c8df648bd7ad7316a35309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1146018721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2160426073838355528, guid: 7f2036c4fb28e4b48ac2fc999d337356,
+    type: 3}
+  m_PrefabInstance: {fileID: 8934759708686820002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1589783483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271,11 +277,16 @@ PrefabInstance:
         type: 3}
       propertyPath: deathScreen
       value: 
-      objectReference: {fileID: 471403802}
+      objectReference: {fileID: 1146018721}
     - target: {fileID: 54084939265967506, guid: 0e74cf81e6fd82546b4797f71ceffb81,
         type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622819698989183117, guid: 0e74cf81e6fd82546b4797f71ceffb81,
+        type: 3}
+      propertyPath: currentHealth
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}

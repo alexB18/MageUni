@@ -8,16 +8,13 @@ public class SpellShapeBolt : SpellShape
 
     public override void Start(SpellScript self)
     {
+        base.Start(self);
         // Create rigidbody and move it forward
         Rigidbody boltBody = self.gameObject.AddComponent<Rigidbody>() as Rigidbody;
         boltBody.drag = 0;
         boltBody.useGravity = false;
         boltBody.velocity = self.transform.up * forwardVelocity;
 
-        // Create Light Object
-        Light boltLight = self.gameObject.AddComponent<Light>() as Light;
-        boltLight.color = Color.yellow;
-        boltLight.intensity = 2.0f;
 
 
         // Create bolt collider
@@ -25,6 +22,9 @@ public class SpellShapeBolt : SpellShape
         boltCollider.isTrigger = true;
         boltCollider.radius = 0.25f;
         boltCollider.height = 0.75f;
+
+        // Decay
+        self.StartCoroutine("Decay", 10f);
     }
 
     public override bool Trigger(SpellScript self, GameObject other)

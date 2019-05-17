@@ -30,6 +30,8 @@ public class SpellCreationMenu : MonoBehaviour
     public GameObject effectSelectorContent;
     public GameObject modifierSelectorContent;
 
+    private List<GameObject> _glyphs = new List<GameObject>();
+
     private Subscriber clickHandler;
 
     // Saving the Spell
@@ -52,7 +54,6 @@ public class SpellCreationMenu : MonoBehaviour
     {
         ClickListener componentViewClickListener = componentView.GetComponent<ClickListener>() as ClickListener;
         componentViewClickListener.SubscribeToClickEvent(clickHandler);
-        
     }
 
     public GlyphUIElement GetSelected()
@@ -81,24 +82,30 @@ public class SpellCreationMenu : MonoBehaviour
         Debug.Log("Spell Creation Menu is enabled: loading glyphs");
 
         // Generate a list of spell slots for the spellSlotSelector
+        PlayerController pc = player.GetComponent<PlayerController>();
         spellSlotSelector.options.Clear();
-        for (int i = 0; i < player.GetComponent<PlayerController>().SpellSlotsAvailable; ++i)
-            spellSlotSelector.options.Add(new Dropdown.OptionData("Spell Slot" + i));
+        for (int i = 0; i < pc.SpellSlotsAvailable; ++i)
+            spellSlotSelector.options.Add(new Dropdown.OptionData("Slot " + i + ": " + ((pc.Spells[i] != null) ? pc.Spells[i].name : "Empty")));
 
-        // Instantiate
-        /*
+        //*
         CreateGlyphListElement(AllSpellsAndGlyphs.boltGlyph);
+        CreateGlyphListElement(AllSpellsAndGlyphs.ballGlyph);
         CreateGlyphListElement(AllSpellsAndGlyphs.fireGlyph);
+        CreateGlyphListElement(AllSpellsAndGlyphs.healGlyph);
         CreateGlyphListElement(AllSpellsAndGlyphs.speedIncreaseGlyph);
         //*/
+        // Instantiate
+        /*
         PlayerSpellInventory playerSpellInventory = player.GetComponent<PlayerSpellInventory>();
         foreach(Glyph g in playerSpellInventory.KnownGlyphs)
             CreateGlyphListElement(g);
+        //*/
     }
 
     private void CreateGlyphListElement(Glyph glyph)
     {
         GameObject obj = Instantiate(glyphListElementPrefab);
+        _glyphs.Add(obj);
         GlyphListToken token = obj.GetComponent<GlyphListToken>();
         token.Glyph = glyph;
         token.SpellMenu = this;
@@ -122,7 +129,14 @@ public class SpellCreationMenu : MonoBehaviour
 
     private void OnDisable()
     {
-        Debug.Log("Spell Creation Menu is disabled: reset values");
+        // Delete our currently built spell
+        DeleteSelected();
+        SetSelected(baseShape);
+        DeleteSelected();
+
+        // Remove our glyphs
+        foreach(var token in _glyphs)
+            Destroy(token);
     }
 
     public void AddGlyph(Glyph glyph)

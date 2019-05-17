@@ -25,6 +25,11 @@ public class MainMenuButtons : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void HardRestart()
+    {
+        playerHolder.player.GetComponent<PlayerSceneChange>().Restart();
+    }
+
     public void Load(string scene)
     {
         playerHolder.player.GetComponent<PlayerSceneChange>().LoadScene(scene);

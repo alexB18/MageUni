@@ -19,7 +19,8 @@ public class OpenMenu : MonoBehaviour
     private void Start()
     {
         startPhysicsStep = Time.fixedDeltaTime;
-        Resume();
+        Pause();
+        menu.SetActive(false);
     }
     void Update()
     {

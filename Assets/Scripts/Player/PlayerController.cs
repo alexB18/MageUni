@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     // Spell variables
     public GameObject emptySpellPrefab;
     public const int spellMaxSpellSlots = 5;
-    private int spellSlotsAvailable = 1;
+    private int spellSlotsAvailable = 3;
     private int activeSpellSlot = 0;
     private PlayerSpellInventory spellInventory;
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public bool isAlive = true;
     public GameObject deathScreen;
-    private float timeUntilReload = 5f;
+    private float timeUntilReload = 3f;
 
     private void OnDeath(Object[] obj)
     {

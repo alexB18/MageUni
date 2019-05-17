@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpellScript : MonoBehaviour
 {
+    public float effectMagnitudeScale = 1.0f;
     public float spellTime = 10f;
     public class Spell
     {
@@ -28,7 +29,6 @@ public class SpellScript : MonoBehaviour
         spell.shape.Start(this);
         foreach (var spellComponent in spell.components)
             spellComponent.Start(this);
-        StartCoroutine("Decay");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,9 +46,9 @@ public class SpellScript : MonoBehaviour
             spell.shape.DestroyAndStartChildren(gameObject);
     }
 
-    IEnumerator Decay()
+    IEnumerator Decay(float time)
     {
-        yield return new WaitForSeconds(spellTime);
+        yield return new WaitForSeconds(time);
 
         spell.shape.DestroyAndStartChildren(gameObject);
     }

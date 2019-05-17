@@ -49,10 +49,13 @@ public class PlayerSceneChange : MonoBehaviour
                 transform.rotation = spawn.transform.rotation;
             }
         }
+        OpenMenu.openMenu.Resume();
     }
 
     public void LoadScene(string scene)
     {
+        if (scene == "")
+            scene = masterSceneName;
         if(currentScene != masterScene)
         {
             // Safely unload the player so we don't get deleted
@@ -78,5 +81,11 @@ public class PlayerSceneChange : MonoBehaviour
 
         targetMarker = transportMarkerName;
         transport = true;
+    }
+
+    public void Restart()
+    {
+        LoadScene(masterSceneName);
+        SceneManager.LoadScene(masterSceneName);
     }
 }

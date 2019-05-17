@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HideOnStart : MonoBehaviour
 {
-    public Renderer renderer;
+    public Renderer meshRenderer;
     // Start is called before the first frame update
     void Start()
     {
-        renderer.enabled = false;
+        meshRenderer.enabled = false;
     }
 }
