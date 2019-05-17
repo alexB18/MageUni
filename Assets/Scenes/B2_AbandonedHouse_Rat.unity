@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -119,6 +119,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -174,11 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (8)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &4328169 stripped
@@ -194,6 +194,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -248,11 +253,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -332,6 +332,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (55)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -387,11 +392,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (55)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &18189970 stripped
@@ -407,6 +407,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -462,11 +467,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (16)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &47843553 stripped
@@ -482,6 +482,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -537,11 +542,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (9)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &50748985 stripped
@@ -557,6 +557,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (48)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -612,11 +617,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (48)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &56883889 stripped
@@ -632,6 +632,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -686,11 +691,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -770,6 +770,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466238095}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -825,11 +830,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (23)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &65925464 stripped
@@ -881,6 +881,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (44)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -936,11 +941,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (44)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &106573484 stripped
@@ -949,6 +949,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 106573483}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &129091605
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2298796452721371832, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_Name
+      value: AbandonedHouseRatB2F1Marker
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298796452721371838, guid: 6984d2a398a4b76489631eaffb57e752,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6984d2a398a4b76489631eaffb57e752, type: 3}
 --- !u!1001 &134219236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1019,6 +1088,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (37)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1074,11 +1148,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (37)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &136931208 stripped
@@ -1094,6 +1163,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (43)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1149,11 +1223,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (43)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &142856775 stripped
@@ -1169,6 +1238,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466238095}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1224,11 +1298,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (22)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &148601510 stripped
@@ -1244,6 +1313,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1299,11 +1373,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (13)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &149648520 stripped
@@ -1319,6 +1388,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (81)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1374,11 +1448,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (81)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &161361892 stripped
@@ -1394,6 +1463,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (89)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1449,11 +1523,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (89)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &168672296 stripped
@@ -1469,6 +1538,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1523,11 +1597,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
@@ -1607,6 +1676,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1662,11 +1736,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (8)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &242563421 stripped
@@ -1682,6 +1751,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (59)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1737,11 +1811,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (59)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &273900071 stripped
@@ -1757,6 +1826,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1812,11 +1886,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (10)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &280412657 stripped
@@ -1832,6 +1901,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1887,11 +1961,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (21)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &297220548 stripped
@@ -1907,6 +1976,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (79)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1962,11 +2036,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (79)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &314228032 stripped
@@ -1982,6 +2051,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2036,11 +2110,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
@@ -2120,6 +2189,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2175,11 +2249,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (34)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &323589105 stripped
@@ -2195,6 +2264,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2250,11 +2324,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (20)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &326022299 stripped
@@ -2270,6 +2339,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (85)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2325,11 +2399,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (85)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &333956939 stripped
@@ -2345,6 +2414,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2400,11 +2474,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (17)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &348234190 stripped
@@ -2420,6 +2489,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (47)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2475,11 +2549,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (47)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &348724096 stripped
@@ -2495,6 +2564,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2550,11 +2624,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (18)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &361649382 stripped
@@ -2570,6 +2639,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (53)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2625,11 +2699,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (53)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &365860880 stripped
@@ -2645,6 +2714,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2700,11 +2774,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (9)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &392237956 stripped
@@ -2720,6 +2789,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (76)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2774,11 +2848,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (76)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -2858,6 +2927,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2913,11 +2987,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &436860713 stripped
@@ -2933,6 +3002,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466238095}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2988,11 +3062,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (33)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &439956212 stripped
@@ -3008,6 +3077,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793591885}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3063,11 +3137,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (26)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &449305582 stripped
@@ -3083,6 +3152,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (70)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3138,11 +3212,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (70)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &472999802 stripped
@@ -3158,6 +3227,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (87)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3213,11 +3287,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (87)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &478660498 stripped
@@ -3233,6 +3302,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3288,11 +3362,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (5)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &483580125 stripped
@@ -3308,6 +3377,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (71)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3363,11 +3437,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (71)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &511023135 stripped
@@ -3383,6 +3452,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3437,11 +3511,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -3551,6 +3620,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (64)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3606,11 +3680,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (64)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &606611987 stripped
@@ -3662,6 +3731,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (67)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3717,11 +3791,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (67)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &631941668 stripped
@@ -3737,6 +3806,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3792,11 +3866,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (12)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &649572952 stripped
@@ -3812,6 +3881,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1228181587}
     m_Modifications:
+    - target: {fileID: 5844738107939227794, guid: d2dae483d3984d344811d70236aa0a3c,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 5844738107939722418, guid: d2dae483d3984d344811d70236aa0a3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3867,11 +3941,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5844738107939227794, guid: d2dae483d3984d344811d70236aa0a3c,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2dae483d3984d344811d70236aa0a3c, type: 3}
 --- !u!4 &651954806 stripped
@@ -3887,6 +3956,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3941,11 +4015,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -4025,6 +4094,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4079,11 +4153,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -4163,6 +4232,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (61)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4218,11 +4292,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (61)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &670324827 stripped
@@ -4238,6 +4307,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4293,11 +4367,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (7)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &693353637 stripped
@@ -4313,6 +4382,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (68)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4368,11 +4442,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (68)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &700801901 stripped
@@ -4388,6 +4457,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4443,11 +4517,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (4)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &701833038 stripped
@@ -4463,6 +4532,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4517,11 +4591,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -4649,6 +4718,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (31)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4704,11 +4778,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (31)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &748200202 stripped
@@ -4724,6 +4793,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (50)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4779,11 +4853,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (50)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &750805113 stripped
@@ -4799,6 +4868,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (62)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4854,11 +4928,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (62)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &754826042 stripped
@@ -4874,6 +4943,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4929,11 +5003,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &759012275 stripped
@@ -4949,6 +5018,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5004,11 +5078,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (19)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &760660199 stripped
@@ -5024,6 +5093,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5079,11 +5153,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (6)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &765668297 stripped
@@ -5099,6 +5168,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (90)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5153,11 +5227,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (90)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -5237,6 +5306,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976981801}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5292,11 +5366,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (22)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &791486320 stripped
@@ -5351,6 +5420,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (86)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5405,11 +5479,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (86)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -5521,6 +5590,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976981801}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5576,11 +5650,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (27)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &839424464 stripped
@@ -5596,6 +5665,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (49)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5650,11 +5724,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (49)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -5764,6 +5833,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793591885}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5819,11 +5893,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (34)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &876203576 stripped
@@ -5839,6 +5908,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5894,11 +5968,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (11)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &889833176 stripped
@@ -5914,6 +5983,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (40)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5969,11 +6043,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (40)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &901386097 stripped
@@ -5989,6 +6058,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6044,11 +6118,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (5)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &916605399 stripped
@@ -6064,6 +6133,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (28)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6119,11 +6193,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (28)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &935773581 stripped
@@ -6139,6 +6208,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466238095}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6194,11 +6268,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (26)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &941919590 stripped
@@ -6214,6 +6283,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (35)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6269,11 +6343,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (35)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &957603171 stripped
@@ -6289,6 +6358,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (32)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6344,11 +6418,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (32)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &967969917 stripped
@@ -6364,6 +6433,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793591885}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6419,11 +6493,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (19)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &993332462 stripped
@@ -6439,6 +6508,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (80)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6494,11 +6568,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (80)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1005471299 stripped
@@ -6514,6 +6583,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1228181587}
     m_Modifications:
+    - target: {fileID: 5844738107939227794, guid: d2dae483d3984d344811d70236aa0a3c,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch
+      objectReference: {fileID: 0}
     - target: {fileID: 5844738107939722418, guid: d2dae483d3984d344811d70236aa0a3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6568,11 +6642,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5844738107939227794, guid: d2dae483d3984d344811d70236aa0a3c,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2dae483d3984d344811d70236aa0a3c, type: 3}
@@ -6652,6 +6721,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466238095}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6707,11 +6781,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (34)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1021812203 stripped
@@ -6727,6 +6796,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (69)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6782,11 +6856,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (69)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1029197677 stripped
@@ -6802,6 +6871,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1228181587}
     m_Modifications:
+    - target: {fileID: 5844738107939227794, guid: d2dae483d3984d344811d70236aa0a3c,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 5844738107939722418, guid: d2dae483d3984d344811d70236aa0a3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6857,11 +6931,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5844738107939227794, guid: d2dae483d3984d344811d70236aa0a3c,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2dae483d3984d344811d70236aa0a3c, type: 3}
 --- !u!4 &1031077219 stripped
@@ -6877,6 +6946,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6932,11 +7006,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (30)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1031935834 stripped
@@ -6952,6 +7021,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7006,11 +7080,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -7093,6 +7162,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7148,11 +7222,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (6)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1053441670 stripped
@@ -7191,7 +7260,7 @@ Transform:
   - {fileID: 1623445080}
   - {fileID: 1357690457}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1060927206
 PrefabInstance:
@@ -7200,6 +7269,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (74)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7255,11 +7329,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (74)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1060927207 stripped
@@ -7268,88 +7337,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1060927206}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1063003361
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1063003364}
-  - component: {fileID: 1063003363}
-  - component: {fileID: 1063003362}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1063003362
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063003361}
-  m_Enabled: 1
---- !u!20 &1063003363
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063003361}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
-  m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 39
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1063003364
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063003361}
-  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: -0.78, y: 5.5, z: -2.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!1001 &1076257901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7357,6 +7344,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (65)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7412,11 +7404,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (65)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1076257902 stripped
@@ -7432,6 +7419,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7486,11 +7478,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
@@ -7570,6 +7557,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7624,11 +7616,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
@@ -7708,6 +7695,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (56)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7763,11 +7755,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (56)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1114929369 stripped
@@ -7783,6 +7770,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (60)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7838,11 +7830,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (60)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1136120873 stripped
@@ -7858,6 +7845,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 815143630}
     m_Modifications:
+    - target: {fileID: 7771369256444576092, guid: 44e135ebbdd4b074490e9e40be830748,
+        type: 3}
+      propertyPath: m_Name
+      value: BossRoom_Entrance
+      objectReference: {fileID: 0}
     - target: {fileID: 6814954073171896399, guid: 44e135ebbdd4b074490e9e40be830748,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7913,11 +7905,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7771369256444576092, guid: 44e135ebbdd4b074490e9e40be830748,
-        type: 3}
-      propertyPath: m_Name
-      value: BossRoom_Entrance
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e135ebbdd4b074490e9e40be830748, type: 3}
 --- !u!4 &1144944610 stripped
@@ -7933,6 +7920,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 815143630}
     m_Modifications:
+    - target: {fileID: 7771369256444576092, guid: 44e135ebbdd4b074490e9e40be830748,
+        type: 3}
+      propertyPath: m_Name
+      value: B1_Entrance
+      objectReference: {fileID: 0}
     - target: {fileID: 6814954073171896399, guid: 44e135ebbdd4b074490e9e40be830748,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7988,11 +7980,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7771369256444576092, guid: 44e135ebbdd4b074490e9e40be830748,
-        type: 3}
-      propertyPath: m_Name
-      value: B1_Entrance
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e135ebbdd4b074490e9e40be830748, type: 3}
 --- !u!4 &1154856120 stripped
@@ -8008,6 +7995,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976981801}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8063,11 +8055,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (30)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1161371472 stripped
@@ -8083,6 +8070,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8137,11 +8129,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -8284,6 +8271,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976981801}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8339,11 +8331,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (26)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1228075129 stripped
@@ -8393,6 +8380,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8448,11 +8440,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (22)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1238464280 stripped
@@ -8468,6 +8455,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (84)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8523,11 +8515,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (84)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1255269533 stripped
@@ -8543,6 +8530,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (39)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8598,11 +8590,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (39)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1257622676 stripped
@@ -8618,6 +8605,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (24)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8673,11 +8665,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (24)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1258261530 stripped
@@ -8693,6 +8680,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (78)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8748,11 +8740,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (78)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1260710819 stripped
@@ -8768,6 +8755,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8823,11 +8815,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (12)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1267361929 stripped
@@ -8843,6 +8830,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (45)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8898,11 +8890,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (45)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1285086010 stripped
@@ -8918,6 +8905,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8973,11 +8965,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (8)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1287870051 stripped
@@ -8993,6 +8980,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (41)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9047,11 +9039,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (41)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -9167,6 +9154,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9221,11 +9213,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (23)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -9290,6 +9277,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (38)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9345,11 +9337,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (38)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1334995977 stripped
@@ -9365,6 +9352,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9420,11 +9412,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (17)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1338797961 stripped
@@ -9440,6 +9427,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (29)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9495,11 +9487,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (29)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1356071540 stripped
@@ -9550,6 +9537,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9605,11 +9597,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (5)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1372251990 stripped
@@ -9625,6 +9612,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466238095}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9680,11 +9672,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (19)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1373651688 stripped
@@ -9700,6 +9687,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (51)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9755,11 +9747,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (51)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1384738870 stripped
@@ -9775,6 +9762,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (82)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9830,11 +9822,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (82)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1391507208 stripped
@@ -9850,6 +9837,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466238095}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9905,11 +9897,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (20)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1391638992 stripped
@@ -9925,6 +9912,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9979,11 +9971,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -10067,6 +10054,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (24)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10122,11 +10114,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (24)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1459457469 stripped
@@ -10142,6 +10129,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10197,11 +10189,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1465708275 stripped
@@ -10256,6 +10243,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976981801}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10311,11 +10303,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (23)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1467888780 stripped
@@ -10331,6 +10318,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (91)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10385,11 +10377,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (91)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -10469,6 +10456,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (46)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10524,11 +10516,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (46)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1482416416 stripped
@@ -10544,6 +10531,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976981801}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10599,11 +10591,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (20)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1483876040 stripped
@@ -10619,6 +10606,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (42)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10674,11 +10666,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (42)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1487818084 stripped
@@ -10694,6 +10681,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (52)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10749,11 +10741,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (52)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1538332106 stripped
@@ -10769,6 +10756,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976981801}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10824,11 +10816,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (33)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1561412079 stripped
@@ -10844,6 +10831,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1228181587}
     m_Modifications:
+    - target: {fileID: 5844738107939227794, guid: d2dae483d3984d344811d70236aa0a3c,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5844738107939722418, guid: d2dae483d3984d344811d70236aa0a3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10899,11 +10891,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5844738107939227794, guid: d2dae483d3984d344811d70236aa0a3c,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2dae483d3984d344811d70236aa0a3c, type: 3}
 --- !u!4 &1568873538 stripped
@@ -10919,6 +10906,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (73)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10974,11 +10966,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (73)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1597240811 stripped
@@ -10994,6 +10981,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11049,11 +11041,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (25)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1598239158 stripped
@@ -11069,6 +11056,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (29)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11124,11 +11116,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (29)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1600141017 stripped
@@ -11144,6 +11131,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (66)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11199,11 +11191,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (66)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1608381170 stripped
@@ -11253,6 +11240,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11308,11 +11300,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (14)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1645719585 stripped
@@ -11328,6 +11315,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11383,11 +11375,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (33)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1648535280 stripped
@@ -11403,6 +11390,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793591885}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11458,11 +11450,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (30)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1662924200 stripped
@@ -11478,6 +11465,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11533,11 +11525,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (9)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1663750401 stripped
@@ -11553,6 +11540,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (57)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11607,11 +11599,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (57)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -11691,6 +11678,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976981801}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11745,11 +11737,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (34)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
@@ -11829,6 +11816,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466238095}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11883,11 +11875,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (30)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
@@ -11986,7 +11973,7 @@ Transform:
   m_LocalScale: {x: 120, y: 1, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1725083692
 PrefabInstance:
@@ -12058,6 +12045,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12113,11 +12105,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1727736923 stripped
@@ -12133,6 +12120,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12188,11 +12180,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1748721282 stripped
@@ -12201,6 +12188,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1748721281}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1776736731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5485421377825846783, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_Name
+      value: AbandonedHouseRatB2F1Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.80000013
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.4360614
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846779, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846772, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: connectedScene
+      value: F1_AbandonedHouse_Rat
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846772, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: connectedMarker
+      value: AbandonedHouseRatF1B2Marker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3cada83f0d17d7f4da1cccf7f82a3c90, type: 3}
 --- !u!1001 &1779753940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12208,6 +12274,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12263,11 +12334,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1779753941 stripped
@@ -12283,6 +12349,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12338,11 +12409,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (26)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1799261269 stripped
@@ -12358,6 +12424,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (54)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12413,11 +12484,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (54)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1814495952 stripped
@@ -12426,68 +12492,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1814495951}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1828364402
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1824340380413090, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -22.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.75552404
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6551209
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 98.142006
-      objectReference: {fileID: 0}
-    - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173982678798674917, guid: 0e74cf81e6fd82546b4797f71ceffb81,
-        type: 3}
-      propertyPath: followCamera
-      value: 
-      objectReference: {fileID: 1063003361}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
 --- !u!1001 &1844377707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12495,6 +12499,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793591885}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12549,11 +12558,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (22)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
@@ -12721,6 +12725,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12776,11 +12785,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (7)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1873375252 stripped
@@ -12796,6 +12800,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (63)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12851,11 +12860,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (63)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1878948214 stripped
@@ -12871,6 +12875,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12926,11 +12935,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (7)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1900229372 stripped
@@ -12946,6 +12950,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793591885}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13001,11 +13010,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (27)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1903530023 stripped
@@ -13021,6 +13025,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (88)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13075,11 +13084,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (88)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -13159,6 +13163,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793591885}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13214,11 +13223,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (23)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1923951790 stripped
@@ -13234,6 +13238,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (32)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13289,11 +13298,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (32)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1928453734 stripped
@@ -13309,6 +13313,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (31)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13364,11 +13373,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (31)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &1935449160 stripped
@@ -13384,6 +13388,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (36)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13439,11 +13448,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (36)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1936610228 stripped
@@ -13459,6 +13463,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13513,11 +13522,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (27)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
@@ -13573,6 +13577,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (28)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13628,11 +13637,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (28)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &1993530746 stripped
@@ -13648,6 +13652,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452725325}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13703,11 +13712,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (10)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &2012297285 stripped
@@ -13723,6 +13727,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13778,11 +13787,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (13)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &2052196819 stripped
@@ -13798,6 +13802,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976981801}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13853,11 +13862,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (19)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &2059710877 stripped
@@ -13873,6 +13877,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793591885}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13928,11 +13937,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (20)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &2061220593 stripped
@@ -13948,6 +13952,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (58)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14003,11 +14012,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (58)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &2070280891 stripped
@@ -14023,6 +14027,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (72)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14078,11 +14087,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (72)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &2083391536 stripped
@@ -14098,6 +14102,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793591885}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14153,11 +14162,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (33)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
 --- !u!4 &2091662844 stripped
@@ -14173,6 +14177,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (83)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14228,11 +14237,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (83)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &2104720362 stripped
@@ -14248,6 +14252,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (77)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14303,11 +14312,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (77)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &2111306566 stripped
@@ -14323,6 +14327,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466238095}
     m_Modifications:
+    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
+        type: 3}
+      propertyPath: m_Name
+      value: StoneWall (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 7220975546514028105, guid: ebc8c1d754fd2c045803ec22abd37a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14377,11 +14386,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055731563435207753, guid: ebc8c1d754fd2c045803ec22abd37a58,
-        type: 3}
-      propertyPath: m_Name
-      value: StoneWall (27)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8c1d754fd2c045803ec22abd37a58, type: 3}
@@ -14461,6 +14465,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14516,11 +14525,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (21)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &2125731146 stripped
@@ -14536,6 +14540,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322589596}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14591,11 +14600,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (16)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &2127806037 stripped
@@ -14611,6 +14615,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (75)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14666,11 +14675,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (75)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
 --- !u!4 &2131734335 stripped
@@ -14686,6 +14690,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736827652}
     m_Modifications:
+    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodFloorPanel_Vertical (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 306037952345076181, guid: ab4f407e3da735d4c9e45c58d900b943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14740,11 +14749,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 306037952345076202, guid: ab4f407e3da735d4c9e45c58d900b943,
-        type: 3}
-      propertyPath: m_Name
-      value: WoodFloorPanel_Vertical (25)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f407e3da735d4c9e45c58d900b943, type: 3}
