@@ -19,6 +19,7 @@ public class OpenMenu : MonoBehaviour
     private void Start()
     {
         startPhysicsStep = Time.fixedDeltaTime;
+        Resume();
     }
     void Update()
     {
