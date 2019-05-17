@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 339398782}
   - component: {fileID: 339398783}
-  - component: {fileID: 339398784}
   m_Layer: 0
   m_Name: torchlight
   m_TagString: Untagged
@@ -70,22 +69,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &339398784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339398781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b536e216bbd27d458fd574b3bcccea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scale: 2
-  speed: 0.5
-  MakeSourceStationary: 1
-  positionOffset: 0
 --- !u!1 &5844738107939227792
 GameObject:
   m_ObjectHideFlags: 0
