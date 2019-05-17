@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class InventoryButtons : MonoBehaviour
 {
-    public GameObject player;
+    public PlayerHolder playerHolder;
     public List<Button> invButtons;
-    public List<Image> invImages;
     public Text infoItemName;
     public Text infoDescription;
 
@@ -16,7 +15,7 @@ public class InventoryButtons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerInv = player.GetComponent<Inventory>();
+        playerInv = playerHolder.Player.GetComponent<Inventory>();
     }
     
     public void Inventory()
@@ -39,9 +38,9 @@ public class InventoryButtons : MonoBehaviour
         infoDescription.text = "";
         infoItemName.text = "";
 
-        foreach (Image image in invImages)
+        foreach (Button b in invButtons)
         {
-            image.color = Color.white;
+            b.image.color = Color.white;
         }
     }
 }

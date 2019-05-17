@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InventoryItemButtons : MonoBehaviour
 {
     public Button inventoryButton;
-    public GameObject player;
+    public PlayerHolder playerHolder;
 
     private Inventory playerInv;
     private InventoryButtons listHolder;
@@ -14,7 +14,7 @@ public class InventoryItemButtons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerInv = player.GetComponent<Inventory>();
+        playerInv = playerHolder.Player.GetComponent<Inventory>();
         listHolder = inventoryButton.GetComponent<InventoryButtons>();
     }
 
@@ -23,11 +23,11 @@ public class InventoryItemButtons : MonoBehaviour
         listHolder.infoItemName.text = playerInv.inventory[index].itemName;
         listHolder.infoDescription.text = playerInv.inventory[index].description;
 
-        foreach (Image image in listHolder.invImages)
+        foreach (Button b in listHolder.invButtons)
         {
-            image.color = Color.white;
+            b.image.color = Color.white;
         }
-        listHolder.invImages[index].color = new Color(0.3f, 0.6f, 0.8f);
+        listHolder.invButtons[index].image.color = new Color(0.3f, 0.6f, 0.8f);
         ActionButtons.selected = index;
     }
 }

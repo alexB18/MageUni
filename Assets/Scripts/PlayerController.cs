@@ -36,7 +36,15 @@ public class PlayerController : MonoBehaviour
     public GameObject emptySpellPrefab;
     public const int spellMaxSpellSlots = 5;
     private int spellSlotsAvailable = 1;
-    private SpellScript.Spell[] spellEffects = new SpellScript.Spell[spellMaxSpellSlots];
+    private int activeSpellSlot = 0;
+    private PlayerSpellInventory spellInventory;
+
+    private SpellScript.Spell[] spells = new SpellScript.Spell[spellMaxSpellSlots];
+    public SpellScript.Spell[] Spells => spells;
+
+    public int SpellSlotsAvailable { get => spellSlotsAvailable; set => spellSlotsAvailable = value; }
+    public void ChangeSpellSlot(int newSlot) => activeSpellSlot = newSlot;
+    public void SetSpell(int slot, SpellScript.Spell spell) => spells[slot] = spell;
 
     // Health and mana
     private HealthScript healthScript;
@@ -49,20 +57,12 @@ public class PlayerController : MonoBehaviour
     private float timeUntilReload = 5f;
     public GameObject deathScreen;
 
-    private readonly Subscriber deathListener = delegate (Object[] obj)
+    private void OnDeath(Object[] obj)
     {
-        GameObject gameObject = obj[0] as GameObject;
-        PlayerController pc = gameObject.GetComponent<PlayerController>();
-        pc.isAlive = false;
-        pc.ragdoll();
-        pc.StartCoroutine("DieAndRestart");
-    };
-    private readonly Subscriber healthChangeListener = delegate (Object[] obj)
-    {
-        HealthScript hs = obj[0] as HealthScript;
-        PlayerController pc = hs.gameObject.GetComponent<PlayerController>();
-        pc.healthBar.value = hs.currentHealth / hs.maximumHealth;
-    };
+        isAlive = false;
+        ragdoll();
+        StartCoroutine("DieAndRestart");
+    }
 
     // Raycasting private variables
     private int floorMask;                  // Used to tell if ray cast has hit ground
@@ -77,10 +77,16 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();       //Retrieve rigidbody from player object
 
         // TODO remove PoC spells
+        /*
         SpellScript.Spell fireSpell = new SpellScript.Spell();
-        fireSpell.effects.Add(new SpellEffectFire());
+        fireSpell.components.Add(new SpellEffectFire());
         fireSpell.shape = new SpellShapeBolt();
-        spellEffects[0] = fireSpell;
+        spells[0] = fireSpell;
+        //*/
+        spellInventory = GetComponent<PlayerSpellInventory>();
+        // TODO remove test effects
+        spellInventory.AddGlyph(AllSpellsAndGlyphs.boltGlyph);
+        spellInventory.AddGlyph(AllSpellsAndGlyphs.fireGlyph);
 
         currentMana = maximumMana;
     }
@@ -90,14 +96,13 @@ public class PlayerController : MonoBehaviour
     {
         followCamera = Camera.main.gameObject;
         healthScript = gameObject.GetComponent<HealthScript>() as HealthScript;
-        healthScript.SubscribeToOnDeath(deathListener);
-        healthScript.SubscribeToOnHealthChange(healthChangeListener);
+        healthScript.SubscribeToOnDeath(OnDeath);
         healthScript.OnHealthChange();
     }
 
     private void Update()
     {
-        if (isAlive)
+        if (isAlive && Time.timeScale != 0)
         {
             currentMana += manaRechargeRate * Time.deltaTime;
             if (manaBar != null)
@@ -109,20 +114,13 @@ public class PlayerController : MonoBehaviour
             // TODO move this to a coroutine
             CameraUpdate();
 
-            // Get spell keydowns
-            for (int i = 0; i < spellSlotsAvailable; ++i)
-            {
+            // Get spell keydowns to switch our spell
+            for (int i = 0; i < SpellSlotsAvailable; ++i)
                 if (Input.GetButtonDown("Spell" + (i + 1)))
-                {
-                    SpellScript.Spell spell = spellEffects[i];
-                    float manaCost = spell.ManaCost();
-                    if (currentMana > manaCost)
-                    {
-                        currentMana -= manaCost;
-                        StartCoroutine("StartSpell", i);
-                    }
-                }
-            }
+                    activeSpellSlot = i;
+
+            if(Input.GetButtonDown("Fire"))
+                StartCoroutine("StartSpell");
         }
     }
 
@@ -258,20 +256,29 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("IsMoving", moving);
     }
 
-    IEnumerator StartSpell(int spellSlot)
+    IEnumerator StartSpell()
     {
-        // create spell instance
-        Vector3 startPos = transform.position;
-        startPos.y += 0.5f;
-        // Put the spell a bit in front of us
-        startPos += transform.forward * 0.75f;
-        Vector3 rotEuler = transform.rotation.eulerAngles;
-        rotEuler.x = 90f;
-        GameObject spellObject = Instantiate(emptySpellPrefab, startPos, Quaternion.Euler(rotEuler)) as GameObject;
+        SpellScript.Spell spell = spells[activeSpellSlot];
+        if (spell != null)
+        {
+            float manaCost = spell.ManaCost();
+            if (currentMana > manaCost)
+            {
+                currentMana -= manaCost;
+                // create spell instance
+                Vector3 startPos = transform.position;
+                startPos.y += 0.5f;
+                // Put the spell a bit in front of us
+                startPos += transform.forward * 0.75f;
+                Vector3 rotEuler = transform.rotation.eulerAngles;
+                rotEuler.x = 90f;
+                GameObject spellObject = Instantiate(emptySpellPrefab, startPos, Quaternion.Euler(rotEuler)) as GameObject;
 
-        // Add the spell effects
-        SpellScript spellScript = spellObject.GetComponent<SpellScript>();
-        spellScript.spell = spellEffects[spellSlot];
+                // Add the spell effects
+                SpellScript spellScript = spellObject.GetComponent<SpellScript>();
+                spellScript.spell = spells[activeSpellSlot];
+            }
+        }
         yield break;
     }
 

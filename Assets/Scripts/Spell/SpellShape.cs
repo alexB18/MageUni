@@ -2,28 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SpellShape
+public abstract class SpellShape : SpellComponent
 {
-    public float manaCost = 5;
-    public float manaMultiplier = 1.0f;
-    /**
-     * Run at the start of the spell. This can be used to initialise a new collider
-     * or trigger. It can also be used to set the locomotion
-     */
-    public abstract void Start(GameObject self);
+    public override bool IsShape => true;
+    public override AllSpellsAndGlyphs.SpellComponentEnum ComponentType => AllSpellsAndGlyphs.SpellComponentEnum.SCShape;
 
-    /**
-     * Used to locomote if needed
-     * others can be used for tracking effects
-     */
-    public abstract void Run(GameObject self, List<GameObject> others = null);
-    /**
-     * When there is a trigger, a spell shape might change or do something else
-     * For example, when we hit someone with a fireball, the spell should burst
-     * first.
-     * For a wave, the spell should affect the target and keep going
-     * 
-     * Return value is a boolean for whether or not we destroy ourself
-     */
-    public abstract bool Trigger(GameObject self, GameObject other, List<SpellEffect> effects);
+    private List<SpellScript.Spell> childSpells = new List<SpellScript.Spell>();
+    public void AddChildSpell(SpellScript.Spell spell) => childSpells.Add(spell);
+
+    public void DestroyAndStartChildren(GameObject self)
+    {
+        // If we are triggered and are finished with our spell, we should start our child effects
+        foreach(SpellScript.Spell spell in childSpells)
+        {
+            GameObject newSpell = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Spell"));
+            SpellScript spellScript = newSpell.GetComponent<SpellScript>();
+            spellScript.spell = spell;
+        }
+        GameObject.Destroy(self);
+    }
 }
