@@ -89,7 +89,7 @@ public class SpellCreationMenu : MonoBehaviour
 
         //*
         CreateGlyphListElement(AllSpellsAndGlyphs.boltGlyph);
-        CreateGlyphListElement(AllSpellsAndGlyphs.ballGlyph);
+        //CreateGlyphListElement(AllSpellsAndGlyphs.ballGlyph);
         CreateGlyphListElement(AllSpellsAndGlyphs.fireGlyph);
         CreateGlyphListElement(AllSpellsAndGlyphs.healGlyph);
         CreateGlyphListElement(AllSpellsAndGlyphs.speedIncreaseGlyph);

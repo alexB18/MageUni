@@ -286,7 +286,7 @@ PrefabInstance:
     - target: {fileID: 1622819698989183117, guid: 0e74cf81e6fd82546b4797f71ceffb81,
         type: 3}
       propertyPath: currentHealth
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
@@ -412,11 +412,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8934759708308073751, guid: 7f2036c4fb28e4b48ac2fc999d337356,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8934759707594036567, guid: 7f2036c4fb28e4b48ac2fc999d337356,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -436,6 +431,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934759707594036564, guid: 7f2036c4fb28e4b48ac2fc999d337356,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934759707594036564, guid: 7f2036c4fb28e4b48ac2fc999d337356,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8934759709240683284, guid: 7f2036c4fb28e4b48ac2fc999d337356,
         type: 3}

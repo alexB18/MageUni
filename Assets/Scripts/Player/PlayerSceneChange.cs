@@ -85,7 +85,7 @@ public class PlayerSceneChange : MonoBehaviour
 
     public void Restart()
     {
-        LoadScene(masterSceneName);
-        SceneManager.LoadScene(masterSceneName);
+        SceneManager.sceneLoaded -= sceneLoadedListener;
+        SceneManager.LoadScene(masterSceneName, LoadSceneMode.Single);
     }
 }
