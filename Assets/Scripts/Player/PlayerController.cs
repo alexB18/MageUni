@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour
     public float cameraRotateSpeed = 3f;
     private float maxPlayerSpeed = 3f;
     private float currentPlayerSpeed;
+    private int numKeys;
     private Animator anim;
     private Rigidbody playerRb;
+    
 
     // Track player's current vertical/horizontal movement
     private float currentVertical = 0f;
@@ -94,6 +96,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        numKeys = 0;
         followCamera = Camera.main.gameObject;
         statScript = gameObject.GetComponent<StatScript>() as StatScript;
         statScript.SubscribeToOnDeath(OnDeath);
@@ -101,13 +104,26 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
         if(other.CompareTag("Interactable"))
         {
+            // Deactivate Object being interacted with
             interactionTrigger.SetActive(false);
+
+            
             StopCoroutine(interactionTimer);
             interactionTimer = null;
 
             other.gameObject.GetComponent<Interactable>().Interact(gameObject);
+            
+        }
+        */
+
+        if (other.CompareTag("Pickup_Key"))
+        {
+            // Deactivate key being picked up
+            other.gameObject.SetActive(false);
+            numKeys = numKeys + 1;
         }
     }
 
