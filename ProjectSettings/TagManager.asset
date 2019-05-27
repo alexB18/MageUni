@@ -12,6 +12,7 @@ TagManager:
   - Spawn
   - Interactable
   - Pickup_Key
+  - DoorCollider
   layers:
   - Default
   - TransparentFX

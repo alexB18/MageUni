@@ -1078,6 +1078,7 @@ MonoBehaviour:
   manaRechargeRate: 5
   isAlive: 1
   deathScreen: {fileID: 0}
+  numKeys: 0
   interactionTrigger: {fileID: 8552527948717880794}
 --- !u!114 &1622819698989183117
 MonoBehaviour:

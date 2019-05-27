@@ -12,9 +12,9 @@ public class PlayerController : MonoBehaviour
     public float cameraRotateSpeed = 3f;
     private float maxPlayerSpeed = 3f;
     private float currentPlayerSpeed;
-    private int numKeys;
     private Animator anim;
     private Rigidbody playerRb;
+
     
 
     // Track player's current vertical/horizontal movement
@@ -55,6 +55,9 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isAlive = true;
     public GameObject deathScreen;
     private float timeUntilReload = 3f;
+
+    // Key Variables
+    public int numKeys;
 
     private void OnDeath(Object[] obj)
     {
@@ -125,6 +128,25 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             numKeys = numKeys + 1;
         }
+        
+        if (other.CompareTag("DoorCollider"))
+        {
+            // Check if door is already locked
+            if (other.gameObject.GetComponent<DoorScript>().isLocked)
+            {
+                // Check if player has any keys
+                if(numKeys > 0)
+                {
+                    numKeys = numKeys - 1;
+                    other.transform.parent.gameObject.SetActive(false);
+                }
+                
+            } else
+            {
+                other.transform.parent.gameObject.SetActive(false);
+            }
+        }
+
     }
 
     private void Update()
