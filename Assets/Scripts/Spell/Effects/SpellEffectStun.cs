@@ -31,8 +31,8 @@ public class SpellEffectStun : SpellEffect
         StatScript ss = other.GetComponentInParent<StatScript>();
         if (ss != null)
         {
-            float procRoll = Random.value - procChance;
-            if(procRoll <= 0f)
+            float procRoll = Random.value;
+            if(procRoll <= procChance)
             {
                 ss.AddStunProc(Random.Range(minTime, maxTime) * self.effectMagnitudeScale);
             }

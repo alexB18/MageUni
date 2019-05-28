@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyAI : MonoBehaviour
 {
-    private StatScript stats;
+    protected StatScript stats;
 
     private enum StateEnum
     {
@@ -36,18 +36,16 @@ public abstract class EnemyAI : MonoBehaviour
     private Coroutine idleTimer;
 
     // The distance at which this AI will go after the target
-    public const float playerDistanceThreshold = 6f;
-    public const float playerBehindDistanceThreshold = 3f;
-    private const float pdThresholdSq = playerDistanceThreshold * playerDistanceThreshold;
-    private const float pdBehindThresholdSq = playerBehindDistanceThreshold * playerBehindDistanceThreshold;
+    public const float targetDistanceThreshold = 6f;
+    public const float targetBehindDistanceThreshold = 3f;
+    private const float tdThresholdSq = targetDistanceThreshold * targetDistanceThreshold;
+    private const float tdBehindThresholdSq = targetBehindDistanceThreshold * targetBehindDistanceThreshold;
     private const float attackDistanceSquare = 3f;
 
     // How fast this AI boy rotates and translates
     private const float minRotationSpeed = 180;
     private const float maxRotationSpeed = 250;
-    public const float linearSpeed = 2f;
-    public const float maxLinearSpeed = 1.5f;
-    public const float maxLinearSpeedSq = maxLinearSpeed * maxLinearSpeed;
+    public const float linearSpeed = 3.5f;
 
     // Angle after which we start to move
     private const float moveAngle = 10f;
@@ -169,9 +167,9 @@ public abstract class EnemyAI : MonoBehaviour
                         }
 
                         Vector3 moveVector = transform.forward;
-                        moveVector *= linearSpeed * 5 * wanderSpeedMultiplier;
-                        rb.AddForce(moveVector);
-                        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxLinearSpeed);
+                        moveVector *= linearSpeed * wanderSpeedMultiplier;
+                        moveVector.y = rb.velocity.y;
+                        rb.velocity = moveVector;
                     }
                     break;
 
@@ -202,7 +200,7 @@ public abstract class EnemyAI : MonoBehaviour
                         newRotation = Quaternion.LookRotation(target.transform.position - transform.position);
                         // Calculate rotation speed based on the velocity
                         float v2 = Vector3.SqrMagnitude(rb.velocity);
-                        float rotationSpeed = Mathf.Lerp(minRotationSpeed, maxRotationSpeed, v2 / maxLinearSpeed);
+                        float rotationSpeed = Mathf.Lerp(minRotationSpeed, maxRotationSpeed, v2 / linearSpeed);
                         float t = Mathf.Abs(rotationSpeed * Time.deltaTime / Quaternion.Angle(transform.rotation, newRotation));
 
                         Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t);
@@ -234,11 +232,11 @@ public abstract class EnemyAI : MonoBehaviour
                         float moveToAngle = transform.rotation.eulerAngles.y + angleBetweenTarget;
                         moveToAngle *= Mathf.Deg2Rad;
                         //Vector3 moveVector = new Vector3(Mathf.Cos(moveAngle), 0f, Mathf.Sin(moveAngle));
-                        Vector3 moveVector = transform.forward;
 
-                        // Add force
-                        rb.AddForce(moveVector * linearSpeed * 5);
-                        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxLinearSpeed);
+                        Vector3 moveVector = transform.forward;
+                        moveVector *= linearSpeed;
+                        moveVector.y = rb.velocity.y;
+                        rb.velocity = moveVector;
                     }
                     break;
 
@@ -302,7 +300,7 @@ public abstract class EnemyAI : MonoBehaviour
 
     protected virtual bool DetectTarget(float squareDistance, float angle)
     {
-        return ((squareDistance <= pdThresholdSq && angle < 60) || (squareDistance <= pdBehindThresholdSq));
+        return ((squareDistance <= tdThresholdSq && angle < 60) || (squareDistance <= tdBehindThresholdSq));
     }
 
     protected virtual bool FacingTarget(float angle)

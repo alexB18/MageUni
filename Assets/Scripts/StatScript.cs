@@ -7,20 +7,25 @@ public class StatScript : MonoBehaviour
     // LOCK
     private readonly object _lock = new object();
 
+    // Material for tints
+    Material material;
+    Color clearTint = new Color(1.0f, 1.0f, 1.0f);
+
     private void Awake()
     {
-        _DTArmourDict = new Dictionary<DamageType, float> {
-            { DamageType.DTPuncture, punctureArmour },
-            { DamageType.DTSlash, slashArmour },
-            { DamageType.DTBludgeon, bludgeonArmour },
-            { DamageType.DTFire, fireArmour },
-            { DamageType.DTElectric, electricArmour },
-            { DamageType.DTDivine, divineArmour }
+        _DTResistanceDict = new Dictionary<DamageType, float> {
+            { DamageType.DTPuncture, punctureResistance },
+            { DamageType.DTSlash, slashResistance },
+            { DamageType.DTBludgeon, bludgeonResistance },
+            { DamageType.DTFire, fireResistance },
+            { DamageType.DTElectric, electricResistance },
+            { DamageType.DTDivine, divineResistance }
         };
     }
 
     private void Start()
     {
+        material = GetComponentInChildren<Renderer>()?.sharedMaterial;
         // Activate the change listeners for health and mana
         OnHealthChange();
         OnManaChange();
@@ -46,20 +51,30 @@ public class StatScript : MonoBehaviour
 
     // Lock before editing
     private float stunTime = 0f;
+
     public float stunResistance = 0f;
+    // What to multiply the resistance with when stunned
+    public float stunResistanceMultiplier = 0.1f;
 
-    // What to multiply the armour with when stunned
-    public float stunArmourMultiplier = 0.1f;
+    private Color stunTint = new Color(0.91f, 0.75f, 0.19f);
 
-    /*---- ARMOUR VARIABLES ----*/
-    // Armour stat: damage = max(0, (damage - armour / 5.) * (100. - armour) / (200.)
+    /*---- FREEZE VARIABLES ----*/
     // Lock before editing
-    public float punctureArmour = 0f;
-    public float slashArmour = 0f;
-    public float bludgeonArmour = 0f;
-    public float fireArmour = 0f;
-    public float electricArmour = 0f;
-    public float divineArmour = 0f;
+    private bool isFrozen = false;
+    public float freezeResistance = 0f;
+    // What to multiply the damage with when unfrozen
+    public float freezeDamageMultiplier = 1f;
+    private Color freezeTint = new Color(0.46f, 0.81f, 0.99f);
+
+    /*---- RESISTANCE VARIABLES ----*/
+    // Resistance stat: damage = max(0, (damage - Resistance / 5.) * (100. - Resistance) / (200.)
+    // Lock before editing
+    public float punctureResistance = 0f;
+    public float slashResistance = 0f;
+    public float bludgeonResistance = 0f;
+    public float fireResistance = 0f;
+    public float electricResistance = 0f;
+    public float divineResistance = 0f;
 
     public enum DamageType
     {
@@ -71,10 +86,10 @@ public class StatScript : MonoBehaviour
         DTDivine
     }
 
-    private Dictionary<DamageType, float> _DTArmourDict;
+    private Dictionary<DamageType, float> _DTResistanceDict;
 
     /*---- GENERAL METHODS ----*/
-    public bool AIEnabled => !(IsStunned || IsDead);
+    public bool AIEnabled => !(IsStunned || IsDead || IsFrozen);
 
     /*---- HEALTH METHODS ----*/
 
@@ -85,10 +100,17 @@ public class StatScript : MonoBehaviour
     {
         if (!IsDead)
         {
-            float armour = _DTArmourDict[dt];
-            if (IsStunned) armour *= stunArmourMultiplier;
-            float damage = Mathf.Max(0f, (f - armour / 5f) * (100f - armour) / 200f);
-            currentHealth -= f;
+            float resistance = _DTResistanceDict[dt];
+            if (IsStunned) resistance *= stunResistanceMultiplier;
+
+            float damage = Mathf.Max(0f, (f - resistance / 5f) * (100f - resistance) / 200f);
+            if (IsFrozen)
+            {
+                damage *= freezeDamageMultiplier;
+                RemoveFreezeProc();
+            }
+
+            currentHealth -= damage;
             OnHealthChange();
             if (currentHealth <= 0)
             {
@@ -191,10 +213,20 @@ public class StatScript : MonoBehaviour
     /*---- STUN METHODS ----*/
     public void AddStunProc(float time)
     {
-        // request lock
-        lock (_lock)
-            stunTime += time;
-        StartCoroutine("StunProcTimer", time);
+        // Check if we resist
+        float procRoll = Random.value;
+        if (procRoll > stunResistance)
+        {
+            // request lock
+            lock (_lock)
+            {
+                stunTime += time;
+                material.SetColor("_Color", stunTint);
+            }
+            StartCoroutine("StunProcTimer", time);
+        }
+        else
+            Debug.Log(gameObject.name + " resisted stun");
     }
     
     private IEnumerator StunProcTimer(float time)
@@ -202,9 +234,43 @@ public class StatScript : MonoBehaviour
         Debug.Log(gameObject.name + " stunned for " + time + " seconds");
         yield return new WaitForSeconds(time);
         lock (_lock)
+        {
             stunTime -= time;
+            if(stunTime <= 0f)
+                material.SetColor("_Color", clearTint);
+        }
         Debug.Log("Stun proc ended");
     }
 
     public bool IsStunned => stunTime > 0;
+
+    /*---- FREEZE METHODS ----*/
+    public void AddFreezeProc()
+    {
+        // Check if we resist
+        float procRoll = Random.value;
+        if (procRoll > freezeResistance)
+        {
+            lock (_lock)
+            {
+                Debug.Log(gameObject.name + " frozen");
+                isFrozen = true;
+                material.SetColor("_Color", freezeTint);
+            }
+        }
+        else
+            Debug.Log(gameObject.name + " resisted freeze");
+    }
+
+    private void RemoveFreezeProc()
+    {
+        lock (_lock)
+        {
+            isFrozen = false;
+            material.SetColor("_Color", clearTint);
+        }
+        Debug.Log(gameObject.name + " unfrozen");
+    }
+
+    public bool IsFrozen => isFrozen;
 }

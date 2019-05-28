@@ -5,8 +5,8 @@ using UnityEngine;
 public class RatAI : EnemyAI
 {
     // Pounce attack consts
-    public const float pounceForce = 25f;
-    private static Vector3 pounceUps = new Vector3(0, 30f, 0);
+    public const float pounceSpeed = 4f;
+    private static Vector3 pounceUps = new Vector3(0, 3f, 0);
 
     public override void OnCollisionEnter(Collision collision)
     {
@@ -30,14 +30,17 @@ public class RatAI : EnemyAI
 
     public void Bite(GameObject enemy)
     {
-        StatScript eHS = enemy.GetComponent<StatScript>();
-        eHS.DamageHealth(damage);
+        if (stats.AIEnabled)
+        {
+            StatScript eHS = enemy.GetComponent<StatScript>();
+            eHS.DamageHealth(damage);
+        }
     }
 
     protected override void Attack(GameObject t)
     {
         //Add force
-        rb.AddForce(transform.forward * pounceForce);
-        rb.AddForce(pounceUps);
+        Vector3 velocity = transform.forward * pounceSpeed + pounceUps;
+        rb.velocity += velocity;
     }
 }

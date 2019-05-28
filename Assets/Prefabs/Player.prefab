@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0aa819105956e4a9a330019d93d902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 3.5
   turnSpeed: 10
   cameraRotateSpeed: 3
   followCamera: {fileID: 0}
@@ -1096,6 +1096,16 @@ MonoBehaviour:
   currentHealth: 100
   maximumMana: 100
   currentMana: 100
+  stunResistance: 0
+  stunResistanceMultiplier: 0.1
+  freezeResistance: 0
+  freezeDamageMultiplier: 1
+  punctureResistance: 0
+  slashResistance: 0
+  bludgeonResistance: 0
+  fireResistance: 0
+  electricResistance: 0
+  divineResistance: 0
 --- !u!114 &467910523102624042
 MonoBehaviour:
   m_ObjectHideFlags: 0

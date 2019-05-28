@@ -7,15 +7,13 @@ public class PlayerController : MonoBehaviour
 {
 
     /* ------------------------  Player variables   ------------------- */
-    public float moveSpeed = 15f;
+    public float moveSpeed = 3.5f;
     public float turnSpeed = 10;
     public float cameraRotateSpeed = 3f;
-    private float maxPlayerSpeed = 3f;
+    private float maxPlayerSpeed = 3.5f;
     private float currentPlayerSpeed;
     private Animator anim;
     private Rigidbody playerRb;
-
-    
 
     // Track player's current vertical/horizontal movement
     private float currentVertical = 0f;
@@ -185,6 +183,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsPaused() => Time.timeScale == 0;
 
+    // Deprecated
     private void Move(float h, float v)
     {
      
@@ -224,21 +223,17 @@ public class PlayerController : MonoBehaviour
     private void SimpleMove(float h, float v)
     {
         Vector3 moveVector = followCamera.transform.forward * v + followCamera.transform.right * h;
-        float directionMagnitude = moveVector.magnitude; // Store initial direction magnitude for normalization
+        //float directionMagnitude = moveVector.magnitude; // Store initial direction magnitude for normalization
         moveVector.y = 0f;   // Ensure lateral movement
-        moveVector = moveVector.normalized * directionMagnitude; // Normalize direction vector
+        moveVector.Normalize();
+        //moveVector = moveVector.normalized * directionMagnitude; // Normalize direction vector
+
         moveVector *= moveSpeed;
-        //currentPlayerSpeed = moveVector.magnitude;  //Retrieive speed of current player for global use
+        if (Input.GetButton("Walk")) moveVector *= walkScale;
 
-        if (moveVector != Vector3.zero)
-        {
-            //transform.rotation = Quaternion.LookRotation(moveVector);
-            float adjMaxSpeed = Input.GetButton("Walk") ? maxPlayerSpeed * walkScale : maxPlayerSpeed;
-            playerRb.velocity = Vector3.ClampMagnitude(playerRb.velocity, adjMaxSpeed);
-            playerRb.AddForce(moveVector);
-
-            anim.SetFloat("MoveSpeed", playerRb.velocity.magnitude / maxPlayerSpeed);
-        }
+        moveVector.y = playerRb.velocity.y;
+        playerRb.velocity = moveVector;
+        anim.SetFloat("MoveSpeed", playerRb.velocity.magnitude / maxPlayerSpeed);
     }
 
     private void CameraRotateKeys()
