@@ -52,8 +52,7 @@ public abstract class EnemyAI : MonoBehaviour
     // Angle after which we start to move
     private const float moveAngle = 10f;
     private const float moveAngleDeviation = 7f;
-
-    private PlayerController pc;
+    
     protected float damage = 10f;
     protected bool canAttack = true;
     protected float attackCooldown = 1.25f;
@@ -71,216 +70,222 @@ public abstract class EnemyAI : MonoBehaviour
         state = StateEnum.Dead;
     }
 
+    protected void OnResurrect(Object[] obj)
+    {
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        state = StateEnum.Idle;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        state = StateEnum.Idle;
-        stats = GetComponent<StatScript>();
-
-        target = GameObject.FindGameObjectWithTag("Player");
-        pc = target.GetComponent<PlayerController>();
         rb = gameObject.GetComponent<Rigidbody>();
-        StatScript ss = gameObject.GetComponent<StatScript>();
-        ss.SubscribeToOnDeath(OnDeath);
+        stats = GetComponent<StatScript>();
+        stats.SubscribeToOnDeath(OnDeath);
+        stats.SubscribeToOnResurrect(OnResurrect);
+        target = GameObject.FindGameObjectWithTag("Player");
+        state = StateEnum.Idle;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 ratPos = transform.position;
-        Vector3 targetPos = target.transform.position;
-        Vector3 dd = targetPos - ratPos;
-        float squareDistanceFromTarget = Vector3.SqrMagnitude(dd);
-        float angleBetweenTarget = Vector3.Angle(transform.forward, target.transform.position - transform.position);
-
-        switch (state)
+        if (stats.AIEnabled)
         {
-            case StateEnum.Idle:
-                // See if we detect the player. If so, make a noise and switch to DetectTarget
-                if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
-                    state = StateEnum.DetectTarget;
-                // Try and switch to wander
-                if (Random.Range(0f, 1f) < wanderChance)
-                {
-                    state = StateEnum.Wander;
-                }
-                else
-                {
-                    idleTimer = StartCoroutine("IdleTimer");
-                    state = StateEnum.IdleContinue;
-                    // Do cute animations and squeaks, randomly switch to Wander
-                }
-                break;
+            Vector3 ratPos = transform.position;
+            Vector3 targetPos = target.transform.position;
+            Vector3 dd = targetPos - ratPos;
+            float squareDistanceFromTarget = Vector3.SqrMagnitude(dd);
+            float angleBetweenTarget = Vector3.Angle(transform.forward, target.transform.position - transform.position);
 
-            case StateEnum.IdleContinue:
-                // See if we detect the player. If so, make a noise and switch to DetectTarget
-                if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
-                {
-                    StopCoroutine(idleTimer);
-                    state = StateEnum.DetectTarget;
-                }
-                break;
-
-            case StateEnum.Wander:
-                {
+            switch (state)
+            {
+                case StateEnum.Idle:
                     // See if we detect the player. If so, make a noise and switch to DetectTarget
                     if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
                         state = StateEnum.DetectTarget;
-
-                    newAngle = Random.Range(-swivelAngleMax, swivelAngleMax);
-                    newRotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y + newAngle, 0f);
-
-                    state = StateEnum.WanderRotate;
-                }
-                break;
-
-            case StateEnum.WanderRotate:
-                {
-                    // See if we detect the player. If so, make a noise and switch to DetectTarget
-                    if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
-                        state = StateEnum.DetectTarget;
-
-                    float t = Mathf.Abs(minRotationSpeed * Time.deltaTime / newAngle);
-
-                    Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t);
-                    //Quaternion slerpedLook = Quaternion.LookRotation(lookV);
-                    transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0));
-
-                    if (Quaternion.Angle(transform.rotation, newRotation) <= 2)
+                    // Try and switch to wander
+                    if (Random.Range(0f, 1f) < wanderChance)
                     {
-                        state = StateEnum.WanderContinue;
-                        wanderTimer = StartCoroutine("WanderTimer");
+                        state = StateEnum.Wander;
                     }
-                }
-                break;
+                    else
+                    {
+                        idleTimer = StartCoroutine("IdleTimer");
+                        state = StateEnum.IdleContinue;
+                        // Do cute animations and squeaks, randomly switch to Wander
+                    }
+                    break;
 
-            case StateEnum.WanderContinue:
-                {
+                case StateEnum.IdleContinue:
                     // See if we detect the player. If so, make a noise and switch to DetectTarget
                     if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
                     {
-                        StopCoroutine(wanderTimer);
+                        StopCoroutine(idleTimer);
                         state = StateEnum.DetectTarget;
                     }
+                    break;
 
-                    Vector3 moveVector = transform.forward;
-                    moveVector *= linearSpeed * 5 * wanderSpeedMultiplier;
-                    rb.AddForce(moveVector);
-                    rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxLinearSpeed);
-                }
-                break;
-
-            case StateEnum.DetectTarget:
-                // Check if we can still detect the target
-                // Check if target is in acceptable sight and switch to MoveTowardTarget
-                // Else rotate toward target
-                if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
-                    state = StateEnum.Idle;
-                else if (FacingTarget(angleBetweenTarget))
-                    state = StateEnum.MoveTowardTarget;
-                else
-                {
-                    state = StateEnum.RotateTowardTarget;
-                }
-                break;
-
-            case StateEnum.RotateTowardTarget:
-                // Check if we can still detect the target
-                // Check if target is in acceptable sight and switch to MoveTowardTarget
-                // Else rotate toward target
-                if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
-                    state = StateEnum.Idle;
-                else if (FacingTarget(angleBetweenTarget))
-                    state = StateEnum.MoveTowardTarget;
-                else
-                {
-                    newRotation = Quaternion.LookRotation(target.transform.position - transform.position);
-                    // Calculate rotation speed based on the velocity
-                    float v2 = Vector3.SqrMagnitude(rb.velocity);
-                    float rotationSpeed = Mathf.Lerp(minRotationSpeed, maxRotationSpeed, v2 / maxLinearSpeed);
-                    float t = Mathf.Abs(rotationSpeed * Time.deltaTime / Quaternion.Angle(transform.rotation, newRotation));
-
-                    Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t);
-                    //Quaternion slerpedLook = Quaternion.LookRotation(lookV);
-                    transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0));
-
-                    if (Quaternion.Angle(transform.rotation, newRotation) <= 2)
+                case StateEnum.Wander:
                     {
+                        // See if we detect the player. If so, make a noise and switch to DetectTarget
+                        if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                            state = StateEnum.DetectTarget;
+
+                        newAngle = Random.Range(-swivelAngleMax, swivelAngleMax);
+                        newRotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y + newAngle, 0f);
+
+                        state = StateEnum.WanderRotate;
+                    }
+                    break;
+
+                case StateEnum.WanderRotate:
+                    {
+                        // See if we detect the player. If so, make a noise and switch to DetectTarget
+                        if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                            state = StateEnum.DetectTarget;
+
+                        float t = Mathf.Abs(minRotationSpeed * Time.deltaTime / newAngle);
+
+                        Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t);
+                        //Quaternion slerpedLook = Quaternion.LookRotation(lookV);
+                        transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0));
+
+                        if (Quaternion.Angle(transform.rotation, newRotation) <= 2)
+                        {
+                            state = StateEnum.WanderContinue;
+                            wanderTimer = StartCoroutine("WanderTimer");
+                        }
+                    }
+                    break;
+
+                case StateEnum.WanderContinue:
+                    {
+                        // See if we detect the player. If so, make a noise and switch to DetectTarget
+                        if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                        {
+                            StopCoroutine(wanderTimer);
+                            state = StateEnum.DetectTarget;
+                        }
+
+                        Vector3 moveVector = transform.forward;
+                        moveVector *= linearSpeed * 5 * wanderSpeedMultiplier;
+                        rb.AddForce(moveVector);
+                        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxLinearSpeed);
+                    }
+                    break;
+
+                case StateEnum.DetectTarget:
+                    // Check if we can still detect the target
+                    // Check if target is in acceptable sight and switch to MoveTowardTarget
+                    // Else rotate toward target
+                    if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                        state = StateEnum.Idle;
+                    else if (FacingTarget(angleBetweenTarget))
                         state = StateEnum.MoveTowardTarget;
+                    else
+                    {
+                        state = StateEnum.RotateTowardTarget;
                     }
-                }
-                break;
+                    break;
 
-            case StateEnum.MoveTowardTarget:
-                // Check if we can still detect the target
-                // Check if we are still facing the target
-                // Move toward the target. If within attacking range and can bite, switch to attack
-                if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
-                    state = StateEnum.Idle;
-                else if (!FacingTarget(angleBetweenTarget))
-                    state = StateEnum.DetectTarget;
-                else if (WithinAttackRange(squareDistanceFromTarget))
-                    state = StateEnum.Attack;
-                else
-                {
-                    // Calculate the most we can move
-                    if (Vector3.Cross(transform.forward, target.transform.position - transform.position).y < 0)
-                        angleBetweenTarget = -angleBetweenTarget;
-                    float moveToAngle = transform.rotation.eulerAngles.y + angleBetweenTarget;
-                    moveToAngle *= Mathf.Deg2Rad;
-                    //Vector3 moveVector = new Vector3(Mathf.Cos(moveAngle), 0f, Mathf.Sin(moveAngle));
-                    Vector3 moveVector = transform.forward;
+                case StateEnum.RotateTowardTarget:
+                    // Check if we can still detect the target
+                    // Check if target is in acceptable sight and switch to MoveTowardTarget
+                    // Else rotate toward target
+                    if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                        state = StateEnum.Idle;
+                    else if (FacingTarget(angleBetweenTarget))
+                        state = StateEnum.MoveTowardTarget;
+                    else
+                    {
+                        newRotation = Quaternion.LookRotation(target.transform.position - transform.position);
+                        // Calculate rotation speed based on the velocity
+                        float v2 = Vector3.SqrMagnitude(rb.velocity);
+                        float rotationSpeed = Mathf.Lerp(minRotationSpeed, maxRotationSpeed, v2 / maxLinearSpeed);
+                        float t = Mathf.Abs(rotationSpeed * Time.deltaTime / Quaternion.Angle(transform.rotation, newRotation));
 
-                    // Add force
-                    rb.AddForce(moveVector * linearSpeed * 5);
-                    rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxLinearSpeed);
-                }
-                break;
+                        Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t);
+                        //Quaternion slerpedLook = Quaternion.LookRotation(lookV);
+                        transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0));
 
-            case StateEnum.Attack:
-                // Check if we can still detect the target
-                // Check if we are still facing the target
-                // Check if we are still within attack range
-                // Attack. Make a noise. Switch to Airborne
-                if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
-                    state = StateEnum.Idle;
-                else if (!FacingTarget(angleBetweenTarget))
-                    state = StateEnum.DetectTarget;
-                else if (!WithinAttackRange(squareDistanceFromTarget))
-                    state = StateEnum.MoveTowardTarget;
-                else if (canAttack)
-                {
-                    // Calculate the most we can move
-                    if (Vector3.Cross(transform.forward, target.transform.position - transform.position).y < 0)
-                        angleBetweenTarget = -angleBetweenTarget;
-                    float moveToAngle = transform.rotation.eulerAngles.y + angleBetweenTarget;
-                    moveToAngle *= Mathf.Deg2Rad;
+                        if (Quaternion.Angle(transform.rotation, newRotation) <= 2)
+                        {
+                            state = StateEnum.MoveTowardTarget;
+                        }
+                    }
+                    break;
+
+                case StateEnum.MoveTowardTarget:
+                    // Check if we can still detect the target
+                    // Check if we are still facing the target
+                    // Move toward the target. If within attacking range and can bite, switch to attack
+                    if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                        state = StateEnum.Idle;
+                    else if (!FacingTarget(angleBetweenTarget))
+                        state = StateEnum.DetectTarget;
+                    else if (WithinAttackRange(squareDistanceFromTarget))
+                        state = StateEnum.Attack;
+                    else
+                    {
+                        // Calculate the most we can move
+                        if (Vector3.Cross(transform.forward, target.transform.position - transform.position).y < 0)
+                            angleBetweenTarget = -angleBetweenTarget;
+                        float moveToAngle = transform.rotation.eulerAngles.y + angleBetweenTarget;
+                        moveToAngle *= Mathf.Deg2Rad;
+                        //Vector3 moveVector = new Vector3(Mathf.Cos(moveAngle), 0f, Mathf.Sin(moveAngle));
+                        Vector3 moveVector = transform.forward;
+
+                        // Add force
+                        rb.AddForce(moveVector * linearSpeed * 5);
+                        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxLinearSpeed);
+                    }
+                    break;
+
+                case StateEnum.Attack:
+                    // Check if we can still detect the target
+                    // Check if we are still facing the target
+                    // Check if we are still within attack range
+                    // Attack. Make a noise. Switch to Airborne
+                    if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                        state = StateEnum.Idle;
+                    else if (!FacingTarget(angleBetweenTarget))
+                        state = StateEnum.DetectTarget;
+                    else if (!WithinAttackRange(squareDistanceFromTarget))
+                        state = StateEnum.MoveTowardTarget;
+                    else if (canAttack)
+                    {
+                        // Calculate the most we can move
+                        if (Vector3.Cross(transform.forward, target.transform.position - transform.position).y < 0)
+                            angleBetweenTarget = -angleBetweenTarget;
+                        float moveToAngle = transform.rotation.eulerAngles.y + angleBetweenTarget;
+                        moveToAngle *= Mathf.Deg2Rad;
 
 
-                    // Attack
-                    Attack(target);
+                        // Attack
+                        Attack(target);
 
-                    // Make a noise
+                        // Make a noise
 
-                    // Switch state
-                    state = StateEnum.Airborne;
-                }
-                break;
+                        // Switch state
+                        state = StateEnum.Airborne;
+                    }
+                    break;
 
-            case StateEnum.Airborne:
-                // Do nothing. Wait until we hit the ground. Collision detection will change the state
-                break;
+                case StateEnum.Airborne:
+                    // Do nothing. Wait until we hit the ground. Collision detection will change the state
+                    break;
 
-            case StateEnum.Dead:
-                // Do nothing, we're dead
-                break;
+                case StateEnum.Dead:
+                    // Do nothing, we're dead
+                    break;
+            }
         }
     }
 
     public virtual void OnCollisionEnter(Collision collision)
     {
-        if (state != StateEnum.Dead)
+        if (stats.AIEnabled)
         {
             if (state == StateEnum.WanderContinue)
             {

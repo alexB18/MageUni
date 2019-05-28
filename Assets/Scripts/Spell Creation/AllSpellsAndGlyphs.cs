@@ -15,6 +15,8 @@ public static class AllSpellsAndGlyphs
     public static readonly SpellShape spellShapeBall = new SpellShapeBall();
     public static readonly SpellEffect spellEffectFire = new SpellEffectFire();
     public static readonly SpellEffect spellEffectHeal = new SpellEffectHeal();
+    public static readonly SpellEffect spellEffectStun = new SpellEffectStun();
+    public static readonly SpellEffect spellEffectLightning = new SpellEffectLightning();
     public static readonly SpellModifier spellModifierSpeedIncrease = new SpellModifierSpeedIncrease();
 
     public static readonly Glyph boltGlyph = new Glyph(
@@ -59,6 +61,27 @@ public static class AllSpellsAndGlyphs
         {
             new Glyph.Connection(0f/128f, 86f/128f),
             new Glyph.Connection(128f/128f, 86f/128f)
+        },
+        null
+        );
+    public static readonly Glyph stunGlyph = new Glyph(
+        spellEffectStun,
+        "EffectStun",
+        new List<Glyph.Connection>
+        {
+            new Glyph.Connection(0f/128f, 37f/128f),
+            new Glyph.Connection(128f/128f, 37f/128f)
+        },
+        null
+        );
+    public static readonly Glyph lightningGlyph = new Glyph(
+        spellEffectLightning,
+        "EffectLightning",
+        new List<Glyph.Connection>
+        {
+            new Glyph.Connection(0f/128f, 72f/128f),
+            new Glyph.Connection(128f/128f, 72f/128f),
+            new Glyph.Connection(64f/128f, 95f/128f)
         },
         null
         );
