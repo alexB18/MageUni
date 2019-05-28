@@ -11,6 +11,9 @@ TagManager:
   - GlyphUI
   - Spawn
   - Interactable
+  - Pickup_Key
+  - DoorCollider
+  - CaveEntrance
   layers:
   - Default
   - TransparentFX
@@ -22,16 +25,16 @@ TagManager:
   - 
   - Floor
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - CarpetLivingRoom
+  - EastHallWay
+  - EastKeyRoom
+  - WestKeyRoom
+  - CentralHallway
+  - PedestalRoom
+  - BedRoom
+  - BlockPatternRoom
+  - CarpetPitFallRoom
+  - EastHallWay_Secret
   - 
   - 
   - 

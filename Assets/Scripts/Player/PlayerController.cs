@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Rigidbody playerRb;
 
+    
+
     // Track player's current vertical/horizontal movement
     private float currentVertical = 0f;
     private float currentHorizontal = 0f;
@@ -53,6 +55,9 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isAlive = true;
     public GameObject deathScreen;
     private float timeUntilReload = 3f;
+
+    // Key Variables
+    public int numKeys;
 
     private void OnDeath(Object[] obj)
     {
@@ -94,6 +99,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        numKeys = 0;
         followCamera = Camera.main.gameObject;
         statScript = gameObject.GetComponent<StatScript>() as StatScript;
         statScript.SubscribeToOnDeath(OnDeath);
@@ -101,14 +107,46 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
         if(other.CompareTag("Interactable"))
         {
+            // Deactivate Object being interacted with
             interactionTrigger.SetActive(false);
+
+            
             StopCoroutine(interactionTimer);
             interactionTimer = null;
 
             other.gameObject.GetComponent<Interactable>().Interact(gameObject);
+            
         }
+        */
+
+        if (other.CompareTag("Pickup_Key"))
+        {
+            // Deactivate key being picked up
+            other.gameObject.SetActive(false);
+            numKeys = numKeys + 1;
+        }
+        
+        if (other.CompareTag("DoorCollider"))
+        {
+            // Check if door is already locked
+            if (other.gameObject.GetComponent<DoorScript>().isLocked)
+            {
+                // Check if player has any keys
+                if(numKeys > 0)
+                {
+                    numKeys = numKeys - 1;
+                    other.transform.parent.gameObject.SetActive(false);
+                }
+                
+            } else
+            {
+                other.transform.parent.gameObject.SetActive(false);
+            }
+        }
+
     }
 
     private void Update()
