@@ -13,7 +13,7 @@ public static class SceneNameList
         {"B1_AbandonedHouse_Rat", "B1_AbandonedHouse_Rat"},
         {"B2_AbandonedHouse_Rat", "B2_AbandonedHouse_Rat"},
         {"AndrewTest", "AndrewTest"},
-        {"SeanTest", "SeanTest" }
+        {"Campus_Environment", "Campus_Environment" }
     };
     public static Dictionary<string, string[]> EcosystemNameToSceneName = new Dictionary<string, string[]>()
     {
@@ -22,7 +22,7 @@ public static class SceneNameList
         {"B1_AbandonedHouse_Rat", new string[] { "B1_AbandonedHouse_Rat" } },
         {"B2_AbandonedHouse_Rat", new string[] { "B2_AbandonedHouse_Rat" } },
         {"AndrewTest", new string[] { "AndrewTest" } },
-        {"SeanTest", new string[] { "SeanTest" } }
+        {"Campus_Environment", new string[] { "Campus_Environment" } }
     };
     
     public static string[] GetSiblingScenes(string sceneName)

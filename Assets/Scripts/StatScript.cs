@@ -40,6 +40,8 @@ public class StatScript : MonoBehaviour
     public float maximumHealth = 100f;
     public float currentHealth = 100f;
     private bool canResurrect = true;
+    private float dotTime = 0f;
+    private const float dotTimeStep = 1.6f;
 
     private List<Subscriber> onDeathSubscribers = new List<Subscriber>();
     private List<Subscriber> onResurrectSubscribers = new List<Subscriber>();
@@ -126,6 +128,15 @@ public class StatScript : MonoBehaviour
         }
     }
 
+    public void AddDamageOverTimeProc(float time, float damage, DamageType dt = DamageType.DTBludgeon)
+    {
+        lock(_lock)
+        {
+            dotTime += time;
+        }
+        StartCoroutine(DoTLoop(time, damage, dt));
+    }
+
     public void Resurrect()
     {
         if (IsDead && canResurrect)
@@ -171,6 +182,19 @@ public class StatScript : MonoBehaviour
     {
         foreach (var sub in onResurrectSubscribers)
             sub(gameObject);
+    }
+
+    private IEnumerator DoTLoop(float time, float damage, DamageType dt)
+    {
+        float timeAcc = time;
+        do
+        {
+            DamageHealth(damage, dt);
+            yield return new WaitForSeconds(dotTimeStep);
+            timeAcc -= dotTimeStep;
+        } while (timeAcc > 0);
+        lock (_lock)
+            dotTime -= time;
     }
 
     /**

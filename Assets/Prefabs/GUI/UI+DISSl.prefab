@@ -18502,7 +18502,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Sean Test
+  m_Text: 'Campus Test
 
 '
 --- !u!1 &8934759707968322172
@@ -18518,7 +18518,7 @@ GameObject:
   - component: {fileID: 8934759707968322115}
   - component: {fileID: 8934759707968322114}
   m_Layer: 5
-  m_Name: SeanTestButton
+  m_Name: CampusTestButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18537,7 +18537,7 @@ RectTransform:
   m_Children:
   - {fileID: 8934759707802025754}
   m_Father: {fileID: 8934759708863874180}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -18640,7 +18640,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SeanTest
+          m_StringArgument: Campus_Environment
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -18979,7 +18979,7 @@ RectTransform:
   m_Children:
   - {fileID: 8934759708284913574}
   m_Father: {fileID: 8934759708863874180}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -19599,8 +19599,8 @@ RectTransform:
   m_Children:
   - {fileID: 8934759708335440550}
   - {fileID: 8934759708079300241}
-  - {fileID: 8934759708305111731}
   - {fileID: 8934759707968322173}
+  - {fileID: 8934759708305111731}
   - {fileID: 8934759708428416906}
   m_Father: {fileID: 2160426072849292285}
   m_RootOrder: 8
