@@ -25,10 +25,15 @@ public class StatScript : MonoBehaviour
 
     private void Start()
     {
-        material = GetComponentInChildren<Renderer>()?.sharedMaterial;
+        material = GetComponentInChildren<Renderer>()?.material;
         // Activate the change listeners for health and mana
         OnHealthChange();
         OnManaChange();
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(material);
     }
     /*---- HEALTH VARIABLES ----*/
     // Only access these directly with the inspector!
@@ -103,7 +108,7 @@ public class StatScript : MonoBehaviour
             float resistance = _DTResistanceDict[dt];
             if (IsStunned) resistance *= stunResistanceMultiplier;
 
-            float damage = Mathf.Max(0f, (f - resistance / 5f) * (100f - resistance) / 200f);
+            float damage = Mathf.Max(0f, (f - resistance / 5f) * (100f - resistance / 2f) / 100f);
             if (IsFrozen)
             {
                 damage *= freezeDamageMultiplier;

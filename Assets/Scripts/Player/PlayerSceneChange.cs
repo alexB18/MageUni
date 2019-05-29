@@ -19,7 +19,14 @@ public class PlayerSceneChange : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         SceneManager.sceneLoaded += sceneLoadedListener;
+        SceneManager.sceneUnloaded += sceneUnloadedListener;
         masterScene = SceneManager.GetSceneByName(masterSceneName);
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= sceneLoadedListener;
+        SceneManager.sceneUnloaded -= sceneUnloadedListener;
     }
 
     private void sceneLoadedListener(Scene arg0, LoadSceneMode arg1)
@@ -33,6 +40,11 @@ public class PlayerSceneChange : MonoBehaviour
 
             OpenMenu.openMenu.Resume();
         }
+    }
+
+    private void sceneUnloadedListener(Scene arg0)
+    {
+        currentScenes.Remove(arg0);
     }
 
     private void TransportMarker()
@@ -72,12 +84,9 @@ public class PlayerSceneChange : MonoBehaviour
 
         // Safely unload the player so we don't get deleted
         SceneManager.MoveGameObjectToScene(gameObject, masterScene);
-        
-        while(currentScenes.Count > 0)
+        foreach(Scene s in currentScenes)
         {
-            Scene s = currentScenes[0];
             SceneManager.UnloadSceneAsync(s);
-            currentScenes.RemoveAt(0);
         }
 
         if (scene != masterScene.name)
@@ -97,8 +106,6 @@ public class PlayerSceneChange : MonoBehaviour
         else
         {
             doTransport = false;
-            currentScenes.Add(masterScene);
-            SceneManager.LoadScene(masterSceneName, LoadSceneMode.Single);
         }
 
         activeScene = SceneManager.GetSceneByName(scene);

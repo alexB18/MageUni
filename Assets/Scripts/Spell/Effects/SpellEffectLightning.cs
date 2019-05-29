@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class SpellEffectLightning : SpellEffect
 {
-    private const float fColorR = 240f / 255f;
-    private const float fColorG = 220f / 255f;
-    private const float fColorB = 100f / 255f;
+    private static readonly Color particleColor = new Color(0.94f, 0.86f, 0.39f);
+    private static readonly Color emissionColor = new Color(0.47f, 0.43f, 0.19f);
     private const float maxDamage = 25f;
     private const float minDamage = 10f;
     private const float maxTime = 5f;
@@ -18,11 +17,7 @@ public class SpellEffectLightning : SpellEffect
 
     public override void Start(SpellScript self)
     {
-        //Debug.Log("I am in the Fire spell effect start");
-        // Create particle effect
-        ParticleSystem ps = self.GetComponentInChildren<ParticleSystem>();
-        ParticleSystem.MainModule mm = ps.main;
-        mm.startColor = new Color(fColorR, fColorG, fColorB);
+        self.mm.startColor = particleColor;
     }
 
     public override bool Trigger(SpellScript self, GameObject other)

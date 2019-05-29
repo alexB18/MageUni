@@ -6,6 +6,8 @@ public class SpellScript : MonoBehaviour
 {
     public float effectMagnitudeScale = 1.0f;
     public float spellTime = 10f;
+    public ParticleSystem.MainModule mm;
+
     public class Spell
     {
         public string name = "Spell";
@@ -25,6 +27,9 @@ public class SpellScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
+        mm = ps.main;
+
         gameObject.name = spell.name;
         spell.shape.Start(this);
         foreach (var spellComponent in spell.components)

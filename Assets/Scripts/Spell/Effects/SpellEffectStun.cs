@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class SpellEffectStun : SpellEffect
 {
-    private const float fColorR = 240f / 255f;
-    private const float fColorG = 240f / 255f;
-    private const float fColorB = 52f / 255f;
+    private static readonly Color particleColor = new Color(0.94f, 0.94f, 0.20f);
+    private static readonly Color emissionColor = new Color(0.57f, 0.57f, 0.10f);
     private const float maxTime = 10f;
     private const float minTime = 3f;
     private const float procChance = 0.90f;
@@ -16,11 +15,7 @@ public class SpellEffectStun : SpellEffect
 
     public override void Start(SpellScript self)
     {
-        //Debug.Log("I am in the Fire spell effect start");
-        // Create particle effect
-        ParticleSystem ps = self.GetComponentInChildren<ParticleSystem>();
-        ParticleSystem.MainModule mm = ps.main;
-        mm.startColor = new Color(fColorR, fColorG, fColorB);
+        self.mm.startColor = particleColor;
     }
 
     public override bool Trigger(SpellScript self, GameObject other)

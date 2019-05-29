@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class SpellEffectHeal : SpellEffect
 {
-    private const float fColorR = 102 / 255f;
-    private const float fColorG = 204 / 255f;
-    private const float fColorB = 255 / 255f;
+    private static readonly Color particleColor = new Color(0.40f, 0.80f, 1.0f);
+    private static readonly Color emissionColor = new Color(0.20f, 0.40f, 0.5f);
     private const float maxHeal = 35f;
     private const float minHeal = 20f;
 
@@ -15,9 +14,7 @@ public class SpellEffectHeal : SpellEffect
     // Start is called before the first frame update
     public override void Start(SpellScript self)
     {
-        ParticleSystem ps = self.GetComponentInChildren<ParticleSystem>();
-        ParticleSystem.MainModule mm = ps.main;
-        mm.startColor = new Color(fColorR, fColorG, fColorB);
+        self.mm.startColor = particleColor;
     }
     
     public override bool Trigger(SpellScript self, GameObject other)
