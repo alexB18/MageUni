@@ -75,9 +75,15 @@ public class StatScript : MonoBehaviour
 
     /*---- ENRAGE VARIABLES ----*/
     public float enrageResistance = 0f;
+    // Lock before changing
     private float enrageTime = 0f;
     private const float enrageTimeStep = 5f;
     private List<Subscriber> OnEnrageSubscribers = new List<Subscriber>();
+
+    /*---- SPEED VARIABLES ----*/
+    //Lock before changing
+    private float speedModifier = 1.0f;
+    public float slowResistance = 0f;
 
     /*---- RESISTANCE VARIABLES ----*/
     // Resistance stat: damage = max(0, (damage - Resistance / 5.) * (100. - Resistance) / (200.)
@@ -358,4 +364,31 @@ public class StatScript : MonoBehaviour
     }
 
     public bool IsEnraged => enrageTime > 0;
+
+    /*---- SPEED METHODS ----*/
+    public void AddSpeedProc(float time, float magnitude)
+    {
+        // Resist negative (slow), don't resist positive.
+        bool success = true;
+        if(magnitude < 0)
+        {
+            float procRoll = Random.value;
+            success = procRoll > slowResistance;
+        }
+        if(success)
+        {
+            lock (_lock) speedModifier += magnitude;
+            StartCoroutine(SpeedProcTimer(time, magnitude));
+        }
+    }
+
+    private IEnumerator SpeedProcTimer(float time, float magnitude)
+    {
+        Debug.Log(gameObject.name + " speed proc with magnitude " + magnitude);
+        yield return new WaitForSeconds(time);
+        lock (_lock) speedModifier -= magnitude;
+        Debug.Log(gameObject.name + " speed proc finished");
+    }
+
+    public float SpeedModifier => Mathf.Max(0f, speedModifier);
 }

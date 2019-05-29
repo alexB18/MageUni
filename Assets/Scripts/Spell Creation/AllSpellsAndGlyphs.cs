@@ -19,6 +19,8 @@ public static class AllSpellsAndGlyphs
     public static readonly SpellEffect spellEffectLightning = new SpellEffectLightning();
     public static readonly SpellEffect spellEffectFreeze = new SpellEffectFreeze();
     public static readonly SpellEffect spellEffectEnrage = new SpellEffectEnrage();
+    public static readonly SpellEffect spellEffectHaste = new SpellEffectHaste();
+    public static readonly SpellEffect spellEffectSlow = new SpellEffectSlow();
     public static readonly SpellModifier spellModifierSpeedIncrease = new SpellModifierSpeedIncrease();
 
     public static readonly Glyph boltGlyph = new Glyph(
@@ -105,6 +107,24 @@ public static class AllSpellsAndGlyphs
             new Glyph.Connection(0f/128f, 52f/128f),
             new Glyph.Connection(128f/128f, 52f/128f),
             new Glyph.Connection(64f/128f, 128f/128f)
+        },
+        null
+        );
+    public static readonly Glyph hasteGlyph = new Glyph(
+        spellEffectHaste,
+        "EffectHaste",
+        new List<Glyph.Connection>
+        {
+            new Glyph.Connection(64f/128f, 0f/128f)
+        },
+        null
+        );
+    public static readonly Glyph slowGlyph = new Glyph(
+        spellEffectSlow,
+        "EffectSlow",
+        new List<Glyph.Connection>
+        {
+            new Glyph.Connection(64f/128f, 84f/128f)
         },
         null
         );

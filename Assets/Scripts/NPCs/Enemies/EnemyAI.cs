@@ -25,7 +25,7 @@ public abstract class EnemyAI : MonoBehaviour
 
     // Wander Variables
     private const float maxWanderTime = 5f;
-    private const float wanderSpeedMultiplier = 0.4f;
+    private const float wanderSpeedMultiplier = 0.5f;
     private const float swivelAngleMax = 90f;
     private Coroutine wanderTimer;
     private Quaternion newRotation;
@@ -46,7 +46,7 @@ public abstract class EnemyAI : MonoBehaviour
     // How fast this AI boy rotates and translates
     private const float minRotationSpeed = 180;
     private const float maxRotationSpeed = 250;
-    public const float linearSpeed = 3.5f;
+    public const float linearSpeed = 3f;
 
     // Angle after which we start to move
     private const float moveAngle = 10f;
@@ -186,7 +186,7 @@ public abstract class EnemyAI : MonoBehaviour
                         }
 
                         Vector3 moveVector = transform.forward;
-                        moveVector *= linearSpeed * wanderSpeedMultiplier;
+                        moveVector *= linearSpeed * wanderSpeedMultiplier * stats.SpeedModifier;
                         moveVector.y = rb.velocity.y;
                         rb.velocity = moveVector;
                     }
@@ -253,7 +253,7 @@ public abstract class EnemyAI : MonoBehaviour
                         //Vector3 moveVector = new Vector3(Mathf.Cos(moveAngle), 0f, Mathf.Sin(moveAngle));
 
                         Vector3 moveVector = transform.forward;
-                        moveVector *= linearSpeed;
+                        moveVector *= linearSpeed * stats.SpeedModifier;
                         moveVector.y = rb.velocity.y;
                         rb.velocity = moveVector;
                     }
