@@ -12,7 +12,7 @@ public class RatAI : EnemyAI
     {
         base.OnCollisionEnter(collision);
 
-        if (canAttack && collision.gameObject.CompareTag("Player"))
+        if (canAttack && collision.gameObject == target)
         {
             // Check if we hit with the head collider
             foreach (var c in collision.contacts)

@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class EnemyAI : MonoBehaviour
 {
     protected StatScript stats;
+    protected Rigidbody rb;
 
     private enum StateEnum
     {
@@ -40,7 +41,7 @@ public abstract class EnemyAI : MonoBehaviour
     public const float targetBehindDistanceThreshold = 3f;
     private const float tdThresholdSq = targetDistanceThreshold * targetDistanceThreshold;
     private const float tdBehindThresholdSq = targetBehindDistanceThreshold * targetBehindDistanceThreshold;
-    private const float attackDistanceSquare = 3f;
+    protected float attackDistanceSquare = 3f;
 
     // How fast this AI boy rotates and translates
     private const float minRotationSpeed = 180;
@@ -51,14 +52,16 @@ public abstract class EnemyAI : MonoBehaviour
     private const float moveAngle = 10f;
     private const float moveAngleDeviation = 7f;
     
+    // Attack variables
     protected float damage = 10f;
     protected bool canAttack = true;
     protected float attackCooldown = 1.25f;
 
     // Sound variables
 
+    // Target variables
     protected GameObject target;
-    protected Rigidbody rb;
+    protected StatScript targetStatScript;
 
     protected void OnDeath(Object[] obj)
     {
@@ -74,6 +77,17 @@ public abstract class EnemyAI : MonoBehaviour
         state = StateEnum.Idle;
     }
 
+    protected void OnTargetDeath(Object[] obj)
+    {
+        StatScript enemyStatScript = obj[0] as StatScript;
+        ResetTarget();
+    }
+
+    protected void OnEnrage(Object[] obj)
+    {
+        ResetTarget();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,26 +95,31 @@ public abstract class EnemyAI : MonoBehaviour
         stats = GetComponent<StatScript>();
         stats.SubscribeToOnDeath(OnDeath);
         stats.SubscribeToOnResurrect(OnResurrect);
-        target = GameObject.FindGameObjectWithTag("Player");
+        stats.SubscribeToOnEnrage(OnEnrage);
         state = StateEnum.Idle;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (stats.AIEnabled && target != null)
+        if (stats.AIEnabled)
         {
             Vector3 ratPos = transform.position;
-            Vector3 targetPos = target.transform.position;
-            Vector3 dd = targetPos - ratPos;
-            float squareDistanceFromTarget = Vector3.SqrMagnitude(dd);
-            float angleBetweenTarget = Vector3.Angle(transform.forward, target.transform.position - transform.position);
+            Vector3 targetPos, dd;
+            float squareDistanceFromTarget = 0f, angleBetweenTarget = 0f;
+            if (target != null)
+            {
+                targetPos = target.transform.position;
+                dd = targetPos - ratPos;
+                squareDistanceFromTarget = Vector3.SqrMagnitude(dd);
+                angleBetweenTarget = Vector3.Angle(transform.forward, target.transform.position - transform.position);
+            }
 
             switch (state)
             {
                 case StateEnum.Idle:
-                    // See if we detect the player. If so, make a noise and switch to DetectTarget
-                    if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                    // See if we have a target. If so, make a noise and switch to DetectTarget
+                    if (target != null)
                         state = StateEnum.DetectTarget;
                     // Try and switch to wander
                     if (Random.Range(0f, 1f) < wanderChance)
@@ -116,8 +135,8 @@ public abstract class EnemyAI : MonoBehaviour
                     break;
 
                 case StateEnum.IdleContinue:
-                    // See if we detect the player. If so, make a noise and switch to DetectTarget
-                    if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                    // See if have a target. If we do make a noise and, switch to DetectTarget
+                    if (target != null)
                     {
                         StopCoroutine(idleTimer);
                         state = StateEnum.DetectTarget;
@@ -126,8 +145,8 @@ public abstract class EnemyAI : MonoBehaviour
 
                 case StateEnum.Wander:
                     {
-                        // See if we detect the player. If so, make a noise and switch to DetectTarget
-                        if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                        // See if we have a target. If so, make a noise and switch to DetectTarget
+                        if (target != null)
                             state = StateEnum.DetectTarget;
 
                         newAngle = Random.Range(-swivelAngleMax, swivelAngleMax);
@@ -139,8 +158,8 @@ public abstract class EnemyAI : MonoBehaviour
 
                 case StateEnum.WanderRotate:
                     {
-                        // See if we detect the player. If so, make a noise and switch to DetectTarget
-                        if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                        // See if we have a target. If so, make a noise and switch to DetectTarget
+                        if (target != null)
                             state = StateEnum.DetectTarget;
 
                         float t = Mathf.Abs(minRotationSpeed * Time.deltaTime / newAngle);
@@ -159,8 +178,8 @@ public abstract class EnemyAI : MonoBehaviour
 
                 case StateEnum.WanderContinue:
                     {
-                        // See if we detect the player. If so, make a noise and switch to DetectTarget
-                        if (DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                        // See if we have a target. If so, make a noise and switch to DetectTarget
+                        if (target != null)
                         {
                             StopCoroutine(wanderTimer);
                             state = StateEnum.DetectTarget;
@@ -177,7 +196,7 @@ public abstract class EnemyAI : MonoBehaviour
                     // Check if we can still detect the target
                     // Check if target is in acceptable sight and switch to MoveTowardTarget
                     // Else rotate toward target
-                    if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                    if (target == null)
                         state = StateEnum.Idle;
                     else if (FacingTarget(angleBetweenTarget))
                         state = StateEnum.MoveTowardTarget;
@@ -191,7 +210,7 @@ public abstract class EnemyAI : MonoBehaviour
                     // Check if we can still detect the target
                     // Check if target is in acceptable sight and switch to MoveTowardTarget
                     // Else rotate toward target
-                    if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                    if (target == null)
                         state = StateEnum.Idle;
                     else if (FacingTarget(angleBetweenTarget))
                         state = StateEnum.MoveTowardTarget;
@@ -218,7 +237,7 @@ public abstract class EnemyAI : MonoBehaviour
                     // Check if we can still detect the target
                     // Check if we are still facing the target
                     // Move toward the target. If within attacking range and can bite, switch to attack
-                    if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                    if (target == null)
                         state = StateEnum.Idle;
                     else if (!FacingTarget(angleBetweenTarget))
                         state = StateEnum.DetectTarget;
@@ -245,7 +264,7 @@ public abstract class EnemyAI : MonoBehaviour
                     // Check if we are still facing the target
                     // Check if we are still within attack range
                     // Attack. Make a noise. Switch to Airborne
-                    if (!DetectTarget(squareDistanceFromTarget, angleBetweenTarget))
+                    if (target == null)
                         state = StateEnum.Idle;
                     else if (!FacingTarget(angleBetweenTarget))
                         state = StateEnum.DetectTarget;
@@ -298,9 +317,27 @@ public abstract class EnemyAI : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (target == null)
+            PickTarget(other.gameObject);
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (target == null)
+            PickTarget(other.gameObject);
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == target)
+            ResetTarget();
+    }
+
     protected virtual bool DetectTarget(float squareDistance, float angle)
     {
-        return ((squareDistance <= tdThresholdSq && angle < 60) || (squareDistance <= tdBehindThresholdSq));
+        return false; //((squareDistance <= tdThresholdSq && angle < 60) || (squareDistance <= tdBehindThresholdSq));
     }
 
     protected virtual bool FacingTarget(float angle)
@@ -334,4 +371,28 @@ public abstract class EnemyAI : MonoBehaviour
     }
 
     protected abstract void Attack(GameObject t);
+
+    private void PickTarget(GameObject go)
+    {
+        go = go.transform.root.gameObject;
+        bool pickTarget = false;
+
+        if (stats.IsEnraged)
+            pickTarget = pickTarget || go.CompareTag("BadGuy");
+        pickTarget = pickTarget || go.CompareTag("GoodGuy") || go.CompareTag("Player");
+        pickTarget = pickTarget && !go.GetComponent<StatScript>().IsDead; // Will short circuit if there is no stats script because I'm cool
+
+        if (pickTarget)
+        {
+            target = go;
+            targetStatScript = target.GetComponent<StatScript>();
+            targetStatScript.SubscribeToOnDeath(OnTargetDeath);
+        }
+    }
+
+    private void ResetTarget()
+    {
+        targetStatScript?.UnsubscribeFromOnDeath(OnTargetDeath);
+        target = null;
+    }
 }

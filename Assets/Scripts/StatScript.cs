@@ -73,6 +73,12 @@ public class StatScript : MonoBehaviour
     public float freezeDamageMultiplier = 1f;
     private Color freezeTint = new Color(0.46f, 0.81f, 0.99f);
 
+    /*---- ENRAGE VARIABLES ----*/
+    public float enrageResistance = 0f;
+    private float enrageTime = 0f;
+    private const float enrageTimeStep = 5f;
+    private List<Subscriber> OnEnrageSubscribers = new List<Subscriber>();
+
     /*---- RESISTANCE VARIABLES ----*/
     // Resistance stat: damage = max(0, (damage - Resistance / 5.) * (100. - Resistance) / (200.)
     // Lock before editing
@@ -117,13 +123,16 @@ public class StatScript : MonoBehaviour
                 RemoveFreezeProc();
             }
 
-            currentHealth -= damage;
-            OnHealthChange();
-            if (currentHealth <= 0)
+            lock (_lock)
             {
-                currentHealth = 0;
-                OnDeath();
+                currentHealth -= damage;
+                if (currentHealth <= 0)
+                {
+                    currentHealth = 0;
+                    OnDeath();
+                }
             }
+            OnHealthChange();
             Debug.Log(string.Format("Health at {0}", currentHealth));
         }
     }
@@ -302,4 +311,51 @@ public class StatScript : MonoBehaviour
     }
 
     public bool IsFrozen => isFrozen;
+
+    /*---- ENRAGE METHODS ----*/
+    public void AddEnrageProc(float time)
+    {
+        // Roll resist
+        float procRoll = Random.value;
+        if (procRoll > enrageResistance)
+        {
+            // I would like to rage
+            lock(_lock) enrageTime += time;
+            StartCoroutine(EnrageProcTimer(time));
+        }
+    }
+
+    public void SubscribeToOnEnrage(Subscriber sub)
+    {
+        OnEnrageSubscribers.Add(sub);
+    }
+
+    public void UnsubscribeToOnEnrage(Subscriber sub)
+    {
+        OnEnrageSubscribers.Remove(sub);
+    }
+
+    private void OnEnrage()
+    {
+        foreach (var sub in OnEnrageSubscribers)
+            sub(this);
+    }
+
+    private IEnumerator EnrageProcTimer(float time)
+    {
+        Debug.Log(gameObject.name + " enraged for " + time + " seconds");
+        float timeAcc = time;
+        do
+        {
+            OnEnrage();
+            yield return new WaitForSeconds(enrageTimeStep);
+            timeAcc -= enrageTimeStep;
+        } while (timeAcc > 0);
+        lock (_lock) enrageTime -= time;
+        // Reset the target selection again
+        OnEnrage();
+        Debug.Log(gameObject.name + " enrage proc ended");
+    }
+
+    public bool IsEnraged => enrageTime > 0;
 }

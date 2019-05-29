@@ -97,6 +97,7 @@ public class SpellCreationMenu : MonoBehaviour
         CreateGlyphListElement(AllSpellsAndGlyphs.stunGlyph);
         CreateGlyphListElement(AllSpellsAndGlyphs.lightningGlyph);
         CreateGlyphListElement(AllSpellsAndGlyphs.freezeGlyph);
+        CreateGlyphListElement(AllSpellsAndGlyphs.enrageGlyph);
         CreateGlyphListElement(AllSpellsAndGlyphs.speedIncreaseGlyph);
         //*/
         // Instantiate
