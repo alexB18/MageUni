@@ -99,7 +99,6 @@ public class PlayerController : MonoBehaviour
     {
         numKeys = 0;
         followCamera = Camera.main.gameObject;
-        followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
         statScript = gameObject.GetComponent<StatScript>() as StatScript;
         statScript.SubscribeToOnDeath(OnDeath);
     }
