@@ -119,6 +119,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        // If we're alive and 
+        if (isAlive && !IsPaused())
+        {
+            // TODO move this to a coroutine
+            float h = Input.GetAxis("Horizontal");
+            float v = Input.GetAxis("Vertical");
+
+            CameraUpdate();
+            SimpleMove(h, v);
+            MouseTurn();
+            Animating(h, v);
+        }
+    }
+
     private void Update()
     {
         // If we're alive and 
@@ -134,14 +150,7 @@ public class PlayerController : MonoBehaviour
             if (healthBar != null)
                 healthBar.value = healthScript.currentHealth / healthScript.maximumHealth;
             //*/
-            // TODO move this to a coroutine
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
             
-            CameraUpdate();
-            SimpleMove(h, v);
-            MouseTurn();
-            Animating(h, v);
 
             // Get spell keydowns to switch our spell
             for (int i = 0; i < SpellSlotsAvailable; ++i)
@@ -155,6 +164,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsPaused() => Time.timeScale == 0;
 
+    /*
     // Deprecated
     private void Move(float h, float v)
     {
@@ -191,6 +201,7 @@ public class PlayerController : MonoBehaviour
             transform.position += currentDirection * moveSpeed * Time.deltaTime;
         }
     }
+    */
 
     private void SimpleMove(float h, float v)
     {
