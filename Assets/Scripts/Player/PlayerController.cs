@@ -14,12 +14,7 @@ public class PlayerController : MonoBehaviour
     private float currentPlayerSpeed;
     private Animator anim;
     private Rigidbody playerRb;
-
-    // Track player's current vertical/horizontal movement
-    private float currentVertical = 0f;
-    private float currentHorizontal = 0f;
-
-    private static readonly float interpConst = 10;
+    
     private static readonly float walkScale = 0.33f;
 
 
@@ -99,6 +94,7 @@ public class PlayerController : MonoBehaviour
     {
         numKeys = 0;
         followCamera = Camera.main.gameObject;
+        followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
         statScript = gameObject.GetComponent<StatScript>() as StatScript;
         statScript.SubscribeToOnDeath(OnDeath);
     }

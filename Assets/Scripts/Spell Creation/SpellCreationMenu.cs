@@ -83,12 +83,6 @@ public class SpellCreationMenu : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
         Debug.Log("Spell Creation Menu is enabled: loading glyphs");
 
-        // Generate a list of spell slots for the spellSlotSelector
-        PlayerController pc = player.GetComponent<PlayerController>();
-        spellSlotSelector.options.Clear();
-        for (int i = 0; i < pc.SpellSlotsAvailable; ++i)
-            spellSlotSelector.options.Add(new Dropdown.OptionData("Slot " + i + ": " + ((pc.Spells[i] != null) ? pc.Spells[i].name : "Empty")));
-
         //*
         CreateGlyphListElement(AllSpellsAndGlyphs.boltGlyph);
         //CreateGlyphListElement(AllSpellsAndGlyphs.ballGlyph);
@@ -110,6 +104,17 @@ public class SpellCreationMenu : MonoBehaviour
         foreach(Glyph g in playerSpellInventory.KnownGlyphs)
             CreateGlyphListElement(g);
         //*/
+    }
+
+    public void UpdateSpellSlots()
+    {
+        spellNameField.text = "";
+        PlayerController pc = player.GetComponent<PlayerController>();
+        spellSlotSelector.ClearOptions();
+        for (int i = 0; i < pc.SpellSlotsAvailable; ++i)
+            spellSlotSelector.options.Add(new Dropdown.OptionData("Slot " + (i + 1) + ": " + ((pc.Spells[i] != null) ? pc.Spells[i].name : "Empty")));
+        spellSlotSelector.value = 1; // Force dirty
+        spellSlotSelector.value = 0;
     }
 
     private void CreateGlyphListElement(Glyph glyph)

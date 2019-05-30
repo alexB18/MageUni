@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class RestrictDetectBlockInteraction : MonoBehaviour
 {
+    Collider coll;
+    private void Start()
+    {
+        coll = GetComponent<Collider>();
+    }
     private void OnCollisionEnter(Collision other)
     {
         // Don't allow any one to interact with block except other block
         if (!(other.gameObject.tag == "MovingBlock_Detect"))
         {
-            Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
+            Physics.IgnoreCollision(other.gameObject.GetComponentInChildren<Collider>(), coll);
         }
     }
 }
