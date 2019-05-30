@@ -7,6 +7,7 @@ public class SpellScript : MonoBehaviour
     public float effectMagnitudeScale = 1.0f;
     public float spellTime = 10f;
     public ParticleSystem.MainModule mm;
+    public GameObject parent;
 
     public class Spell
     {

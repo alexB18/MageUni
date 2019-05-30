@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*
+        //*
         if(other.CompareTag("Interactable"))
         {
             // Deactivate Object being interacted with
@@ -118,32 +118,37 @@ public class PlayerController : MonoBehaviour
             other.gameObject.GetComponent<Interactable>().Interact(gameObject);
             
         }
-        */
+        //*/
 
+        /*
         if (other.CompareTag("Pickup_Key"))
         {
             // Deactivate key being picked up
             other.gameObject.SetActive(false);
             numKeys = numKeys + 1;
         }
+        //*/
         
+        /*
         if (other.CompareTag("DoorCollider"))
         {
             // Check if door is already locked
             if (other.gameObject.GetComponent<DoorScript>().isLocked)
             {
                 // Check if player has any keys
-                if(numKeys > 0)
+                if (numKeys > 0)
                 {
                     numKeys = numKeys - 1;
                     other.transform.parent.gameObject.SetActive(false);
                 }
-                
-            } else
+
+            }
+            else
             {
                 other.transform.parent.gameObject.SetActive(false);
             }
         }
+        //*/
 
     }
 
@@ -329,6 +334,7 @@ public class PlayerController : MonoBehaviour
                 // Add the spell effects
                 SpellScript spellScript = spellObject.GetComponent<SpellScript>();
                 spellScript.spell = spells[activeSpellSlot];
+                spellScript.parent = gameObject;
             }
         }
         yield break;

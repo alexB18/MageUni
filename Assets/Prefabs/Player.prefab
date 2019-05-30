@@ -1101,6 +1101,7 @@ MonoBehaviour:
   freezeResistance: 0
   freezeDamageMultiplier: 1
   enrageResistance: 0
+  slowResistance: 0
   punctureResistance: 0
   slashResistance: 0
   bludgeonResistance: 0
