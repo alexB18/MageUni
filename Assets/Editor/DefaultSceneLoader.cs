@@ -1,6 +1,7 @@
 ﻿#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 [InitializeOnLoadAttribute]
 public static class DefaultSceneLoader
@@ -19,7 +20,8 @@ public static class DefaultSceneLoader
 
         if (state == PlayModeStateChange.EnteredPlayMode)
         {
-            EditorSceneManager.LoadScene("Assets/Scenes/MasterScene.unity");
+            if(SceneManager.GetActiveScene().name != "MasterScene")
+                EditorSceneManager.LoadScene("Assets/Scenes/MasterScene.unity");
         }
     }
 }

@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
   turnSpeed: 10
-  cameraRotateSpeed: 3
+  cameraRotateSpeed: 45
   followCamera: {fileID: 0}
   followCamera2DDistance: 7.5
   followCameraHeight: 7.5

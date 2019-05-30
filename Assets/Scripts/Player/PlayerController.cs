@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     /* ------------------------  Player variables   ------------------- */
     public float moveSpeed = 3.5f;
     public float turnSpeed = 10;
-    public float cameraRotateSpeed = 3f;
+    public float cameraRotateSpeed = 45f;
     private float maxPlayerSpeed = 3.5f;
     private float currentPlayerSpeed;
     private Animator anim;
@@ -105,7 +105,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //*
         if(other.CompareTag("Interactable"))
         {
             // Deactivate Object being interacted with
@@ -118,38 +117,6 @@ public class PlayerController : MonoBehaviour
             other.gameObject.GetComponent<Interactable>().Interact(gameObject);
             
         }
-        //*/
-
-        /*
-        if (other.CompareTag("Pickup_Key"))
-        {
-            // Deactivate key being picked up
-            other.gameObject.SetActive(false);
-            numKeys = numKeys + 1;
-        }
-        //*/
-        
-        /*
-        if (other.CompareTag("DoorCollider"))
-        {
-            // Check if door is already locked
-            if (other.gameObject.GetComponent<DoorScript>().isLocked)
-            {
-                // Check if player has any keys
-                if (numKeys > 0)
-                {
-                    numKeys = numKeys - 1;
-                    other.transform.parent.gameObject.SetActive(false);
-                }
-
-            }
-            else
-            {
-                other.transform.parent.gameObject.SetActive(false);
-            }
-        }
-        //*/
-
     }
 
     private void Update()
@@ -243,9 +210,16 @@ public class PlayerController : MonoBehaviour
 
     private void CameraRotateKeys()
     {
-        float degree = Input.GetAxis("Camera Horizontal");
-        followCameraRotation.y += degree * cameraRotateSpeed;
-        followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+        if (Input.GetButtonDown("Camera Horizontal Left"))
+        {
+            followCameraRotation.y -= cameraRotateSpeed;
+            followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+        }
+        else if (Input.GetButtonDown("Camera Horizontal Right"))
+        {
+            followCameraRotation.y += cameraRotateSpeed;
+            followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+        }
         
         /*
         if( currentPlayerSpeed == 0)
