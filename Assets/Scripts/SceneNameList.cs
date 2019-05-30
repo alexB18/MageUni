@@ -9,18 +9,14 @@ public static class SceneNameList
         //{"F1_AbandonedHouse_Rat", "AbandonedHouse_Rat"},
         //{"B1_AbandonedHouse_Rat", "AbandonedHouse_Rat"},
         //{"B2_AbandonedHouse_Rat", "AbandonedHouse_Rat"},
-        {"F1_AbandonedHouse_Rat", "F1_AbandonedHouse_Rat"},
-        {"B1_AbandonedHouse_Rat", "B1_AbandonedHouse_Rat"},
-        {"B2_AbandonedHouse_Rat", "B2_AbandonedHouse_Rat"},
+        {"RatHouse", "RatHouse"},
         {"AndrewTest", "AndrewTest"},
         {"Campus_Environment", "Campus_Environment" }
     };
     public static Dictionary<string, string[]> EcosystemNameToSceneName = new Dictionary<string, string[]>()
     {
         //{"AbandonedHouse_Rat", new string[] { "F1_AbandonedHouse_Rat", "B1_AbandonedHouse_Rat", "B2_AbandonedHouse_Rat" } },
-        {"F1_AbandonedHouse_Rat", new string[] { "F1_AbandonedHouse_Rat" } },
-        {"B1_AbandonedHouse_Rat", new string[] { "B1_AbandonedHouse_Rat" } },
-        {"B2_AbandonedHouse_Rat", new string[] { "B2_AbandonedHouse_Rat" } },
+        {"RatHouse", new string[] { "RatHouse" } },
         {"AndrewTest", new string[] { "AndrewTest" } },
         {"Campus_Environment", new string[] { "Campus_Environment" } }
     };
