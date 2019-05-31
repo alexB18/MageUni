@@ -106,3 +106,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedScene: 
   connectedMarker: 
+  isLocked: 0
