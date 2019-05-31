@@ -8,6 +8,7 @@ ModelImporter:
     400000: //RootNode
     400002: object1
     2100000: Rock
+    2100002: object1Mat
     2300000: object1
     3300000: object1
     4300000: object1

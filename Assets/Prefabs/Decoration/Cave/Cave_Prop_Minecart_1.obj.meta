@@ -16,6 +16,10 @@ ModelImporter:
     2100000: Iron_Grey_-_Dark
     2100002: Iron_Grey_-_Light
     2100004: Iron_Grey
+    2100006: object1Mat
+    2100008: object2Mat
+    2100010: object3Mat
+    2100012: object4Mat
     2300000: object1
     2300002: object2
     2300004: object3

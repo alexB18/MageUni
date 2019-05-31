@@ -52,6 +52,10 @@ public class DeanDialogue : NPC
             {
                 "Dean of Students: The game can’t continue unless you say “yes”, actually."
             } },
+            { QuestStage.QuestStages.DemonFinished + "7", new List<string>()
+            {
+                "Dean of Students: Great. We're counting on you!"
+            } },
             { QuestStage.QuestStages.HellStart + "1", new List<string>() },
             { QuestStage.QuestStages.HellBoss + "1", new List<string>() },
             { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
@@ -93,6 +97,63 @@ public class DeanDialogue : NPC
             { QuestStage.QuestStages.HellBoss + "1", new List<string>() },
             { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
             { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
+        };
+        playerResponsesAction = new Dictionary<string, List<Fragment>>
+        {
+            { QuestStage.QuestStages.RatDorm + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.RatLecture + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.RatStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.RatFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.RatGraded + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeDorm + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeLecture + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeGraded + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneDorm + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneLecture + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneQuest + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneRetrieved + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneReturned + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneGraded + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.DemonStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.DemonFinished + "1", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.DemonFinished + "2"; },
+                () => { currentState = QuestStage.QuestStages.DemonFinished + "3"; },
+                () => { currentState = QuestStage.QuestStages.DemonFinished + "4"; }
+            } },
+            { QuestStage.QuestStages.DemonFinished + "2", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.DemonFinished + "5"; }
+            } },
+            { QuestStage.QuestStages.DemonFinished + "3", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.DemonFinished + "5"; }
+            } },
+            { QuestStage.QuestStages.DemonFinished + "4", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.DemonFinished + "1"; }
+            } },
+            { QuestStage.QuestStages.DemonFinished + "5", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.DemonFinished + "7";},
+                () => { currentState = QuestStage.QuestStages.DemonFinished + "6";}
+            } },
+            { QuestStage.QuestStages.DemonFinished + "6", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.DemonFinished + "5"; }
+            } },
+            { QuestStage.QuestStages.DemonFinished + "7", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.HellStart; Exit(); }
+            } },
+            { QuestStage.QuestStages.HellStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.HellBoss + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.HellFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.GameFinished + "1", new List<Fragment>() },
         };
     }
 }

@@ -49,9 +49,12 @@ public static class QuestStage
     };
     private static QuestDetails Index => QDs[QS_Q[QS]];
     public static bool Pacifist => Index.pacifist;
+
+    public static int Score { get => Index.score; set => Index.score = value; }
+
     /**
-     * 0 = D+, 1 = C-, 2 = C, 3 = D+, 4 = B+, 5 = A-, 6 = A, 7 = A+
-     */
+* 0 = D+, 1 = C-, 2 = C, 3 = D+, 4 = B+, 5 = A-, 6 = A, 7 = A+
+*/
     public static int Grade()
     {
         int grade = 7;

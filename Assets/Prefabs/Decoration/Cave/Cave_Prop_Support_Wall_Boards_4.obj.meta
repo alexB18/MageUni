@@ -11,6 +11,8 @@ ModelImporter:
     400004: object2
     2100000: Wood_Light
     2100002: Wood_Dark
+    2100004: object1Mat
+    2100006: object2Mat
     2300000: object1
     2300002: object2
     3300000: object1

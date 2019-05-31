@@ -9,18 +9,6 @@ public class BigBonedBenDialogue : NPC
         base.Start();
         dialogueLines = new Dictionary<string, List<string>>
         {
-            { QuestStage.QuestStages.RatDorm + "1", new List<string>() },
-            { QuestStage.QuestStages.RatLecture + "1", new List<string>() },
-            { QuestStage.QuestStages.RatStart + "1", new List<string>() },
-            { QuestStage.QuestStages.RatFinished + "1", new List<string>() },
-            { QuestStage.QuestStages.RatGraded + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeDorm + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeLecture + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeStart + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeFinished + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeGraded + "1", new List<string>() },
-            { QuestStage.QuestStages.BoneDorm + "1", new List<string>() },
-            { QuestStage.QuestStages.BoneLecture + "1", new List<string>() },
             { QuestStage.QuestStages.BoneStart + "1", new List<string>()
             {
                 "Big-Boned Ben: Ah, someone has sent for help. Can you help me find my bones, young one?"
@@ -59,27 +47,9 @@ public class BigBonedBenDialogue : NPC
                 "<Well, that was...certainly an interesting experience.>"
             } },
             { QuestStage.QuestStages.BoneGraded + "1", new List<string>() },
-            { QuestStage.QuestStages.DemonStart + "1", new List<string>() },
-            { QuestStage.QuestStages.DemonFinished + "1", new List<string>() },
-            { QuestStage.QuestStages.HellStart + "1", new List<string>() },
-            { QuestStage.QuestStages.HellBoss + "1", new List<string>() },
-            { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
-            { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
         };
         playerResponses = new Dictionary<string, List<string>>
         {
-            { QuestStage.QuestStages.RatDorm + "1", new List<string>() },
-            { QuestStage.QuestStages.RatLecture + "1", new List<string>() },
-            { QuestStage.QuestStages.RatStart + "1", new List<string>() },
-            { QuestStage.QuestStages.RatFinished + "1", new List<string>() },
-            { QuestStage.QuestStages.RatGraded + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeDorm + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeLecture + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeStart + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeFinished + "1", new List<string>() },
-            { QuestStage.QuestStages.SlimeGraded + "1", new List<string>() },
-            { QuestStage.QuestStages.BoneDorm + "1", new List<string>() },
-            { QuestStage.QuestStages.BoneLecture + "1", new List<string>() },
             { QuestStage.QuestStages.BoneStart + "1", new List<string>()
             {
                 "Your...bones?",
@@ -90,13 +60,45 @@ public class BigBonedBenDialogue : NPC
             { QuestStage.QuestStages.BoneRetrieved + "1", new List<string>() },
             { QuestStage.QuestStages.BoneReturned + "1", new List<string>() },
             { QuestStage.QuestStages.BoneFinished + "1", new List<string>() },
-            { QuestStage.QuestStages.BoneGraded + "1", new List<string>() },
-            { QuestStage.QuestStages.DemonStart + "1", new List<string>() },
-            { QuestStage.QuestStages.DemonFinished + "1", new List<string>() },
-            { QuestStage.QuestStages.HellStart + "1", new List<string>() },
-            { QuestStage.QuestStages.HellBoss + "1", new List<string>() },
-            { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
-            { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
+        };
+        playerResponsesAction = new Dictionary<string, List<Fragment>>
+        {
+            { QuestStage.QuestStages.BoneStart + "1", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.BoneStart + "2"; },
+                () => { currentState = QuestStage.QuestStages.BoneStart + "3"; },
+                () => { currentState = QuestStage.QuestStages.BoneStart + "4"; }
+            } },
+            { QuestStage.QuestStages.BoneStart + "2", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.BoneStart + "1"; }
+            } },
+            { QuestStage.QuestStages.BoneStart + "3", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.BoneStart + "1"; }
+            } },
+            { QuestStage.QuestStages.BoneStart + "4", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.BoneQuest; Exit(); }
+            } },
+            { QuestStage.QuestStages.BoneQuest + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneRetrieved + "1", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.BoneRetrieved + "2"; }
+            } },
+            { QuestStage.QuestStages.BoneRetrieved + "2", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.BoneReturned; Exit(); }
+            } },
+            { QuestStage.QuestStages.BoneReturned + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneFinished + "1", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.BoneFinished + "2"; }
+            } },
+            { QuestStage.QuestStages.BoneFinished + "2", new List<Fragment>()
+            {
+                () => { Exit(); }
+            } }
         };
     }
 }
