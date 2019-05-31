@@ -27517,27 +27517,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2145059362}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1691231540752491 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3698840495287079259, guid: 2b9fb3fa2a304f04487139efc5999862,
-    type: 3}
-  m_PrefabInstance: {fileID: 3698275528895275312}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1691231540752492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691231540752491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c9d427dcc4953345b66720eabdbc50f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roommate: {fileID: 675249882}
-  roommateHoldingCell: {fileID: 1426536969}
-  roommateNormalPosition: {fileID: 941250412}
 --- !u!4 &4890430563004637 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3693996427351101933, guid: 2b9fb3fa2a304f04487139efc5999862,
@@ -27760,6 +27739,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1691231540752492, guid: 2b9fb3fa2a304f04487139efc5999862, type: 3}
+      propertyPath: roommate
+      value: 
+      objectReference: {fileID: 675249882}
+    - target: {fileID: 1691231540752492, guid: 2b9fb3fa2a304f04487139efc5999862, type: 3}
+      propertyPath: roommateHoldingCell
+      value: 
+      objectReference: {fileID: 1426536969}
+    - target: {fileID: 1691231540752492, guid: 2b9fb3fa2a304f04487139efc5999862, type: 3}
+      propertyPath: roommateNormalPosition
+      value: 
+      objectReference: {fileID: 941250412}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b9fb3fa2a304f04487139efc5999862, type: 3}
 --- !u!1 &3836227864060347033 stripped
