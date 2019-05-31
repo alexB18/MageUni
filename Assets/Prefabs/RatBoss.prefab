@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 2763482687534286212}
   - component: {fileID: 6294841568160721579}
   - component: {fileID: 6294841568160721574}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: RatBoss
   m_TagString: BadGuy
   m_Icon: {fileID: 0}
@@ -141,6 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5510eee4a010c4f8f49120a47e8482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxWanderTime: 5
+  maxIdleTime: 2.5
+  wanderChance: 0.4
+  linearSpeed: 3
 --- !u!114 &2763482687534286212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,8 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275344f2268c9114d9eaa2897b321797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumHealth: 250
-  currentHealth: 250
+  maximumHealth: 100
+  currentHealth: 100
   maximumMana: 0
   currentMana: 0
   stunResistance: 0
@@ -162,6 +166,7 @@ MonoBehaviour:
   freezeResistance: 0
   freezeDamageMultiplier: 1
   enrageResistance: 0
+  slowResistance: 0
   punctureResistance: 0
   slashResistance: 0
   bludgeonResistance: 0

@@ -10,10 +10,10 @@ public class RatBiteScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player") && canBite)
+        EnemyTestRatAI ai = gameObject.GetComponentInParent<EnemyTestRatAI>() as EnemyTestRatAI;
+        if (collision.gameObject == ai.target && canBite)
         {
             canBite = false;
-            EnemyTestRatAI ai = gameObject.GetComponentInParent<EnemyTestRatAI>() as EnemyTestRatAI;
             ai.Bite(collision.gameObject);
         }
     }

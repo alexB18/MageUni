@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3582195917802249301}
   - component: {fileID: 7033498777213751254}
   - component: {fileID: 2669410285166546438}
+  - component: {fileID: 5650866073046277229}
   m_Layer: 31
   m_Name: BasicDemon
   m_TagString: BadGuy
@@ -110,6 +111,19 @@ CapsuleCollider:
   m_Height: 5.8
   m_Direction: 1
   m_Center: {x: 0, y: 2.83, z: 0.38}
+--- !u!114 &5650866073046277229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200218356929556791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c929ceb37957fa947a008fad4f0c455c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1001 &3346911904034056357
 PrefabInstance:
   m_ObjectHideFlags: 0

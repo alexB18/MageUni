@@ -34,7 +34,7 @@ public class EnemyTestRatAI : MonoBehaviour
     private bool canBite = true;
     private float biteCooldown = 2f;
 
-    private GameObject target;
+    public GameObject target;
     private Rigidbody rb;
     private Subscriber deathlistener = delegate(Object[] obj) {
     };

@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 624110726402605511}
   - component: {fileID: 5380860450848941974}
   - component: {fileID: 2586722378707340165}
+  - component: {fileID: 1780586107135219207}
   m_Layer: 31
   m_Name: BasicSlime
   m_TagString: BadGuy
@@ -109,6 +110,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 10
   m_CollisionDetection: 0
+--- !u!114 &1780586107135219207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632092964592923562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c929ceb37957fa947a008fad4f0c455c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1001 &5169576209083505150
 PrefabInstance:
   m_ObjectHideFlags: 0
