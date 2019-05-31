@@ -46,54 +46,8 @@ public class NPCTestScript : NPC
         playerResponses["state3"].Add("Please do.");
     }
 
-    public override string GetNextLine()
-    {
-        string nextLine;
-
-        if (currentPos < (dialogueLines[currentState].Count - 1))
-        {
-            nextLine = dialogueLines[currentState][currentPos];
-            currentPos++;
-        }
-        else
-        {
-            nextLine = dialogueLines[currentState][currentPos];
-            nextButton.interactable = false;
-            ShowResponses();
-        }       
-
-        return nextLine;
-    }
-
-    public override void ResetDialogue()
-    {
-        currentPos = 0;
-        if (currentState != "state3")
-        {
-            currentState = "state1";
-        }
-
-        foreach (Button button in playerChoicesList)
-        {
-            button.interactable = false;
-        }
-        foreach (Text text in buttonTextList)
-        {
-            text.text = "";
-        }
-    }
-
     public override void PlayerDialogueChoice(int playerChoice)
     {
-        foreach (Button button in playerChoicesList)
-        {
-            button.interactable = false;
-        }
-        foreach (Text text in buttonTextList)
-        {
-            text.text = "";
-        }
-
         currentPos = 0;
         switch (currentState)
         {
@@ -119,19 +73,9 @@ public class NPCTestScript : NPC
                 break;
         }
 
-        nextButton.interactable = true;
-        dialogue.text = GetNextLine();
+        DialogueButtons.dialogueButtons.nextButton.interactable = true;
+        DialogueButtons.dialogueButtons.dialogue.text = GetNextLine();
     }
 
-    private void ShowResponses()
-    {
-        int numButtons = 0;
-        foreach (string response in playerResponses[currentState])
-        {
-            buttonTextList[numButtons].text = response;
-            playerChoicesList[numButtons].interactable = true;
-            numButtons++;
-        }
-    }
 
 }

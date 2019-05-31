@@ -603,7 +603,6 @@ GameObject:
   - component: {fileID: 883147148678153993}
   - component: {fileID: 883147148678153992}
   - component: {fileID: 883147148678153995}
-  - component: {fileID: 883147148678153994}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -708,7 +707,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 883147148678153994}
+      - m_Target: {fileID: 6452136429758225052}
         m_MethodName: Next
         m_Mode: 1
         m_Arguments:
@@ -721,19 +720,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &883147148678153994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883147148678153996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407a4d76a162a8343b7bad36cff3affb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 883147149670754893}
 --- !u!1 &883147148717264157
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +812,6 @@ GameObject:
   - component: {fileID: 883147148751983534}
   - component: {fileID: 883147148751983521}
   - component: {fileID: 883147148751983520}
-  - component: {fileID: 883147148751983523}
   m_Layer: 5
   m_Name: PlayerChoice2
   m_TagString: Untagged
@@ -931,32 +916,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 883147148751983523}
-        m_MethodName: PlayerChoice2
-        m_Mode: 1
+      - m_Target: {fileID: 6452136429758225052}
+        m_MethodName: PlayerChoice
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &883147148751983523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883147148751983525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407a4d76a162a8343b7bad36cff3affb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 883147149670754893}
 --- !u!1 &883147148968907164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1099,6 @@ GameObject:
   - component: {fileID: 883147149343778527}
   - component: {fileID: 883147149343778526}
   - component: {fileID: 883147149343778513}
-  - component: {fileID: 883147149343778512}
   m_Layer: 5
   m_Name: Goodbye
   m_TagString: Untagged
@@ -1243,7 +1214,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 883147149343778512}
+      - m_Target: {fileID: 6452136429758225052}
         m_MethodName: Goodbye
         m_Mode: 1
         m_Arguments:
@@ -1256,19 +1227,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &883147149343778512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883147149343778514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407a4d76a162a8343b7bad36cff3affb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 883147149670754893}
 --- !u!1 &883147149403973281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1315,6 @@ GameObject:
   - component: {fileID: 883147149430457264}
   - component: {fileID: 883147149430457267}
   - component: {fileID: 883147149430457266}
-  - component: {fileID: 883147149430457269}
   m_Layer: 5
   m_Name: PlayerChoice3
   m_TagString: Untagged
@@ -1462,32 +1419,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 883147149430457269}
-        m_MethodName: PlayerChoice3
-        m_Mode: 1
+      - m_Target: {fileID: 6452136429758225052}
+        m_MethodName: PlayerChoice
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &883147149430457269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883147149430457268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407a4d76a162a8343b7bad36cff3affb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 883147149670754893}
 --- !u!1 &883147149438967322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,7 +2740,6 @@ GameObject:
   - component: {fileID: 883147150450669362}
   - component: {fileID: 883147150450669365}
   - component: {fileID: 883147150450669364}
-  - component: {fileID: 883147150450669367}
   m_Layer: 5
   m_Name: PlayerChoice1
   m_TagString: Untagged
@@ -2901,9 +2844,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 883147150450669367}
-        m_MethodName: PlayerChoice1
-        m_Mode: 1
+      - m_Target: {fileID: 6452136429758225052}
+        m_MethodName: PlayerChoice
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2914,19 +2857,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &883147150450669367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883147150450669321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407a4d76a162a8343b7bad36cff3affb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 883147149670754893}
 --- !u!1 &883147150488892413
 GameObject:
   m_ObjectHideFlags: 0
@@ -6542,6 +6472,7 @@ GameObject:
   - component: {fileID: 2160426073940656447}
   - component: {fileID: 2160426073940656440}
   - component: {fileID: 8934759707831776620}
+  - component: {fileID: 6452136429758225052}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6636,6 +6567,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHolder: {fileID: 6936990017524253350}
+--- !u!114 &6452136429758225052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160426073940656419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a4d76a162a8343b7bad36cff3affb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textWindow: {fileID: 883147148717264157}
+  dialogue: {fileID: 883147149670754893}
+  playerChoices:
+  - {fileID: 883147150450669364}
+  - {fileID: 883147148751983520}
+  - {fileID: 883147149430457266}
+  playerChoiceTexts:
+  - {fileID: 883147150006178884}
+  - {fileID: 883147149719251260}
+  - {fileID: 883147149483777733}
+  goodbyeButton: {fileID: 883147149343778513}
+  nextButton: {fileID: 883147148678153995}
 --- !u!1 &2160426073993148123
 GameObject:
   m_ObjectHideFlags: 0

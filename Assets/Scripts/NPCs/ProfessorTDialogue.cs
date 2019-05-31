@@ -16,11 +16,13 @@ public class ProfessorTDialogue : NPC
             } },
             { QuestStage.QuestStages.RatLecture + "2", new List<string>()
             {
-                "Professor T: Shape glyphs dictate the shape of the spell, as you might imagine. They are the “base” of the spell. The shape glyph contains the other glyphs of the spell; if you try to cast a spell with only a shape glyph, nothing will happen. Some examples of shape glyphs include “bolt”, “ball”, and “spray”, though there are several more which you will learn in other classes."
+                "Professor T: Shape glyphs dictate the shape of the spell, as you might imagine. They are the “base” of the spell. The shape glyph contains the other glyphs of the spell; if you try to cast a spell with only a shape glyph, nothing will happen.",
+                "Some examples of shape glyphs include “bolt”, “ball”, and “spray”, though there are several more which you will learn in other classes."
             } },
             { QuestStage.QuestStages.RatLecture + "3", new List<string>()
             {
-                "Professor T: Effect glyphs determine what effect the spell has when the spell triggers. For many spell shapes, such as bolt, this is when it hits something. Two common effects for spells are fire and healing. Healing will, as you might expect, heal injuries either on the target hit by the spell, or on all targets in the area covered by the spell, depending on the other glyphs. Fire does some damage initially, and has a chance of setting the target alight for a short time, causing additional harm."
+                "Professor T: Effect glyphs determine what effect the spell has when the spell triggers. For many spell shapes, such as bolt, this is when it hits something. Two common effects for spells are fire and healing.",
+                "Healing will, as you might expect, heal injuries either on the target hit by the spell, or on all targets in the area covered by the spell, depending on the other glyphs. Fire does some damage initially, and has a chance of setting the target alight for a short time, causing additional harm."
             } },
             { QuestStage.QuestStages.RatLecture + "4", new List<string>()
             {
@@ -28,7 +30,8 @@ public class ProfessorTDialogue : NPC
             } },
             { QuestStage.QuestStages.RatLecture + "5", new List<string>()
             {
-                "Professor T: Now, to actually create a spell, you must first open up your spell creation menu. From there, you can create a spell by adding first a shape, such as “bolt”, and an effect, such as “fire”. From there, you can add to the spell with modifiers, and in a future class, you will learn that you can add even more interesting effects to your spells."
+                "Professor T: Now, to actually create a spell, you must first open up your spell creation menu. From there, you can create a spell by adding first a shape, such as “bolt”, and an effect, such as “fire”.",
+                "From there, you can add to the spell with modifiers, and in a future class, you will learn that you can add even more interesting effects to your spells."
             } },
             { QuestStage.QuestStages.RatLecture + "6", new List<string>()
             {
@@ -36,7 +39,9 @@ public class ProfessorTDialogue : NPC
             } },
             { QuestStage.QuestStages.RatLecture + "7", new List<string>()
             {
-                "Professor T: Well, well. In that case, this lecture is over. Rats seem like a great target for you to test your spell creation abilities on. You can also head to the practice hall to test out spell creation. <Player Name>, why don’t you go take care of our rats?"
+                "Professor T: Well, well. In that case, this lecture is over. Rats seem like a great target for you to test your spell creation abilities on.",
+                "You can also head to the practice hall to test out spell creation.",
+                "You, why don’t you go take care of our rats?"
             } },
             { QuestStage.QuestStages.RatLecture + "8", new List<string>()
             {
@@ -85,11 +90,11 @@ public class ProfessorTDialogue : NPC
             } },
             { QuestStage.QuestStages.RatFinished + "9", new List<string>()
             {
-                "A huge rat? Rats are not normally organised. Strange. Well, if you got rid of the alpha rat, I imagine there won’t be many rats left in that old dungeon."
+                "Ah, you encountered a brute. These types of enemies cannot be harmed unless you use the stun spell. I believe I have the stun spell tome around here somewhere…"
             } },
             { QuestStage.QuestStages.RatFinished + "10", new List<string>()
             {
-                "Ah, you encountered a brute. These types of enemies cannot be harmed unless you use the stun spell. I believe I have the stun spell tome around here somewhere…"
+                "All right. Good luck with your classes!"
             } },
             { QuestStage.QuestStages.RatGraded + "1", new List<string>() },
             { QuestStage.QuestStages.SlimeDorm + "1", new List<string>() },
@@ -132,14 +137,14 @@ public class ProfessorTDialogue : NPC
             { QuestStage.QuestStages.RatStart + "1", new List<string>() },
             { QuestStage.QuestStages.RatFinished + "5", new List<string>()
             {
-                "Can I make up this assignment?",
+                "Make up?",
                 "All right…"
             } },
             { QuestStage.QuestStages.RatFinished + "7", new List<string>()
             {
-                "Why were there rats in the dungeon?",
-                "There was this huge rat ",
-                "Immune rat"
+                "Why were there rats?",
+                "Immune rat",
+                "That's all"
             } },
             { QuestStage.QuestStages.RatGraded + "1", new List<string>() },
             { QuestStage.QuestStages.SlimeDorm + "1", new List<string>() },
@@ -162,19 +167,123 @@ public class ProfessorTDialogue : NPC
             { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
             { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
         };
-    }
-    public override string GetNextLine()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void PlayerDialogueChoice(int playerChoice)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void ResetDialogue()
-    {
-        throw new System.NotImplementedException();
+        playerResponsesAction = new Dictionary<string, List<Fragment>>
+        {
+            { QuestStage.QuestStages.RatDorm + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.RatLecture + "1", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatLecture + "2";  }
+            } },
+            { QuestStage.QuestStages.RatLecture + "2", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatLecture + "3";  }
+            } },
+            { QuestStage.QuestStages.RatLecture + "3", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatLecture + "4";  }
+            } },
+            { QuestStage.QuestStages.RatLecture + "4", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatLecture + "5";  }
+            } },
+            { QuestStage.QuestStages.RatLecture + "5", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatLecture + "6";  }
+            } },
+            { QuestStage.QuestStages.RatLecture + "6", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatLecture + "7";  }
+            } },
+            { QuestStage.QuestStages.RatLecture + "7", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatLecture + "8";  },
+                () => { currentState = QuestStage.QuestStages.RatLecture + "10";  },
+            } },
+            { QuestStage.QuestStages.RatLecture + "8", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatLecture + "9";  },
+                () => { currentState = QuestStage.QuestStages.RatLecture + "10";  },
+            } },
+            { QuestStage.QuestStages.RatLecture + "9", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatLecture + "10";  }
+            } },
+            { QuestStage.QuestStages.RatLecture + "10", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.RatStart;
+                        Exit(); }
+            } },
+            { QuestStage.QuestStages.RatStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.RatFinished + "1", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatFinished.ToString();
+                        if(QuestStage.Pacifist) currentState += "2";
+                        else if(QuestStage.Grade() > 5) currentState += "3";
+                        else if(QuestStage.Grade() > 1) currentState += "3";
+                        else  currentState += "4";
+                        }
+            } },
+            { QuestStage.QuestStages.RatFinished + "2", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatFinished + "7";  }
+            } },
+            { QuestStage.QuestStages.RatFinished + "3", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatFinished + "7";  }
+            } },
+            { QuestStage.QuestStages.RatFinished + "4", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatFinished + "7";  }
+            } },
+            { QuestStage.QuestStages.RatFinished + "5", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatFinished + "6";  },
+                () => { currentState = QuestStage.QuestStages.RatFinished + "7";  }
+            } },
+            { QuestStage.QuestStages.RatFinished + "6", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.RatStart;
+                        Exit(); }
+            } },
+            { QuestStage.QuestStages.RatFinished + "7", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatFinished + "8";  },
+                () => { currentState = QuestStage.QuestStages.RatFinished + "9";  },
+                () => { currentState = QuestStage.QuestStages.RatFinished + "10";  }
+            } },
+            { QuestStage.QuestStages.RatFinished + "8", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatFinished + "7";  }
+            } },
+            { QuestStage.QuestStages.RatFinished + "9", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatFinished + "10";  }
+            } },
+            { QuestStage.QuestStages.RatFinished + "10", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.RatGraded;
+                        Exit(); }
+            } },
+            { QuestStage.QuestStages.RatGraded + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeDorm + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeLecture + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeGraded + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneDorm + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneLecture + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneQuest + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneRetrieved + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneReturned + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneGraded + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.DemonStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.DemonFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.HellStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.HellBoss + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.HellFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.GameFinished + "1", new List<Fragment>() },
+        };
     }
 }

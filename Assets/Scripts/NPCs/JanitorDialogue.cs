@@ -62,18 +62,4 @@ public class JanitorDialogue : NPC
             { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
         };
     }
-    public override string GetNextLine()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void PlayerDialogueChoice(int playerChoice)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void ResetDialogue()
-    {
-        throw new System.NotImplementedException();
-    }
 }

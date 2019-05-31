@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 1247960020787710417}
   - component: {fileID: 6941099070400866034}
   - component: {fileID: 1247960020787710429}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: GiantRat
   m_TagString: BadGuy
   m_Icon: {fileID: 0}
@@ -174,12 +174,13 @@ MonoBehaviour:
   freezeResistance: 0
   freezeDamageMultiplier: 1
   enrageResistance: 0
-  punctureResistance: 0
-  slashResistance: 0
-  bludgeonResistance: 0
-  fireResistance: 0
-  electricResistance: 0
-  divineResistance: 0
+  slowResistance: 0
+  punctureResistance: 100
+  slashResistance: 100
+  bludgeonResistance: 100
+  fireResistance: 100
+  electricResistance: 100
+  divineResistance: 100
 --- !u!54 &1247960020787710429
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ GameObject:
   - component: {fileID: 174250029540366693}
   m_Layer: 31
   m_Name: rat
-  m_TagString: Untagged
+  m_TagString: BadGuy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
