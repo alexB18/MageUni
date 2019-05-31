@@ -10,6 +10,8 @@ ModelImporter:
     400002: object1
     400004: object2
     2100000: Iron_Grey
+    2100002: object1Mat
+    2100004: object2Mat
     2300000: object1
     2300002: object2
     3300000: object1
