@@ -26,16 +26,16 @@ TagManager:
   - 
   - Floor
   - PostProcessing
-  - CarpetLivingRoom
-  - EastHallWay
-  - EastKeyRoom
-  - WestKeyRoom
-  - CentralHallway
-  - PedestalRoom
-  - BedRoom
-  - BlockPatternRoom
-  - CarpetPitFallRoom
-  - EastHallWay_Secret
+  - LargeRoom1
+  - LargeRoom2
+  - SmallRoom1
+  - SmallRoom2
+  - Hallway1
+  - Hallway2
+  - MiscRoom1
+  - MiscRoom2
+  - 
+  - 
   - 
   - 
   - 
