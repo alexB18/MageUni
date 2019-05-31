@@ -52,7 +52,7 @@ public abstract class NPC : Interactable
 
     public override void Interact(GameObject player)
     {
-        //OpenMenu.openMenu.Pause();
+        OpenMenu.openMenu.Pause(false);
         DialogueButtons.speaker = this;
         DialogueButtons.dialogueButtons.textWindow.SetActive(true);
         DialogueButtons.dialogueButtons.goodbyeButton.interactable = false;

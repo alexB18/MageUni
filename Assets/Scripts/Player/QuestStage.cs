@@ -48,9 +48,31 @@ public static class QuestStage
         {Quests.Hell,   new QuestDetails() { pacifist = true, score = 0, frozenEnemies = 0 } },
     };
     private static QuestDetails Index => QDs[QS_Q[QS]];
-    public static bool Pacifist => Index.pacifist;
-
+    public static bool Pacifist { get => Index.pacifist; set => Index.pacifist = value; }
     public static int Score { get => Index.score; set => Index.score = value; }
+    public static void Reset()
+    {
+        QS = QuestStages.RatStart;
+        Score = 0;
+        Pacifist = true;
+        QS = QuestStages.SlimeStart;
+        Score = 0;
+        Pacifist = true;
+        QS = QuestStages.BoneStart;
+        Score = 0;
+        Pacifist = true;
+        QS = QuestStages.DemonStart;
+        Score = 0;
+        Pacifist = true;
+        QS = QuestStages.HellStart;
+        Score = 0;
+        Pacifist = true;
+
+
+        QS = QuestStages.RatDorm;
+    }
+    public static Quests Quest => QS_Q[QS];
+
 
     /**
 * 0 = D+, 1 = C-, 2 = C, 3 = D+, 4 = B+, 5 = A-, 6 = A, 7 = A+
@@ -60,7 +82,7 @@ public static class QuestStage
         int grade = 7;
         return grade;
     }
-    private enum Quests
+    public enum Quests
     {
         Rat,
         Slime,

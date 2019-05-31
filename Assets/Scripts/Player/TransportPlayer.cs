@@ -8,29 +8,36 @@ public class TransportPlayer : Interactable
     public string connectedMarker = "";
 
     public bool isLocked;
+    public bool questLocked = false;
+    public QuestStage.QuestStages stage;
 
     public override void Interact(GameObject actor)
     {
         // Check to make sure door is linked
         if (connectedMarker != "" && connectedScene != "")
         {
-            // Check to see if door is locked
-            if (isLocked)
+            if ((questLocked && stage == QuestStage.QS) || !questLocked)
             {
-
-                PlayerController pc = actor.GetComponent<PlayerController>();
-                // Check if player has any keys
-                // If they do, use one on the door
-                if (pc.numKeys > 0)
+                // Check to see if door is locked
+                if (isLocked)
                 {
-                    pc.numKeys -= 1;
-                    isLocked = false;
-                    actor.GetComponent<PlayerSceneChange>().Transport(connectedScene, connectedMarker);
+
+                    PlayerController pc = actor.GetComponent<PlayerController>();
+                    // Check if player has any keys
+                    // If they do, use one on the door
+                    if (pc.numKeys > 0)
+                    {
+                        pc.numKeys -= 1;
+                        isLocked = false;
+                        actor.GetComponent<PlayerSceneChange>().Transport(connectedScene, connectedMarker);
+
+                    }
 
                 }
-                
-            } else {
+                else
+                {
                     actor.GetComponent<PlayerSceneChange>().Transport(connectedScene, connectedMarker);
+                }
             }
         }
     }

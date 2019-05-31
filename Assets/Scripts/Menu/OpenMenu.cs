@@ -30,10 +30,10 @@ public class OpenMenu : MonoBehaviour
                 Pause();
         }
     }
-    public void Pause()
+    public void Pause(bool showMenu = true)
     {
         isPaused = true;
-        menu.SetActive(true);
+        menu.SetActive(showMenu);
         Time.timeScale = 0f;
         Time.fixedDeltaTime = 0f;
     }

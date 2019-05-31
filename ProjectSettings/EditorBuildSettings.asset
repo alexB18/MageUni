@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BoneZone.unity
     guid: 26c665aa559a56046812ecdb51f1367a
+  - enabled: 1
+    path: Assets/Scenes/Campus.unity
+    guid: 26dbffc39b5f2a143a292722a91f3178
   m_configObjects: {}

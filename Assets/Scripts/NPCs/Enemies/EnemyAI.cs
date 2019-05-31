@@ -24,7 +24,7 @@ public abstract class EnemyAI : MonoBehaviour
     private StateEnum state;
 
     // Wander Variables
-    private const float maxWanderTime = 5f;
+    public float maxWanderTime = 5f;
     private const float wanderSpeedMultiplier = 0.5f;
     private const float swivelAngleMax = 90f;
     private Coroutine wanderTimer;
@@ -32,8 +32,8 @@ public abstract class EnemyAI : MonoBehaviour
     private float newAngle;
 
     // Idle variables
-    private const float maxIdleTime = 2.5f;
-    private const float wanderChance = 0.40f;
+    public float maxIdleTime = 2.5f;
+    public float wanderChance = 0.40f;
     private Coroutine idleTimer;
 
     // The distance at which this AI will go after the target
@@ -46,7 +46,7 @@ public abstract class EnemyAI : MonoBehaviour
     // How fast this AI boy rotates and translates
     private const float minRotationSpeed = 180;
     private const float maxRotationSpeed = 250;
-    public const float linearSpeed = 3f;
+    public float linearSpeed = 3f;
 
     // Angle after which we start to move
     private const float moveAngle = 10f;
