@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 3.5f;
     public float turnSpeed = 10;
     public float cameraRotateSpeed = 45f;
+    public int healthPotionCount = 0;
+    public int manaPotionCount = 0;
     private float maxPlayerSpeed = 3.5f;
     private float currentPlayerSpeed;
     private Animator anim;
@@ -155,6 +157,39 @@ public class PlayerController : MonoBehaviour
 
             if(Input.GetButtonDown("Fire"))
                 StartCoroutine("StartSpell");
+
+           
+            // Health pickups
+            if (Input.GetButtonDown("Health Potion")){
+
+                if (this.healthPotionCount > 0)
+                    if (gameObject.GetComponent<StatScript>().currentHealth + 25 > 100)
+                    {
+                        gameObject.gameObject.GetComponent<StatScript>().currentHealth = 100;
+
+                    }
+                    else
+                    {
+                        gameObject.GetComponent<StatScript>().currentHealth += 25;
+                    }
+            }
+
+            // Mana Pickups
+            if (Input.GetButtonDown("Mana Potion"))
+            {
+                if (this.manaPotionCount > 0)
+                    if (gameObject.GetComponent<StatScript>().currentMana + 25 > 100)
+                    {
+                        gameObject.gameObject.GetComponent<StatScript>().currentMana = 100;
+                    }
+                    else
+                    {
+                        gameObject.GetComponent<StatScript>().currentMana += 25;
+
+                    }
+            }
+
+
         }
     }
 
