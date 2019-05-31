@@ -12,7 +12,6 @@ public class hidden_key : MonoBehaviour
     {
         hiddenKey = transform.GetChild(0).gameObject;
         hiddenKey.SetActive(false);
-        GetComponentInParent<ColorChanger>().changeColor(Color.red);
     }
 
     public void setTriggerActive()
@@ -20,7 +19,6 @@ public class hidden_key : MonoBehaviour
         currentActiveTriggers += 1;
         if (currentActiveTriggers == totalTriggers)
         {
-            GetComponent<ColorChanger>().changeColor(Color.green);
             hiddenKey = transform.GetChild(0).gameObject;
             hiddenKey.SetActive(true);
         }

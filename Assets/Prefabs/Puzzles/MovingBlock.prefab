@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9045174203040815251}
   - component: {fileID: 2062626695}
   - component: {fileID: 7614513901458075482}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: MovingBlock
   m_TagString: MovingBlock_Detect
   m_Icon: {fileID: 0}
