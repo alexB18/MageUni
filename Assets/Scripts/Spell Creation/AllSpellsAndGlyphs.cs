@@ -13,6 +13,7 @@ public static class AllSpellsAndGlyphs
 
     public static readonly SpellShape spellShapeBolt = new SpellShapeBolt();
     public static readonly SpellShape spellShapeBall = new SpellShapeBall();
+    public static readonly SpellShape spellShapeSelf = new SpellShapeSelf();
     public static readonly SpellEffect spellEffectFire = new SpellEffectFire();
     public static readonly SpellEffect spellEffectHeal = new SpellEffectHeal();
     public static readonly SpellEffect spellEffectStun = new SpellEffectStun();
@@ -47,6 +48,22 @@ public static class AllSpellsAndGlyphs
             new bool[] { true, true, true },
             new bool[] { true, true, true },
             new bool[] { true, true, true } })
+         );
+    // Todo change connections
+    public static readonly Glyph selfGlyph = new Glyph(
+         spellShapeSelf,
+         "ShapeSelf",
+         new List<Glyph.Connection> {
+            new Glyph.Connection(0f/128f, 64f/128f),
+            new Glyph.Connection(64/128f, 0/128f),
+            new Glyph.Connection(128/128f, 64/128f),
+            new Glyph.Connection(64/128f, 128/128f) },
+         new Glyph.ConnectionMap(new bool[][] {
+            new bool[] { true, true, false, true },
+            new bool[] { true, true, true, false },
+            new bool[] { false, true, true, true },
+            new bool[] { true, false, true, true },
+         })
          );
     public static readonly Glyph fireGlyph = new Glyph(
         spellEffectFire,

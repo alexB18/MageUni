@@ -40,7 +40,7 @@ public class SpellScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Make sure we don't prematurely break
-        if (other.CompareTag("Player") || other.CompareTag("Ground"))
+        if (other.CompareTag("Ground"))
             return;
 
         // If this returns true, we keep going. Otherwise, split off and destroy ourself
