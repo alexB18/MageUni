@@ -30,7 +30,10 @@ public class DemonLordDialogue : NPC
             { QuestStage.QuestStages.DemonStart + "1", new List<string>() },
             { QuestStage.QuestStages.DemonFinished + "1", new List<string>() },
             { QuestStage.QuestStages.HellStart + "1", new List<string>() },
-            { QuestStage.QuestStages.HellBoss + "1", new List<string>() },
+            { QuestStage.QuestStages.HellBoss + "1", new List<string>()
+            {
+                "FOOLISH MORTAL. YOU MAY HAVE BESTED THE LESSER DEMONS, BUT I AM THE KING OF HELL! I WILL DESTROY YOUR CAMPUS’ PETUNIAS!!"
+            } },
             { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
             { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
         };
@@ -61,19 +64,5 @@ public class DemonLordDialogue : NPC
             { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
             { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
         };
-    }
-    public override string GetNextLine()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void PlayerDialogueChoice(int playerChoice)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void ResetDialogue()
-    {
-        throw new System.NotImplementedException();
     }
 }

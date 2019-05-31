@@ -59,7 +59,8 @@ public class RoommateDialogue : NPC
             { QuestStage.QuestStages.BoneFinished + "1", new List<string>() },
             { QuestStage.QuestStages.BoneGraded + "1", new List<string>() },
             { QuestStage.QuestStages.DemonDorm + "1",new List<string>()
-                { "Roommate: Dude, you’re not gonna believe this. There are demons all over campus! Nobody’s doing anything about it, all of the professors are holed up in the administrative building talking about having to “protect the garden” or something. I’ve never been in that building, so I don’t know what’s up, but shouldn’t they be protecting the students first? Look, I see you getting ready to go out there, man, but...it’s demons. That’s scary, I think I’ll stay in here. If you’re gonna do something...best of luck."}
+                { "Roommate: Dude, you’re not gonna believe this. There are demons all over campus! Nobody’s doing anything about it, all of the professors are holed up in the administrative building talking about having to “protect the garden” or something. I’ve never been in that building, so I don’t know what’s up, but shouldn’t they be protecting the students first?",
+                "Look, I see you getting ready to go out there, man, but...it’s demons. That’s scary, I think I’ll stay in here. If you’re gonna do something...best of luck."}
             },
             { QuestStage.QuestStages.DemonStart + "1", new List<string>() },
             { QuestStage.QuestStages.DemonFinished + "1", new List<string>() },
@@ -109,19 +110,86 @@ public class RoommateDialogue : NPC
             { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
             { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
         };
-    }
-    public override string GetNextLine()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void PlayerDialogueChoice(int playerChoice)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void ResetDialogue()
-    {
-        throw new System.NotImplementedException();
+        playerResponsesAction = new Dictionary<string, List<Fragment>>()
+        {
+            { QuestStage.QuestStages.RatDorm + "1", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatDorm + "2"; },
+                () => { currentState = QuestStage.QuestStages.RatDorm + "4"; },
+                () => { currentState = QuestStage.QuestStages.RatDorm + "5"; }
+            }},
+            { QuestStage.QuestStages.RatDorm + "2", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatDorm + "1"; }
+            }},
+            { QuestStage.QuestStages.RatDorm + "3", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatDorm + "1"; }
+            }},
+            { QuestStage.QuestStages.RatDorm + "4", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.RatDorm + "1"; }
+            }},
+            { QuestStage.QuestStages.RatDorm + "5", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.RatLecture;
+                        Exit(); }
+            }},
+            { QuestStage.QuestStages.RatLecture + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.RatStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.RatFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.RatGraded + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeDorm + "1", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.SlimeDorm + "2"; },
+                () => { currentState = QuestStage.QuestStages.SlimeDorm + "3"; }
+            }},
+            { QuestStage.QuestStages.SlimeDorm + "2", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.SlimeDorm + "4"; }
+            }},
+            { QuestStage.QuestStages.SlimeDorm + "3", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.SlimeDorm + "4"; }
+            }},
+            { QuestStage.QuestStages.SlimeDorm + "4", new List<Fragment>()
+            {
+                () => { currentState = QuestStage.QuestStages.SlimeDorm + "5"; },
+                () => { currentState = QuestStage.QuestStages.SlimeDorm + "6"; }
+            }},
+            { QuestStage.QuestStages.SlimeDorm + "5", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.SlimeLecture;
+                        Exit(); }
+            }},
+            { QuestStage.QuestStages.SlimeDorm + "6", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.SlimeLecture;
+                        Exit(); }
+            }},
+            { QuestStage.QuestStages.SlimeLecture + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.SlimeGraded + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneDorm + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneLecture + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneQuest + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneRetrieved + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneReturned + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.BoneGraded + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.DemonDorm + "1", new List<Fragment>()
+            {
+                () => { QuestStage.QS = QuestStage.QuestStages.DemonStart;
+                        Exit(); }
+            } },
+            { QuestStage.QuestStages.DemonStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.DemonFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.HellStart + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.HellBoss + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.HellFinished + "1", new List<Fragment>() },
+            { QuestStage.QuestStages.GameFinished + "1", new List<Fragment>() },
+        };
     }
 }
