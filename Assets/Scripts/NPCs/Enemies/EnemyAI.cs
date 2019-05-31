@@ -63,7 +63,7 @@ public abstract class EnemyAI : MonoBehaviour
     protected GameObject target;
     protected StatScript targetStatScript;
 
-    protected void OnDeath(Object[] obj)
+    protected virtual void OnDeath(Object[] obj)
     {
         Vector3 deadRot = transform.rotation.eulerAngles;
         deadRot.z = 180f;
@@ -71,19 +71,19 @@ public abstract class EnemyAI : MonoBehaviour
         state = StateEnum.Dead;
     }
 
-    protected void OnResurrect(Object[] obj)
+    protected virtual void OnResurrect(Object[] obj)
     {
         transform.rotation = Quaternion.Euler(0, 0, 0);
         state = StateEnum.Idle;
     }
 
-    protected void OnTargetDeath(Object[] obj)
+    protected virtual void OnTargetDeath(Object[] obj)
     {
         StatScript enemyStatScript = obj[0] as StatScript;
         ResetTarget();
     }
 
-    protected void OnEnrage(Object[] obj)
+    protected virtual void OnEnrage(Object[] obj)
     {
         ResetTarget();
     }

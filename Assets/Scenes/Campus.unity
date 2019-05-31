@@ -18219,6 +18219,16 @@ PrefabInstance:
       propertyPath: stage
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846772, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: connectedMarker
+      value: BoneCampusMarker
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485421377825846772, guid: 3cada83f0d17d7f4da1cccf7f82a3c90,
+        type: 3}
+      propertyPath: connectedScene
+      value: BoneZone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cada83f0d17d7f4da1cccf7f82a3c90, type: 3}
 --- !u!4 &1436358097 stripped

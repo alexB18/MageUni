@@ -16,7 +16,7 @@ public class PlayerBed : Interactable
                 roommate.Interact(actor);
                 break;
             case QuestStage.QuestStages.SlimeGraded:
-                QuestStage.QS = QuestStage.QuestStages.BoneDorm;
+                QuestStage.QS = QuestStage.QuestStages.DemonDorm;
                 roommate.Interact(actor);
                 break;
             case QuestStage.QuestStages.BoneFinished:
