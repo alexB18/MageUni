@@ -85,7 +85,7 @@ public class SpellCreationMenu : MonoBehaviour
 
         //*
         CreateGlyphListElement(AllSpellsAndGlyphs.boltGlyph);
-        //CreateGlyphListElement(AllSpellsAndGlyphs.ballGlyph);
+        CreateGlyphListElement(AllSpellsAndGlyphs.ballGlyph);
 
         CreateGlyphListElement(AllSpellsAndGlyphs.fireGlyph);
         CreateGlyphListElement(AllSpellsAndGlyphs.healGlyph);
@@ -194,7 +194,14 @@ public class SpellCreationMenu : MonoBehaviour
             {
                 glyphUIElement.StartScale = childScale;
                 glyphUIElement.ParentShape = selected;
-                glyphUIElement.Resolve(0, true);
+                if(!glyphUIElement.Resolve(0, true))
+                {
+                    // We couldn't resolve the glyph, remove it
+                    SetSelected(glyphUIElement);
+                    DeleteSelected();
+                    //
+                    return;
+                }
             }
 
             // Listen for it being clicked so we know to focus on it
@@ -240,15 +247,21 @@ public class SpellCreationMenu : MonoBehaviour
     public void RotateSelectedRight()
     {
         Debug.Log("Rotate right");
-        if (selected != null)
-        { }
+        if (selected != null && selected != baseShape)
+        {
+            int index = selected.StartIndex(true) + 1;
+            selected.Resolve(index, true);
+        }
     }
 
     public void RotateSelectedLeft()
     {
         Debug.Log("Rotate left");
-        if (selected != null)
-        { }
+        if (selected != null && selected != baseShape)
+        {
+            int index = selected.StartIndex(false) - 1;
+            selected.Resolve(index, false);
+        }
     }
 
     public void SaveSpell()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingBlockDetect : MonoBehaviour
 {
-    private bool inPlace = false;
+    //private bool inPlace = false;
     Rigidbody otherRb;
 
     private void OnCollisionEnter(Collision other)

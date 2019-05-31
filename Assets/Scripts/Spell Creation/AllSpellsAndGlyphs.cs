@@ -27,9 +27,9 @@ public static class AllSpellsAndGlyphs
         spellShapeBolt,
         "ShapeBolt",
         new List<Glyph.Connection> {
-            new Glyph.Connection(64f/128f, 118f/128f),
-            new Glyph.Connection(32/128f, 64/128f),
-            new Glyph.Connection(96/128f, 64/128f) },
+            new Glyph.Connection(64f/128f, 110f/128f),
+            new Glyph.Connection(35/128f, 55/128f),
+            new Glyph.Connection(93/128f, 55/128f) },
         new Glyph.ConnectionMap(new bool[][] {
             new bool[] { true, true, true },
             new bool[] { true, true, true },

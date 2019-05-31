@@ -7,25 +7,19 @@ using UnityEngine.UI;
 public class NPCTestScript : NPC
 {
     
-    void Start()
+    protected override void Start()
     {
-        playerChoicesList = new List<Button>();
-        playerChoicesList.Add(playerChoice1);
-        playerChoicesList.Add(playerChoice2);
-        playerChoicesList.Add(playerChoice3);
-        buttonTextList = new List<Text>();
-        buttonTextList.Add(playerChoice1Text);
-        buttonTextList.Add(playerChoice2Text);
-        buttonTextList.Add(playerChoice3Text);
+        base.Start();
 
         currentState = "state1";
-        currentPos = 0;
 
-        dialogueLines = new Dictionary<string, List<string>>();
-        dialogueLines.Add("state1", new List<string>());
-        dialogueLines.Add("state2", new List<string>());
-        dialogueLines.Add("state3", new List<string>());
-       
+        dialogueLines = new Dictionary<string, List<string>>
+        {
+            { "state1", new List<string>() },
+            { "state2", new List<string>() },
+            { "state3", new List<string>() }
+        };
+
         dialogueLines["state1"].Add("Hello! I am here to teach you about interacting!");
         dialogueLines["state1"].Add("Interacting with the world around you is easy! Just press F while near something to interact with it!");
         dialogueLines["state1"].Add("Try interacting with everything! It may surprise you what you can find...");
@@ -36,10 +30,12 @@ public class NPCTestScript : NPC
 
         dialogueLines["state3"].Add("If you've forgotten what I said, I can say it again, if you'd like.");
 
-        playerResponses = new Dictionary<string, List<string>>();
-        playerResponses.Add("state1", new List<string>());
-        playerResponses.Add("state2", new List<string>());
-        playerResponses.Add("state3", new List<string>());
+        playerResponses = new Dictionary<string, List<string>>
+        {
+            { "state1", new List<string>() },
+            { "state2", new List<string>() },
+            { "state3", new List<string>() }
+        };
 
         playerResponses["state1"].Add("What can I do?");
 

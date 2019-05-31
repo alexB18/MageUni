@@ -14,19 +14,30 @@ public abstract class NPC : MonoBehaviour
     public GameObject textWindow;
     public Text dialogue;
     public string currentState;
-    public int currentPos;
+    public int currentPos = 0;
     public Button playerChoice1;
     public Button playerChoice2;
     public Button playerChoice3;
-    protected List<Button> playerChoicesList;
+    protected List<Button> playerChoicesList = new List<Button>();
     public Text playerChoice1Text;
     public Text playerChoice2Text;
     public Text playerChoice3Text;
-    protected List<Text> buttonTextList;
+    protected List<Text> buttonTextList = new List<Text>();
     public Button nextButton;
 
     public Dictionary<string, List<string>> dialogueLines;
     public Dictionary<string, List<string>> playerResponses;
+
+    protected virtual void Start()
+    {
+        playerChoicesList.Add(playerChoice1);
+        playerChoicesList.Add(playerChoice2);
+        playerChoicesList.Add(playerChoice3);
+
+        buttonTextList.Add(playerChoice1Text);
+        buttonTextList.Add(playerChoice2Text);
+        buttonTextList.Add(playerChoice3Text);
+    }
 
     // Update is called once per frame
     void Update()

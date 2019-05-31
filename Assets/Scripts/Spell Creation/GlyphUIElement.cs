@@ -11,6 +11,7 @@ public class GlyphUIElement : MonoBehaviour
     private GlyphUIElement parentShape;
     private AllSpellsAndGlyphs.SpellComponentEnum glyphType;
     private GlyphUIElement[] connectedEnds;
+    private int[] indices;
 
     // Image children
     private string imageDirectory = "";
@@ -21,6 +22,9 @@ public class GlyphUIElement : MonoBehaviour
     private Vector3 startScale = new Vector3(1f, 1f, 1f);
 
     public GameObject highlightChild;
+
+    private GameObject[] childImages;
+    public GameObject[] ChildImages => childImages;
 
     public Glyph Glyph {
         get => glyph;
@@ -33,11 +37,14 @@ public class GlyphUIElement : MonoBehaviour
 
             int imageDim = (glyph.IsShape) ? 1 : glyph.Connections.Count;
             images = new Image[imageDim];
+            childImages = new GameObject[imageDim];
             for(int i = 0; i < imageDim; ++i)
             {
                 GameObject child = Instantiate(childPrefab);
+                child.name = i.ToString();
                 child.transform.SetParent(transform);
                 child.GetComponent<RectTransform>().anchoredPosition.Set(0, 0);
+                childImages[i] = child;
                 images[i] = child.GetComponent<Image>();
                 images[i].sprite = Resources.Load<Sprite>(imageDirectory + "/" + i);
             }
@@ -49,8 +56,47 @@ public class GlyphUIElement : MonoBehaviour
 
     public void Connect(int[] indices, GlyphUIElement child)
     {
-        foreach(int index in indices)
+        Vector2 origin = new Vector2(0.5f, 0.5f);
+        Vector2 zero = new Vector2(0f, 1f);
+        GameObject[] children = child.ChildImages;
+        /*
+        int i = 0;
+        float a = 0f, b = 0f;
+        foreach (int index in indices)
+        {
             connectedEnds[index] = child;
+            // Rotate the child image to fit our constraint
+            Vector2 v = child.Glyph.Connections[i].Coordinates - origin;
+            Vector2 g = glyph.Connections[index].Coordinates - origin;
+            // Minimise distance with rotation with respect to t:
+            a += g.x * v.x + g.y * v.y;
+            b += g.x * v.y - g.y * v.x;
+            //float t = Mathf.Rad2Deg * (- Mathf.Atan((g.x * v.y - g.y * v.x) / (g.x * v.x - g.y * v.y)));
+            //Debug.Log("Connection " + i + " rotate z by " + t + " degrees");
+            ++i;
+        }
+        float t = Mathf.Rad2Deg * (Mathf.Atan(b / a));
+        //*/
+
+        // There may be a case where the rotation is flipped. Check for that
+        float t;
+        Vector2 gd = new Vector2();
+        Vector2 vd = new Vector2();
+        for (int i = 0; i < indices.Length; ++i)
+        {
+            connectedEnds[indices[i]] = child;
+            Vector2 g = glyph.Connections[indices[i]].Coordinates - origin;
+            Vector2 v = origin - child.Glyph.Connections[i].Coordinates;
+            //v.Set(v.x * Mathf.Cos(t1) - v.y * Mathf.Sin(t1), v.x * Mathf.Sin(t1) + v.y * Mathf.Cos(t1));
+            gd += g;
+            vd += v;
+        }
+        t = Vector2.Angle(gd, vd);
+        Vector3 cross = Vector3.Cross(new Vector3(vd.x, vd.y), new Vector3(gd.x, gd.y));
+        Vector3 normal = new Vector3(0, 0, 1);
+        t = (Vector3.Dot(cross, normal) >= 0) ? -t : t;
+        Debug.Log("Rotate by " + t + " degrees");
+        child.transform.rotation = Quaternion.Euler(0, 0, t);
     }
 
     public void Disconnect(GlyphUIElement child)
@@ -67,6 +113,8 @@ public class GlyphUIElement : MonoBehaviour
     }
 
     public int ConnectionLength => connectedEnds.Length;
+
+    public int ImageLength => glyph.IsShape ? 1 : connectedEnds.Length;
 
     public Vector2 StartPosition { get => startPosition; set => startPosition = value; }
     public Vector3 StartScale { get => startScale; set => startScale = value; }
@@ -86,7 +134,7 @@ public class GlyphUIElement : MonoBehaviour
     private int CircularIndex(int value, int length)
     {
         int ret = value;
-        if (ret > length)
+        if (ret >= length)
             ret -= length;
         else if (ret < 0)
             ret += length;
@@ -114,8 +162,9 @@ public class GlyphUIElement : MonoBehaviour
      * closest to the startIndex with its offset in the direction of clockwise
      * Returns whether or not a connection could be resolved
      */
-    public bool Resolve(int startIndex, bool clockwise)
+    public bool Resolve(int startIndex = 0, bool clockwise = true)
     {
+        // If we don't have our images yet, let's get them
         // Release connections on parent
         ParentShape.Disconnect(this);
 
@@ -124,7 +173,7 @@ public class GlyphUIElement : MonoBehaviour
         int parentLength = parentShape.ConnectionLength;
         int myLength = (Glyph.IsShape) ? (1) : glyph.Connections.Count;
         int iterations = nCr(parentLength, myLength);
-        int[] indices = new int[myLength];
+        indices = new int[myLength];
 
 
         int indexOffset = 0;
@@ -144,7 +193,8 @@ public class GlyphUIElement : MonoBehaviour
             int mod = 1;
             int prevMod = 1;
             int prev = 0;
-            int currIteration = i + indexOffset;
+            //int currIteration = i*offset + indexOffset;
+            int currIteration = i*offset + indexOffset;
             for (int j = 0; j < myLength; ++j)
             {
                 mod *= parentLength;
@@ -156,7 +206,8 @@ public class GlyphUIElement : MonoBehaviour
             // Convert the absolute indices
             for(int j = 0; j < myLength; ++j)
             {
-                int newIndex = (clockwise) ? startIndex + indices[j] : startIndex - indices[j];
+                //int newIndex = (clockwise) ? startIndex + indices[j] : startIndex - indices[j];
+                int newIndex = startIndex + indices[j];
                 newIndex = CircularIndex(newIndex, parentLength);
 
                 // If this index is already connected, move the index forward
@@ -167,6 +218,10 @@ public class GlyphUIElement : MonoBehaviour
                         goto doContinue;
                     else
                         goto failure;
+                }
+                else
+                {
+                    indices[j] = newIndex;
                 }
             }
 
@@ -201,6 +256,24 @@ public class GlyphUIElement : MonoBehaviour
 
         // We couldn't find a suitable connection
         return false;
+    }
+    public void FindChildrenImages()
+    {
+        // We only have the highlight image and the children
+        childImages = new GameObject[ImageLength];
+        // Note, unity magically makes it so that transform can be iterated 
+        // over to get its children. Whack.
+        foreach (Transform c in transform)
+        {
+            if (int.TryParse(c.name, out int index))
+                childImages[index] = transform.gameObject;
+        }
+    }
+    public int StartIndex(bool clockwise = true)
+    {
+        //int index = clockwise ? indices[0] : indices[indices.Length - 1];
+
+        return indices[0];
     }
     public SpellScript.Spell Compile()
     {

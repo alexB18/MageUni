@@ -10,6 +10,8 @@ public static class SceneNameList
         //{"B1_AbandonedHouse_Rat", "AbandonedHouse_Rat"},
         //{"B2_AbandonedHouse_Rat", "AbandonedHouse_Rat"},
         {"RatHouse", "RatHouse"},
+        {"SlimeCave", "SlimeCave"},
+        {"BoneZone", "BoneZone"},
         {"AndrewTest", "AndrewTest"},
         {"Campus_Environment", "Campus_Environment" }
     };
@@ -17,6 +19,8 @@ public static class SceneNameList
     {
         //{"AbandonedHouse_Rat", new string[] { "F1_AbandonedHouse_Rat", "B1_AbandonedHouse_Rat", "B2_AbandonedHouse_Rat" } },
         {"RatHouse", new string[] { "RatHouse" } },
+        {"SlimeCave", new string[] { "SlimeCave" } },
+        {"BoneZone", new string[] { "BoneZone" } },
         {"AndrewTest", new string[] { "AndrewTest" } },
         {"Campus_Environment", new string[] { "Campus_Environment" } }
     };
