@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 33039531046108848}
   - component: {fileID: 23577960205708268}
   - component: {fileID: 1410796684476670824}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4258253756684602
 Transform:
