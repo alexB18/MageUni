@@ -174,6 +174,17 @@ public class StatScript : MonoBehaviour
         }
     }
 
+    public void RestoreMana(float f)
+    {
+        if (!IsDead)
+        {
+            currentMana += f;
+            if (currentMana > maximumMana)
+                currentMana = maximumMana;
+            OnHealthChange();
+        }
+    }
+
     public void SubscribeToOnDeath(Subscriber sub) => onDeathSubscribers.Add(sub);
 
     public bool UnsubscribeFromOnDeath(Subscriber sub) => onDeathSubscribers.Remove(sub);

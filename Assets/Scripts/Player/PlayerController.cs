@@ -163,30 +163,16 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Health Potion")){
 
                 if (this.healthPotionCount > 0)
-                    if (gameObject.GetComponent<StatScript>().currentHealth + 25 > 100)
-                    {
-                        gameObject.gameObject.GetComponent<StatScript>().currentHealth = 100;
+                        this.gameObject.GetComponent<StatScript>().RestoreHealth(25);
 
-                    }
-                    else
-                    {
-                        gameObject.GetComponent<StatScript>().currentHealth += 25;
-                    }
             }
 
             // Mana Pickups
             if (Input.GetButtonDown("Mana Potion"))
             {
                 if (this.manaPotionCount > 0)
-                    if (gameObject.GetComponent<StatScript>().currentMana + 25 > 100)
-                    {
-                        gameObject.gameObject.GetComponent<StatScript>().currentMana = 100;
-                    }
-                    else
-                    {
-                        gameObject.GetComponent<StatScript>().currentMana += 25;
+                        this.gameObject.GetComponent<StatScript>().RestoreMana(75);
 
-                    }
             }
 
 

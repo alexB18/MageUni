@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthPotionPickup : Interactable
+
 {
     public override void Interact(GameObject actor)
     {

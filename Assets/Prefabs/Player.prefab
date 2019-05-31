@@ -1070,6 +1070,8 @@ MonoBehaviour:
   moveSpeed: 3.5
   turnSpeed: 10
   cameraRotateSpeed: 45
+  healthPotionCount: 0
+  manaPotionCount: 0
   followCamera: {fileID: 0}
   followCamera2DDistance: 7.5
   followCameraHeight: 7.5
@@ -1144,8 +1146,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 4
+  m_Color: {r: 1, g: 0.63320255, b: 0, a: 1}
+  m_Intensity: 3
   m_Range: 3
   m_SpotAngle: 30
   m_CookieSize: 10
