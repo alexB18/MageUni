@@ -17,7 +17,7 @@ public class SpellShapeSelf : SpellShape
         SphereCollider boltCollider = self.gameObject.AddComponent<SphereCollider>();
         boltCollider.isTrigger = true;
         boltCollider.radius = 0.75f;
-        Transform playerTransform = GameObject.Find("Player").transform;
+        Transform playerTransform = self.parent.transform;
         self.transform.position = playerTransform.position;
         self.transform.rotation = playerTransform.rotation;
     }

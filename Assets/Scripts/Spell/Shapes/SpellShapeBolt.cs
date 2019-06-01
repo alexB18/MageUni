@@ -17,14 +17,19 @@ public class SpellShapeBolt : SpellShape
 
 
 
+        /*
         // Create bolt collider
         CapsuleCollider boltCollider = self.gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
         boltCollider.isTrigger = true;
         boltCollider.radius = 0.25f;
         boltCollider.height = 0.75f;
+        //*/
+
+        // Create ball effect
+        GameObject sphere = GameObject.Instantiate(Resources.Load<GameObject>("sphere"), self.transform);
 
         // Decay
-        self.StartCoroutine("Decay", 10f);
+        self.StartCoroutine("Decay", 5f);
     }
 
     public override bool Trigger(SpellScript self, GameObject other)

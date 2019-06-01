@@ -42,5 +42,6 @@ public class RatAI : EnemyAI
         //Add force
         Vector3 velocity = transform.forward * pounceSpeed + pounceUps;
         rb.velocity += velocity;
+        state = StateEnum.Airborne;
     }
 }

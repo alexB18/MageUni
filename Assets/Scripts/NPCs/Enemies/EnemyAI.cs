@@ -7,7 +7,7 @@ public abstract class EnemyAI : MonoBehaviour
     protected StatScript stats;
     protected Rigidbody rb;
 
-    private enum StateEnum
+    protected enum StateEnum
     {
         Idle,
         IdleContinue,
@@ -21,7 +21,7 @@ public abstract class EnemyAI : MonoBehaviour
         Airborne,
         Dead
     };
-    private StateEnum state;
+    protected StateEnum state;
 
     // Wander Variables
     public float maxWanderTime = 5f;
@@ -41,7 +41,7 @@ public abstract class EnemyAI : MonoBehaviour
     public const float targetBehindDistanceThreshold = 3f;
     private const float tdThresholdSq = targetDistanceThreshold * targetDistanceThreshold;
     private const float tdBehindThresholdSq = targetBehindDistanceThreshold * targetBehindDistanceThreshold;
-    protected float attackDistanceSquare = 3f;
+    public float attackDistanceSquare = 3f;
 
     // How fast this AI boy rotates and translates
     private const float minRotationSpeed = 180;
@@ -53,9 +53,9 @@ public abstract class EnemyAI : MonoBehaviour
     private const float moveAngleDeviation = 7f;
     
     // Attack variables
-    protected float damage = 10f;
+    public float damage = 10f;
     protected bool canAttack = true;
-    protected float attackCooldown = 1.25f;
+    public float attackCooldown = 1.25f;
 
     // Sound variables
 
@@ -280,12 +280,10 @@ public abstract class EnemyAI : MonoBehaviour
 
 
                         // Attack
+                        StartCoroutine(AttackCooldown());
                         Attack(target);
 
                         // Make a noise
-
-                        // Switch state
-                        state = StateEnum.Airborne;
                     }
                     break;
 
@@ -352,6 +350,7 @@ public abstract class EnemyAI : MonoBehaviour
 
     private IEnumerator AttackCooldown()
     {
+        canAttack = false;
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }

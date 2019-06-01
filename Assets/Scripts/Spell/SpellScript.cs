@@ -8,6 +8,7 @@ public class SpellScript : MonoBehaviour
     public float spellTime = 10f;
     public ParticleSystem.MainModule mm;
     public GameObject parent;
+    public MeshFilter mf;
 
     public class Spell
     {
