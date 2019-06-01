@@ -224,7 +224,7 @@ public abstract class EnemyAI : MonoBehaviour
 
                         Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t);
                         //Quaternion slerpedLook = Quaternion.LookRotation(lookV);
-                        transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0));
+                        transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0)).normalized;
 
                         if (Quaternion.Angle(transform.rotation, newRotation) <= 2)
                         {

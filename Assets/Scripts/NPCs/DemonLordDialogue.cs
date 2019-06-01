@@ -27,5 +27,6 @@ public class DemonLordDialogue : NPC
             { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
             { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
         };
+        playerResponsesAction = new Dictionary<string, List<Fragment>>();
     }
 }

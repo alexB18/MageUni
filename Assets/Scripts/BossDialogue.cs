@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossDialogue : MonoBehaviour
 {
-    DemonLordDialogue dialogue;
+    public DemonLordDialogue dialogue;
     private void OnTriggerEnter(Collider other)
     {
         if(QuestStage.QS == QuestStage.QuestStages.HellStart)
