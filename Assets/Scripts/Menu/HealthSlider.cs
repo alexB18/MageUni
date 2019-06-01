@@ -7,7 +7,8 @@ public class HealthSlider : MonoBehaviour
 {
     public PlayerHolder menuHolder;
     public Slider mySlider;
-    
+    StatScript stat;
+
     private void OnHealthChange(Object[] obj) 
     {
         StatScript hs = obj[0] as StatScript;
@@ -16,7 +17,15 @@ public class HealthSlider : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    { 
+        stat = menuHolder.Player.GetComponent<StatScript>();
+        stat.SubscribeToOnHealthChange(OnHealthChange);
+        stat.RestoreHealth(0);
+    }
+
+    private void OnEnable()
     {
-        menuHolder.Player.GetComponent<StatScript>().SubscribeToOnHealthChange(OnHealthChange);
+        stat = menuHolder.Player.GetComponent<StatScript>();
+        stat.RestoreHealth(0);
     }
 }

@@ -102,10 +102,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6294841568160721576}
-  - component: {fileID: 6294841568160721575}
   - component: {fileID: 2763482687534286212}
   - component: {fileID: 6294841568160721579}
-  - component: {fileID: 6294841568160721574}
+  - component: {fileID: 6184951418247911795}
   m_Layer: 31
   m_Name: RatBoss
   m_TagString: BadGuy
@@ -129,22 +128,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &6294841568160721575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6294841568160721577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c5510eee4a010c4f8f49120a47e8482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxWanderTime: 5
-  maxIdleTime: 2.5
-  wanderChance: 0.4
-  linearSpeed: 3
 --- !u!114 &2763482687534286212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +172,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &6294841568160721574
+--- !u!114 &6184951418247911795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,9 +181,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6294841568160721577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294fcd18a191c004ba44409ef2f05c03, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d38dee72c3872f43b0e187615ac4029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxWanderTime: 5
+  maxIdleTime: 2.5
+  wanderChance: 0.4
+  attackDistanceSquare: 5
+  linearSpeed: 2
+  damage: 10
+  attackCooldown: 1.25
 --- !u!1 &6294841569911427150
 GameObject:
   m_ObjectHideFlags: 0

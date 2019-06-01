@@ -1,8 +1,9 @@
+
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
 
-public class PyramidGenerator : ScriptableWizard
+public class PyramidGenerator //: ScriptableWizard
 {
 
     public int size = 4;
@@ -94,17 +95,17 @@ public class PyramidGenerator : ScriptableWizard
 
         return oldMesh;
     }
-
-    [MenuItem("Assets/Create/Pyramid")]
+    
+    //[MenuItem("Assets/Create/Pyramid")]
     static void CreateWizard()
     {
-        ScriptableWizard.DisplayWizard("PyramidGenerator", typeof(PyramidGenerator));
+        //ScriptableWizard.DisplayWizard("PyramidGenerator", typeof(PyramidGenerator));
     }
 
     void OnWizardCreate()
     {
         Mesh result = flat ? GenerateMeshFlat() : GenerateMesh();
         string name = "pyramid" + (flat ? "Flat" : "") + size+ ".asset";
-        AssetDatabase.CreateAsset(result, "Assets/Models/" + name);
+        //AssetDatabase.CreateAsset(result, "Assets/Models/" + name);
     }
 }

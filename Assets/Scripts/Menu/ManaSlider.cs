@@ -7,6 +7,7 @@ public class ManaSlider : MonoBehaviour
 {
     public PlayerHolder menuHolder;
     public Slider mySlider;
+    StatScript stat;
 
     private void OnManaChange(Object[] obj)
     {
@@ -17,6 +18,13 @@ public class ManaSlider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        menuHolder.Player.GetComponent<StatScript>().SubscribeToOnManaChange(OnManaChange);
+        stat = menuHolder.Player.GetComponent<StatScript>();
+        stat.SubscribeToOnManaChange(OnManaChange);
+    }
+
+    private void OnEnable()
+    {
+        stat = menuHolder.Player.GetComponent<StatScript>();
+        stat.RestoreMana(0);
     }
 }
