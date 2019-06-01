@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4938589666528734324}
   - component: {fileID: 4661067993615950152}
   - component: {fileID: 2216956505810667026}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4710,7 +4710,7 @@ GameObject:
   - component: {fileID: 9115242570344683284}
   - component: {fileID: 872031827164056951}
   - component: {fileID: 9074173838408929914}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: Spell
   m_TagString: Untagged
   m_Icon: {fileID: 0}

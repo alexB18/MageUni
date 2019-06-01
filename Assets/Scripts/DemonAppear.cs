@@ -6,7 +6,7 @@ public class DemonAppear : MonoBehaviour
 {
     public Renderer mesh;
     public EnemyAI ai;
-    public Collider collider;
+    public Collider coll;
     // Update is called once per frame
     void Update()
     {
@@ -16,7 +16,7 @@ public class DemonAppear : MonoBehaviour
             {
                 mesh.enabled = true;
                 ai.enabled = true;
-                collider.gameObject.layer = 31;
+                coll.gameObject.layer = 31;
             }
         }
         else
@@ -25,7 +25,7 @@ public class DemonAppear : MonoBehaviour
             {
                 mesh.enabled = false;
                 ai.enabled = false;
-                collider.gameObject.layer = 28;
+                coll.gameObject.layer = 28;
             }
         }
     }

@@ -19,12 +19,14 @@ public abstract class SpellShape : SpellComponent
     public void DestroyAndStartChildren(GameObject self)
     {
         // If we are triggered and are finished with our spell, we should start our child effects
+        /*
         foreach(SpellScript.Spell spell in childSpells)
         {
             GameObject newSpell = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Spell"));
             SpellScript spellScript = newSpell.GetComponent<SpellScript>();
             spellScript.spell = spell;
         }
+        //*/
         GameObject.Destroy(self);
     }
     

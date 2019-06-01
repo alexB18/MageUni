@@ -15,6 +15,11 @@ public class MainMenuButtons : MonoBehaviour
 #endif
     }
 
+    public void HellQS()
+    {
+        QuestStage.QS = QuestStage.QuestStages.HellStart;
+    }
+
     public void Resume()
     {
         OpenMenu.openMenu.Resume();

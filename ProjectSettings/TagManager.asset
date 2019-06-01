@@ -43,7 +43,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - IgnoreDetector
   - EntityPassthrough
   - Detector
   - EntityWeapon

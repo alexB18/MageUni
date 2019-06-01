@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemonLordAI : EnemyAI
+public class DemonLordAI : DemonAI
 {
-    protected override void Attack(GameObject t)
+    DemonLordDialogue dialogue;
+    protected override void OnDeath(Object[] obj)
     {
-        throw new System.NotImplementedException();
+        base.OnDeath(obj);
+        QuestStage.QS = QuestStage.QuestStages.HellFinished;
+        dialogue.Interact(gameObject);
     }
 }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7216379711860273902}
   - component: {fileID: 2134531933307447197}
   - component: {fileID: 3422174110031898793}
-  m_Layer: 30
+  m_Layer: 27
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 2121814792334028187}
   - component: {fileID: 3068130616438555313}
   - component: {fileID: 4141256827231415799}
-  m_Layer: 30
+  m_Layer: 27
   m_Name: SlimeAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 3989225830102500916}
   ai: {fileID: 4677917759101418756}
-  collider: {fileID: 6077167742915342167}
+  coll: {fileID: 6077167742915342167}
 --- !u!1001 &8168906713069396305
 PrefabInstance:
   m_ObjectHideFlags: 0

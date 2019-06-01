@@ -79,7 +79,12 @@ MonoBehaviour:
   maxWanderTime: 5
   maxIdleTime: 2.5
   wanderChance: 0.4
-  linearSpeed: 3
+  attackDistanceSquare: 100
+  linearSpeed: 2.5
+  damage: 20
+  attackCooldown: 1.25
+  demonAttack: {fileID: 5241299155110152871, guid: cc2aaabd64bdd3d4289747b037695b09,
+    type: 3}
 --- !u!54 &7033498777213751254
 Rigidbody:
   m_ObjectHideFlags: 0

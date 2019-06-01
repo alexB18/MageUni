@@ -58,7 +58,10 @@ public class DeanDialogue : NPC
             } },
             { QuestStage.QuestStages.HellStart + "1", new List<string>() },
             { QuestStage.QuestStages.HellBoss + "1", new List<string>() },
-            { QuestStage.QuestStages.HellFinished + "1", new List<string>() },
+            { QuestStage.QuestStages.HellFinished + "1", new List<string>()
+            {
+                "Dean of Students: Congratulations, you beat the game. You can stop now"
+            } },
             { QuestStage.QuestStages.GameFinished + "1", new List<string>() },
         };
         playerResponses = new Dictionary<string, List<string>>
