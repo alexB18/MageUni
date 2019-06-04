@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3797,10 +3797,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 464194618}
     m_Modifications:
-    - target: {fileID: 4200218356929556791, guid: 58374049bcd02614092450fca408fdda,
+    - target: {fileID: 3582195917802249301, guid: 58374049bcd02614092450fca408fdda,
         type: 3}
-      propertyPath: m_Name
-      value: BasicDemon
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2323938456945301587, guid: 58374049bcd02614092450fca408fdda,
         type: 3}
@@ -3872,12 +3872,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 4588094932496293719, guid: 58374049bcd02614092450fca408fdda,
+    - target: {fileID: 4200218356929556791, guid: 58374049bcd02614092450fca408fdda,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_Name
+      value: BasicDemon
       objectReference: {fileID: 0}
-    - target: {fileID: 3582195917802249301, guid: 58374049bcd02614092450fca408fdda,
+    - target: {fileID: 4588094932496293719, guid: 58374049bcd02614092450fca408fdda,
         type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9513,9 +9513,10 @@ AudioSource:
   m_GameObject: {fileID: 684805398}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243956361405130930, guid: 58cf5a9a26a1b0b469145e4c2f1ee179,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -9600,6 +9601,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!169 &684805400
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684805398}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.045454547
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &684805401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684805398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0737e4aecbbad5442a049a389383c5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song1: {fileID: 8300000, guid: 957cf74a25f17ea4abeb4f415d1da12e, type: 3}
+  song2: {fileID: 8300000, guid: 625f6a124e1e03249bd3956be523f757, type: 3}
+  song3: {fileID: 8300000, guid: 2c8cc6f4d1d67d24ca9451f2d5447d3c, type: 3}
+  song4: {fileID: 8300000, guid: f6ca8fef06c273b459bef2e9ced1200e, type: 3}
+  song5: {fileID: 8300000, guid: 18739c6d26ca61f42970adf5a601b62a, type: 3}
+  song6: {fileID: 8300000, guid: 13e24e434933639409e8ee40c37fa312, type: 3}
+  song7: {fileID: 8300000, guid: 062e9c6570182b747b454797e7a3be46, type: 3}
+  song8: {fileID: 8300000, guid: 49da18046a3f4034ba8f5349fd64302b, type: 3}
+  song9: {fileID: 8300000, guid: 162fd755c8309ad42852d774a5a4ad8a, type: 3}
+  song10: {fileID: 8300000, guid: 628feec36e524af4889e2a0c2900b8db, type: 3}
+  audioSource: {fileID: 684805399}
 --- !u!1 &695240146
 GameObject:
   m_ObjectHideFlags: 0
