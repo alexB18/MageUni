@@ -135,4 +135,14 @@ public class PlayerSceneChange : MonoBehaviour
         SceneManager.sceneLoaded -= sceneLoadedListener;
         SceneManager.LoadScene(masterSceneName, LoadSceneMode.Single);
     }
+
+    public bool CampusScene()
+    {
+        bool ret = false;
+        foreach(Scene s in currentScenes)
+        {
+            ret = ret || s.name == "Campus";
+        }
+        return ret;
+    }
 }

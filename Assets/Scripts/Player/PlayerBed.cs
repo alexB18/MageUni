@@ -9,6 +9,9 @@ public class PlayerBed : Interactable
     public Transform roommateNormalPosition;
     public override void Interact(GameObject actor)
     {
+        // Restore health
+        actor.GetComponent<StatScript>().RestoreHealth(100000f);
+        // Progress quest if we are supposed to
         switch(QuestStage.QS)
         {
             case QuestStage.QuestStages.RatGraded:

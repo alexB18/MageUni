@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public PlayerSceneChange sceneManager;
 
     /* ------------------------  Player variables   ------------------- */
     public float moveSpeed = 3.5f;
@@ -18,9 +19,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     
     private static readonly float walkScale = 0.33f;
-
-
-    private Vector3 currentDirection = Vector3.zero;    // Track players current direction
 
     // Follow camera
     public GameObject followCamera;
@@ -43,6 +41,8 @@ public class PlayerController : MonoBehaviour
     public void ChangeSpellSlot(int newSlot) => activeSpellSlot = newSlot;
     public void SetSpell(int slot, SpellScript.Spell spell) => spells[slot] = spell;
 
+    public bool campusPracticeArena = false;
+
     // Health and mana
     private StatScript statScript;
     public float manaRechargeRate = 5;
@@ -61,10 +61,6 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("DieAndRestart");
     }
 
-    // Raycasting private variables
-    private int floorMask;                  // Used to tell if ray cast has hit ground
-    private float camRayLength = 100;       // Length of ray cast from camera
-
     // Interaction trigger
     public GameObject interactionTrigger;
     private Coroutine interactionTimer;
@@ -74,7 +70,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         followCameraDisplacement = new Vector3(0.0f, followCameraHeight, -followCamera2DDistance);
-        floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();            //Retrieve animator from player object
         playerRb = GetComponent<Rigidbody>();       //Retrieve rigidbody from player object
 
@@ -155,23 +150,23 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetButtonDown("Spell" + (i + 1)))
                     activeSpellSlot = i;
 
-            if(Input.GetButtonDown("Fire"))
+            if(Input.GetButtonDown("Fire") && (!sceneManager.CampusScene() || QuestStage.Quest == QuestStage.Quests.Demon || campusPracticeArena))
                 StartCoroutine("StartSpell");
 
            
             // Health pickups
             if (Input.GetButtonDown("Health Potion")){
 
-                if (this.healthPotionCount > 0)
-                        this.gameObject.GetComponent<StatScript>().RestoreHealth(25);
+                if (healthPotionCount > 0)
+                        gameObject.GetComponent<StatScript>().RestoreHealth(25);
 
             }
 
             // Mana Pickups
             if (Input.GetButtonDown("Mana Potion"))
             {
-                if (this.manaPotionCount > 0)
-                        this.gameObject.GetComponent<StatScript>().RestoreMana(75);
+                if (manaPotionCount > 0)
+                        gameObject.GetComponent<StatScript>().RestoreMana(75);
 
             }
 
@@ -277,6 +272,7 @@ public class PlayerController : MonoBehaviour
 
     private void Turning()
     {
+        /*
         // Create Camera Ray
         // Takes point underneath mouse and casts a ray from that point to the screen 
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -294,6 +290,7 @@ public class PlayerController : MonoBehaviour
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
             playerRb.MoveRotation(newRotation);
         }
+        //*/
     }
 
     private void MouseTurn()
