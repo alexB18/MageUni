@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DemonLordAI : DemonAI
 {
-    DemonLordDialogue dialogue;
+    public DemonLordDialogue dialogue;
     protected override void OnDeath(Object[] obj)
     {
         base.OnDeath(obj);

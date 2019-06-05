@@ -300,7 +300,7 @@ public abstract class EnemyAI : MonoBehaviour
 
     public virtual void OnCollisionEnter(Collision collision)
     {
-        if (stats.AIEnabled)
+        if (stats && stats.AIEnabled)
         {
             if (state == StateEnum.WanderContinue)
             {
@@ -376,7 +376,7 @@ public abstract class EnemyAI : MonoBehaviour
         go = go.transform.root.gameObject;
         bool pickTarget = false;
 
-        if (stats.IsEnraged)
+        if (stats && stats.IsEnraged)
             pickTarget = pickTarget || go.CompareTag("BadGuy");
         pickTarget = pickTarget || go.CompareTag("GoodGuy") || go.CompareTag("Player");
         pickTarget = pickTarget && !go.GetComponent<StatScript>().IsDead; // Will short circuit if there is no stats script because I'm cool

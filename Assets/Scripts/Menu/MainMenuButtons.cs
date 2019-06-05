@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement; //For SceneManager and reloading the scene af
 public class MainMenuButtons : MonoBehaviour
 {
     public PlayerHolder playerHolder;
+
     public void Quit()
     {
 #if UNITY_EDITOR
@@ -18,6 +19,11 @@ public class MainMenuButtons : MonoBehaviour
     public void HellQS()
     {
         QuestStage.QS = QuestStage.QuestStages.HellStart;
+    }
+
+    public void ResetPlayer()
+    {
+        QuestStage.QS = QuestStage.QuestStages.RatDorm;
     }
 
     public void Resume()
@@ -38,5 +44,6 @@ public class MainMenuButtons : MonoBehaviour
     public void Load(string scene)
     {
         playerHolder.player.GetComponent<PlayerSceneChange>().LoadScene(scene);
+        OpenMenu.openMenu.Resume();
     }
 }

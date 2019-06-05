@@ -279,12 +279,19 @@ public class SpellCreationMenu : MonoBehaviour
 
     public void ConfirmSave()
     {
-        SpellScript.Spell spell = Compile();
-        spell.name = spellNameField.text;
-        if (spell.name == null || spell.name == "")
-            spell.name = "Spell";
-        PlayerController controller = player.GetComponent<PlayerController>();
-        controller.ChangeSpellSlot(spellSlotSelector.value);
-        controller.SetSpell(spellSlotSelector.value, spell);
+        if (baseShape)
+        {
+            SpellScript.Spell spell = Compile();
+            spell.name = spellNameField.text;
+            if (spell.name == null || spell.name == "")
+                spell.name = "Spell";
+            PlayerController controller = player.GetComponent<PlayerController>();
+            controller.ChangeSpellSlot(spellSlotSelector.value);
+            controller.SetSpell(spellSlotSelector.value, spell);
+        }
+        else
+        {
+            // Error message
+        }
     }
 }

@@ -104,7 +104,10 @@ public abstract class NPC : Interactable
                 DialogueButtons.dialogueButtons.nextButton.interactable = false;
             // We check so that we don't have to hit next to get the same buttons if we have a self loop
             if (previousState == currentState)
+            {
                 ShowResponses();
+                DialogueButtons.dialogueButtons.nextButton.interactable = false;
+            }
         }
 
         return nextLine;
