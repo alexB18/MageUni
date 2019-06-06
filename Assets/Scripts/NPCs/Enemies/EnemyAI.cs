@@ -58,6 +58,14 @@ public abstract class EnemyAI : MonoBehaviour
     public float attackCooldown = 1.25f;
 
     // Sound variables
+    public AudioClip idleNoise1;
+    public AudioClip idleNoise2;
+    public AudioClip idleNoise3;
+    public AudioClip detectNoise;
+    public AudioClip attackNoise;
+    public AudioClip deathNoise;
+
+    protected AudioSource noiseSource;
 
     // Target variables
     protected GameObject target;
@@ -69,6 +77,11 @@ public abstract class EnemyAI : MonoBehaviour
         deadRot.z = 180f;
         transform.rotation = Quaternion.Euler(deadRot);
         state = StateEnum.Dead;
+        if (deathNoise != null)
+        {
+            noiseSource.clip = deathNoise;
+            noiseSource.Play();
+        }
     }
 
     protected virtual void OnResurrect(Object[] obj)
@@ -97,6 +110,7 @@ public abstract class EnemyAI : MonoBehaviour
         stats.SubscribeToOnResurrect(OnResurrect);
         stats.SubscribeToOnEnrage(OnEnrage);
         state = StateEnum.Idle;
+        noiseSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -120,7 +134,14 @@ public abstract class EnemyAI : MonoBehaviour
                 case StateEnum.Idle:
                     // See if we have a target. If so, make a noise and switch to DetectTarget
                     if (target != null)
+                    {
                         state = StateEnum.DetectTarget;
+                        if (detectNoise != null)
+                        {
+                            noiseSource.clip = detectNoise;
+                            noiseSource.Play();
+                        }
+                    }
                     // Try and switch to wander
                     if (Random.Range(0f, 1f) < wanderChance)
                     {
@@ -131,6 +152,31 @@ public abstract class EnemyAI : MonoBehaviour
                         idleTimer = StartCoroutine("IdleTimer");
                         state = StateEnum.IdleContinue;
                         // Do cute animations and squeaks, randomly switch to Wander
+                        int idleNoise = Random.Range(0, 2);
+                        switch(idleNoise)
+                        {
+                            case 0:
+                                if (idleNoise1 != null)
+                                {
+                                    noiseSource.clip = idleNoise1;
+                                    noiseSource.Play();
+                                }
+                                break;
+                            case 1:
+                                if (idleNoise2 != null)
+                                {
+                                    noiseSource.clip = idleNoise2;
+                                    noiseSource.Play();
+                                }
+                                break;
+                            case 2:
+                                if (idleNoise3 != null)
+                                {
+                                    noiseSource.clip = idleNoise3;
+                                    noiseSource.Play();
+                                }
+                                break;
+                        }
                     }
                     break;
 
@@ -140,6 +186,11 @@ public abstract class EnemyAI : MonoBehaviour
                     {
                         StopCoroutine(idleTimer);
                         state = StateEnum.DetectTarget;
+                        if (detectNoise != null)
+                        {
+                            noiseSource.clip = detectNoise;
+                            noiseSource.Play();
+                        }
                     }
                     break;
 
@@ -147,8 +198,14 @@ public abstract class EnemyAI : MonoBehaviour
                     {
                         // See if we have a target. If so, make a noise and switch to DetectTarget
                         if (target != null)
+                        {
                             state = StateEnum.DetectTarget;
-
+                            if (detectNoise != null)
+                            {
+                                noiseSource.clip = detectNoise;
+                                noiseSource.Play();
+                            }
+                        }
                         newAngle = Random.Range(-swivelAngleMax, swivelAngleMax);
                         newRotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y + newAngle, 0f);
 
@@ -160,7 +217,14 @@ public abstract class EnemyAI : MonoBehaviour
                     {
                         // See if we have a target. If so, make a noise and switch to DetectTarget
                         if (target != null)
+                        {
                             state = StateEnum.DetectTarget;
+                            if (detectNoise != null)
+                            {
+                                noiseSource.clip = detectNoise;
+                                noiseSource.Play();
+                            }
+                        }
 
                         float t = Mathf.Abs(minRotationSpeed * Time.deltaTime / newAngle);
 
@@ -183,6 +247,11 @@ public abstract class EnemyAI : MonoBehaviour
                         {
                             StopCoroutine(wanderTimer);
                             state = StateEnum.DetectTarget;
+                            if (detectNoise != null)
+                            {
+                                noiseSource.clip = detectNoise;
+                                noiseSource.Play();
+                            }
                         }
 
                         Vector3 moveVector = transform.forward;
@@ -278,12 +347,16 @@ public abstract class EnemyAI : MonoBehaviour
                         float moveToAngle = transform.rotation.eulerAngles.y + angleBetweenTarget;
                         moveToAngle *= Mathf.Deg2Rad;
 
+                        // Make a noise
+                        if (attackNoise != null)
+                        {
+                            noiseSource.clip = attackNoise;
+                            noiseSource.Play();
+                        }
 
                         // Attack
                         StartCoroutine(AttackCooldown());
                         Attack(target);
-
-                        // Make a noise
                     }
                     break;
 
