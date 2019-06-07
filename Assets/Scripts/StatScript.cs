@@ -73,12 +73,15 @@ public class StatScript : MonoBehaviour
     public float freezeDamageMultiplier = 1f;
     private Color freezeTint = new Color(0.46f, 0.81f, 0.99f);
 
+    private List<Subscriber> onFreezeSubscribers = new List<Subscriber>();
+    private List<Subscriber> onFreezeEndSubscribers = new List<Subscriber>();
+
     /*---- ENRAGE VARIABLES ----*/
     public float enrageResistance = 0f;
     // Lock before changing
     private float enrageTime = 0f;
     private const float enrageTimeStep = 5f;
-    private List<Subscriber> OnEnrageSubscribers = new List<Subscriber>();
+    private List<Subscriber> onEnrageSubscribers = new List<Subscriber>();
 
     /*---- SPEED VARIABLES ----*/
     //Lock before changing
@@ -109,6 +112,16 @@ public class StatScript : MonoBehaviour
 
     /*---- GENERAL METHODS ----*/
     public bool AIEnabled => !(IsStunned || IsDead || IsFrozen);
+    public void Reset()
+    {
+        StopAllCoroutines();
+        currentHealth = maximumHealth;
+        currentMana = maximumMana;
+        stunTime = 0f;
+        speedModifier = 0f;
+        enrageTime = 0f;
+        isFrozen = false;
+    }
 
     /*---- HEALTH METHODS ----*/
 
@@ -329,6 +342,26 @@ public class StatScript : MonoBehaviour
 
     public bool IsFrozen => isFrozen;
 
+    public void SubscribeToOnFreeze(Subscriber sub)
+    {
+        onFreezeSubscribers.Add(sub);
+    }
+
+    public void UnsubscribeToOnFreeze(Subscriber sub)
+    {
+        onFreezeSubscribers.Remove(sub);
+    }
+
+    public void SubscribeToOnFreezeEnd(Subscriber sub)
+    {
+        onFreezeEndSubscribers.Add(sub);
+    }
+
+    public void UnsubscribeToOnFreezeEnd(Subscriber sub)
+    {
+        onFreezeEndSubscribers.Remove(sub);
+    }
+
     /*---- ENRAGE METHODS ----*/
     public void AddEnrageProc(float time)
     {
@@ -344,17 +377,17 @@ public class StatScript : MonoBehaviour
 
     public void SubscribeToOnEnrage(Subscriber sub)
     {
-        OnEnrageSubscribers.Add(sub);
+        onEnrageSubscribers.Add(sub);
     }
 
     public void UnsubscribeToOnEnrage(Subscriber sub)
     {
-        OnEnrageSubscribers.Remove(sub);
+        onEnrageSubscribers.Remove(sub);
     }
 
     private void OnEnrage()
     {
-        foreach (var sub in OnEnrageSubscribers)
+        foreach (var sub in onEnrageSubscribers)
             sub(this);
     }
 

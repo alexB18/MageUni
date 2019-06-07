@@ -15,6 +15,7 @@ TagManager:
   - DoorCollider
   - CaveEntrance
   - MovingBlock_Detect
+  - AIDoorMarker
   layers:
   - Default
   - TransparentFX

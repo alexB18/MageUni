@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyAI : MonoBehaviour
 {
+    [HideInInspector] public bool isBoss = false;
     protected StatScript stats;
     protected Rigidbody rb;
 
@@ -101,8 +102,21 @@ public abstract class EnemyAI : MonoBehaviour
         ResetTarget();
     }
 
+
+    private Vector3 startPos;
+    private Quaternion startRot;
+    public virtual void Reset()
+    {
+        stats?.Reset();
+        transform.localPosition = startPos;
+        transform.localRotation = startRot;
+
+        state = StateEnum.Idle;
+        ResetTarget();
+    }
+
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         stats = GetComponent<StatScript>();
@@ -110,6 +124,8 @@ public abstract class EnemyAI : MonoBehaviour
         stats.SubscribeToOnResurrect(OnResurrect);
         stats.SubscribeToOnEnrage(OnEnrage);
         state = StateEnum.Idle;
+        startPos = transform.localPosition;
+        startRot = transform.localRotation;
         noiseSource = GetComponent<AudioSource>();
     }
 
