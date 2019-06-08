@@ -321,12 +321,13 @@ public class StatScript : MonoBehaviour
     {
         // Check if we resist
         float procRoll = Random.value;
-        if (procRoll > freezeResistance)
+        if (!isFrozen && procRoll > freezeResistance)
         {
             lock (_lock)
             {
                 Debug.Log(gameObject.name + " frozen");
                 isFrozen = true;
+                OnFreeze();
                 material.SetColor("_Color", freezeTint);
             }
         }
@@ -339,6 +340,7 @@ public class StatScript : MonoBehaviour
         lock (_lock)
         {
             isFrozen = false;
+            OnFreezeEnd();
             material.SetColor("_Color", clearTint);
         }
         Debug.Log(gameObject.name + " unfrozen");
@@ -364,6 +366,18 @@ public class StatScript : MonoBehaviour
     public void UnsubscribeToOnFreezeEnd(Subscriber sub)
     {
         onFreezeEndSubscribers.Remove(sub);
+    }
+
+    public void OnFreeze()
+    {
+        foreach (Subscriber sub in onFreezeSubscribers)
+            sub(this);
+    }
+
+    public void OnFreezeEnd()
+    {
+        foreach (Subscriber sub in onFreezeEndSubscribers)
+            sub(this);
     }
 
     /*---- ENRAGE METHODS ----*/

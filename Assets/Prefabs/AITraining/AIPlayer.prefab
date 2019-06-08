@@ -65,7 +65,7 @@ MonoBehaviour:
   interactablesContainer: {fileID: 0}
   doorsContainer: {fileID: 0}
   moveSpeed: 3
-  emptySpellPrefab: {fileID: 9115242570344683285, guid: dc4d7e134ee9aa44eb039160a99ac6ae,
+  emptySpellPrefab: {fileID: 9115242570344683285, guid: e1496d20aa0d6a34a941b5bce857a065,
     type: 3}
 --- !u!114 &1178749611924083361
 MonoBehaviour:

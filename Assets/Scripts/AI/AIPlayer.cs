@@ -12,6 +12,7 @@ public class AIPlayer : Agent
     public int manaPotionCount = 0;
     public int keyCount = 0;
     private bool interact = false;
+    private bool canFire = true;
 
     public GameObject companion;
     public GameObject enemiesContainer;
@@ -99,8 +100,9 @@ public class AIPlayer : Agent
         lock (_lock)
         {
             score += killScore;
-            StatScript enemyStats = obj[0] as StatScript;
-            if (enemyStats.GetComponent<EnemyAI>().isBoss)
+            GameObject enemy = obj[0] as GameObject;
+            EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
+            if (enemyAI.isBoss)
             {
                 Finish();
             }
@@ -191,10 +193,10 @@ public class AIPlayer : Agent
 
     private void Score()
     {
-        if (isPacifist)
-            score += pacifistScore;
         if (!isDead)
         {
+            if (isPacifist)
+                score += pacifistScore;
             int framesPassed = maxFrames - (Time.frameCount - startFrame);
             score += framesPassed * timeScoreMult;
         }
@@ -225,6 +227,8 @@ public class AIPlayer : Agent
             float manaCost = -spell.ManaCost();
             if (stats.ModifyMana(manaCost))
             {
+                lock(_lock) canFire = false;
+                StartCoroutine(FireCooldown());
                 // create spell instance
                 Vector3 startPos = transform.position;
                 startPos.y += 0.5f;
@@ -386,14 +390,15 @@ public class AIPlayer : Agent
         // Rotate
         Rotate(vectorAction[2]);
         // Fire spell
-        for (int i = 0; i < 5; ++i)
-        {
-            if (isTrue(vectorAction[i + 3]))
+        if(canFire)
+            for (int i = 0; i < 5; ++i)
             {
-                Fire(i);
-                break;
+                if (isTrue(vectorAction[i + 3]))
+                {
+                    Fire(i);
+                    break;
+                }
             }
-        }
         // Health potion
         if (isTrue(vectorAction[8]))
             UseHealthPotion();
@@ -414,6 +419,9 @@ public class AIPlayer : Agent
 
         stats.AIReset();
         score = 0;
+        keyCount = 0;
+        healthPotionCount = 0;
+        manaPotionCount = 0;
         startFrame = Time.frameCount;
         isDead = false;
         frozenCount = 0;
@@ -436,4 +444,10 @@ public class AIPlayer : Agent
         base.AgentOnDone();
     }
     
+    private IEnumerator FireCooldown()
+    {
+        yield return new WaitForSeconds(0.25f);
+        lock (_lock)
+            canFire = true;
+    }
 }
