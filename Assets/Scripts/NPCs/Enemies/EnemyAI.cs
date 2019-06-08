@@ -70,6 +70,7 @@ public abstract class EnemyAI : MonoBehaviour
 
     // Target variables
     protected GameObject target;
+    public GameObject Target => target;
     protected StatScript targetStatScript;
 
     protected virtual void OnDeath(Object[] obj)
@@ -105,9 +106,9 @@ public abstract class EnemyAI : MonoBehaviour
 
     private Vector3 startPos;
     private Quaternion startRot;
-    public virtual void Reset()
+    public virtual void AIReset()
     {
-        stats?.Reset();
+        stats?.AIReset();
         transform.localPosition = startPos;
         transform.localRotation = startRot;
 
@@ -378,6 +379,8 @@ public abstract class EnemyAI : MonoBehaviour
 
                 case StateEnum.Airborne:
                     // Do nothing. Wait until we hit the ground. Collision detection will change the state
+                    if (transform.localPosition.y <= 0.25f)
+                        state = StateEnum.MoveTowardTarget;
                     break;
 
                 case StateEnum.Dead:
@@ -462,7 +465,7 @@ public abstract class EnemyAI : MonoBehaviour
 
     private void PickTarget(GameObject go)
     {
-        go = go.transform.root.gameObject;
+        //go = go.transform.root.gameObject;
         bool pickTarget = false;
 
         if (stats && stats.IsEnraged)

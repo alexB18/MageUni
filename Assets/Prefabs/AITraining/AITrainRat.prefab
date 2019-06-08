@@ -88,7 +88,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 728251697801376799}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 430.94302
   m_Height: 3878.3008
   m_Direction: 1
@@ -211,7 +211,9 @@ GameObject:
   - component: {fileID: 1824775880071479472}
   - component: {fileID: 7516787244903296927}
   - component: {fileID: 2518750839547180358}
-  m_Layer: 0
+  - component: {fileID: 2529163916223433981}
+  - component: {fileID: 4185058768832971827}
+  m_Layer: 31
   m_Name: AITrainRat
   m_TagString: BadGuy
   m_Icon: {fileID: 0}
@@ -298,6 +300,38 @@ MonoBehaviour:
   linearSpeed: 3
   damage: 10
   attackCooldown: 1.25
+  idleNoise1: {fileID: 0}
+  idleNoise2: {fileID: 0}
+  idleNoise3: {fileID: 0}
+  detectNoise: {fileID: 0}
+  attackNoise: {fileID: 0}
+  deathNoise: {fileID: 0}
+--- !u!65 &2529163916223433981
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516787244903296925}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 0.35, z: 1.8}
+  m_Center: {x: 0, y: 0.175, z: -0.5}
+--- !u!114 &4185058768832971827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516787244903296925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c929ceb37957fa947a008fad4f0c455c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1001 &4518463743637961917
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -112,13 +112,13 @@ public class StatScript : MonoBehaviour
 
     /*---- GENERAL METHODS ----*/
     public bool AIEnabled => !(IsStunned || IsDead || IsFrozen);
-    public void Reset()
+    public void AIReset()
     {
         StopAllCoroutines();
         currentHealth = maximumHealth;
         currentMana = maximumMana;
         stunTime = 0f;
-        speedModifier = 0f;
+        speedModifier = 1f;
         enrageTime = 0f;
         isFrozen = false;
     }
@@ -198,7 +198,10 @@ public class StatScript : MonoBehaviour
         }
     }
 
-    public void SubscribeToOnDeath(Subscriber sub) => onDeathSubscribers.Add(sub);
+    public void SubscribeToOnDeath(Subscriber sub)
+    {
+        if (!onDeathSubscribers.Contains(sub)) onDeathSubscribers.Add(sub);
+    }
 
     public bool UnsubscribeFromOnDeath(Subscriber sub) => onDeathSubscribers.Remove(sub);
 
@@ -213,7 +216,8 @@ public class StatScript : MonoBehaviour
     public void OnDeath()
     {
         //Debug.Log("Dead");
-        foreach (var sub in onDeathSubscribers)
+        List<Subscriber> subscribers = new List<Subscriber>(onDeathSubscribers);
+        foreach (var sub in subscribers)
             sub(gameObject);
     }
 

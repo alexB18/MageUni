@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class RatBiteScript : MonoBehaviour
 {
-    public float damage = 10f;
     private bool canBite = true;
     private const float biteCooldown = 2f;
 
     private void OnCollisionEnter(Collision collision)
     {
-        EnemyTestRatAI ai = gameObject.GetComponentInParent<EnemyTestRatAI>() as EnemyTestRatAI;
-        if (collision.gameObject == ai.target && canBite)
+        EnemyAI ai = gameObject.GetComponentInParent<EnemyAI>() as EnemyAI;
+        if (collision.gameObject == ai.Target && canBite)
         {
             canBite = false;
-            ai.Bite(collision.gameObject);
+            ai.Target.GetComponent<StatScript>().DamageHealth(ai.damage);
+            StartCoroutine(BiteCooldown());
         }
     }
 

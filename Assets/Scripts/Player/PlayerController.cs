@@ -44,12 +44,12 @@ public class PlayerController : MonoBehaviour
     public bool campusPracticeArena = false;
 
     // Health and mana
-    private StatScript statScript;
+    private StatScript stats;
     public float manaRechargeRate = 5;
 
     [HideInInspector] public bool isAlive = true;
     public GameObject deathScreen;
-    private float timeUntilReload = 3f;
+    private const float timeUntilReload = 3f;
 
     // Key Variables
     public int numKeys;
@@ -92,8 +92,8 @@ public class PlayerController : MonoBehaviour
         numKeys = 0;
         followCamera = Camera.main.gameObject;
         followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
-        statScript = gameObject.GetComponent<StatScript>() as StatScript;
-        statScript.SubscribeToOnDeath(OnDeath);
+        stats = gameObject.GetComponent<StatScript>() as StatScript;
+        stats.SubscribeToOnDeath(OnDeath);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
                 interactionTrigger.SetActive(true);
                 interactionTimer = StartCoroutine("InteractionTimer");
             }
-            statScript.ModifyMana(manaRechargeRate * Time.deltaTime);
+            stats.ModifyMana(manaRechargeRate * Time.deltaTime);
             /*
             if (healthBar != null)
                 healthBar.value = healthScript.currentHealth / healthScript.maximumHealth;
@@ -155,19 +155,17 @@ public class PlayerController : MonoBehaviour
 
            
             // Health pickups
-            if (Input.GetButtonDown("Health Potion")){
-
-                if (healthPotionCount > 0)
-                        gameObject.GetComponent<StatScript>().RestoreHealth(25);
-
+            if (Input.GetButtonDown("Health Potion") && healthPotionCount > 0)
+            {
+                --healthPotionCount;
+                stats.RestoreHealth(25);
             }
 
             // Mana Pickups
-            if (Input.GetButtonDown("Mana Potion"))
+            if (Input.GetButtonDown("Mana Potion") && manaPotionCount > 0)
             {
-                if (manaPotionCount > 0)
-                        gameObject.GetComponent<StatScript>().RestoreMana(75);
-
+                --manaPotionCount;
+                stats.RestoreMana(75);
             }
 
 
@@ -319,7 +317,7 @@ public class PlayerController : MonoBehaviour
         if (spell != null)
         {
             float manaCost = -spell.ManaCost();
-            if (statScript.ModifyMana(manaCost))
+            if (stats.ModifyMana(manaCost))
             {
                 // create spell instance
                 Vector3 startPos = transform.position;
@@ -332,7 +330,7 @@ public class PlayerController : MonoBehaviour
 
                 // Add the spell effects
                 SpellScript spellScript = spellObject.GetComponent<SpellScript>();
-                spellScript.spell = spells[activeSpellSlot];
+                spellScript.spell = spell;
                 spellScript.parent = gameObject;
             }
         }
