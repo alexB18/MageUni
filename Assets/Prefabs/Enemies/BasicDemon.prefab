@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3582195917802249301}
   - component: {fileID: 7033498777213751254}
   - component: {fileID: 2669410285166546438}
+  - component: {fileID: 5427125667444969392}
   m_Layer: 31
   m_Name: BasicDemon
   m_TagString: BadGuy
@@ -76,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d382fc203e3994f9c2a61b93e5a167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   maxWanderTime: 5
   maxIdleTime: 2.5
   wanderChance: 0.4
@@ -83,8 +85,15 @@ MonoBehaviour:
   linearSpeed: 2.5
   damage: 20
   attackCooldown: 1.25
+  idleNoise1: {fileID: 8300000, guid: fef318984dcf3b1499c6fca897aa64f8, type: 3}
+  idleNoise2: {fileID: 8300000, guid: 37aba0a666fe8074c86abb47a07ab3a4, type: 3}
+  idleNoise3: {fileID: 8300000, guid: 66dcf9bf554f77943a2e770becf0480a, type: 3}
+  detectNoise: {fileID: 8300000, guid: 68296d451bf80c7409a3a9bf43c38e14, type: 3}
+  attackNoise: {fileID: 8300000, guid: 91c0ac43a68229a4a807a4a966787b9a, type: 3}
+  deathNoise: {fileID: 8300000, guid: feb2200f0edde8548a6476d14a3132f1, type: 3}
   demonAttack: {fileID: 5241299155110152871, guid: cc2aaabd64bdd3d4289747b037695b09,
     type: 3}
+  distance: 3
 --- !u!54 &7033498777213751254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,6 +124,103 @@ CapsuleCollider:
   m_Height: 5.8
   m_Direction: 1
   m_Center: {x: 0, y: 2.83, z: 0.38}
+--- !u!82 &5427125667444969392
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200218356929556791}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243933218537477148, guid: 58cf5a9a26a1b0b469145e4c2f1ee179,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &3346911904034056357
 PrefabInstance:
   m_ObjectHideFlags: 0
