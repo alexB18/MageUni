@@ -20,7 +20,7 @@ public static class DefaultSceneLoader
 
         if (state == PlayModeStateChange.EnteredPlayMode)
         {
-            if(SceneManager.GetActiveScene().name != "MasterScene" && SceneManager.GetActiveScene().name != "AITraining")
+            if(SceneManager.GetActiveScene().name != "MasterScene" && SceneManager.GetActiveScene().name != "AITraining" && SceneManager.GetActiveScene().name != "AITraining 1")
                 EditorSceneManager.LoadScene("Assets/Scenes/MasterScene.unity");
         }
     }

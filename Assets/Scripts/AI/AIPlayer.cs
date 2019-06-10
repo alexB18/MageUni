@@ -20,6 +20,7 @@ public class AIPlayer : Agent
     public GameObject interactablesContainer;
     public GameObject doorsContainer;
     private List<AIDoorScript> doorScripts = new List<AIDoorScript>();
+    private Vector3 startPos;
 
     private GameObject perceived;
     private bool isCompanion = false;
@@ -28,7 +29,8 @@ public class AIPlayer : Agent
     private bool isInteractable = false;
 
     private Rigidbody rb;
-    public float moveSpeed = 3f;
+    public float moveSpeed = 5f;
+    public float rotationSpeed = 5f;
 
     private const int deathScore = -10000;
     private const int maxFrames = 7500;
@@ -85,21 +87,23 @@ public class AIPlayer : Agent
 
     private void OnDeath(Object[] obj)
     {
-        score += deathScore;
+        //score += deathScore;
+        AddReward(deathScore);
         isDead = true;
         Finish();
     }
 
     private void OnHealthChange(Object[] obj)
     {
-        Debug.Log("Player health at " + stats.currentHealth);
+        Float score = obj[1] as Float;
+        AddReward(score.val);
     }
 
     private void OnEnemyDeath(Object[] obj)
     {
         lock (_lock)
         {
-            score += killScore;
+            AddReward(killScore);
             GameObject enemy = obj[0] as GameObject;
             EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
             if (enemyAI.isBoss)
@@ -111,7 +115,10 @@ public class AIPlayer : Agent
 
     private void OnEnemyHealthChange(Object[] obj)
     {
-        isPacifist = false;
+        Float score = obj[1] as Float;
+        if (score.val < 0)
+            isPacifist = false;
+        AddReward(-score.val);
     }
 
     private void OnEnemyFreeze(Object[] obj)
@@ -132,6 +139,7 @@ public class AIPlayer : Agent
     // Start is called before the first frame update
     void Start()
     {
+        startPos = transform.localPosition;
         stats = GetComponent<StatScript>();
         rb = GetComponent<Rigidbody>();
         AgentReset();
@@ -216,7 +224,7 @@ public class AIPlayer : Agent
     private void Rotate(float a)
     {
         //transform.rotation = Quaternion.Euler(0, a, 0);
-        transform.Rotate(0f, a, 0f);
+        transform.Rotate(0f, a*rotationSpeed, 0f);
     }
 
     private void Fire(int index)
@@ -225,7 +233,7 @@ public class AIPlayer : Agent
         if (spell != null)
         {
             float manaCost = -spell.ManaCost();
-            if (stats.ModifyMana(manaCost))
+            if (stats.ModifyMana(-10))
             {
                 lock(_lock) canFire = false;
                 StartCoroutine(FireCooldown());
@@ -415,7 +423,7 @@ public class AIPlayer : Agent
         // If the Agent fell, zero its momentum
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
-        transform.localPosition = new Vector3(7.5f, 1f, 0f);
+        transform.localPosition = startPos;
 
         stats.AIReset();
         score = 0;

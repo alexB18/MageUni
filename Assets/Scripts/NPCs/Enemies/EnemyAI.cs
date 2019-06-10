@@ -104,13 +104,23 @@ public abstract class EnemyAI : MonoBehaviour
     }
 
 
-    private Vector3 startPos;
+    public Vector2 xRange;
+    public Vector2 yRange;
     private Quaternion startRot;
     public virtual void AIReset()
     {
         stats?.AIReset();
-        transform.localPosition = startPos;
-        transform.localRotation = startRot;
+        if (rb)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+        Vector3 pos = new Vector3(
+            Random.Range(xRange.x, xRange.y),
+            0,
+            Random.Range(yRange.x, yRange.y));
+        transform.localPosition = pos;
+        transform.localRotation = Quaternion.Euler(0f, Random.Range(-180f, 180f), 0);
 
         state = StateEnum.Idle;
         ResetTarget();
@@ -125,8 +135,6 @@ public abstract class EnemyAI : MonoBehaviour
         stats.SubscribeToOnResurrect(OnResurrect);
         stats.SubscribeToOnEnrage(OnEnrage);
         state = StateEnum.Idle;
-        startPos = transform.localPosition;
-        startRot = transform.localRotation;
         noiseSource = GetComponent<AudioSource>();
     }
 

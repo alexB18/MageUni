@@ -27,8 +27,8 @@ public class StatScript : MonoBehaviour
     {
         material = GetComponentInChildren<Renderer>()?.material;
         // Activate the change listeners for health and mana
-        OnHealthChange();
-        OnManaChange();
+        OnHealthChange(0f);
+        OnManaChange(0f);
     }
 
     private void OnDestroy()
@@ -132,6 +132,7 @@ public class StatScript : MonoBehaviour
     {
         if (!IsDead)
         {
+            float old = currentHealth;
             float resistance = _DTResistanceDict[dt];
             if (IsStunned) resistance *= stunResistanceMultiplier;
 
@@ -151,7 +152,7 @@ public class StatScript : MonoBehaviour
                     OnDeath();
                 }
             }
-            OnHealthChange();
+            OnHealthChange(currentHealth - old);
             Debug.Log(string.Format("Health at {0}", currentHealth));
         }
     }
@@ -172,7 +173,7 @@ public class StatScript : MonoBehaviour
             canResurrect = false;
             currentHealth = maximumHealth / 2f;
             OnResurrect();
-            OnHealthChange();
+            OnHealthChange(maximumHealth / 2f);
         }
     }
 
@@ -180,10 +181,11 @@ public class StatScript : MonoBehaviour
     {
         if (!IsDead)
         {
+            float old = currentHealth;
             currentHealth += f;
             if (currentHealth > maximumHealth)
                 currentHealth = maximumHealth;
-            OnHealthChange();
+            OnHealthChange(currentHealth - old);
         }
     }
 
@@ -191,10 +193,11 @@ public class StatScript : MonoBehaviour
     {
         if (!IsDead)
         {
+            float old = currentMana;
             currentMana += f;
             if (currentMana > maximumMana)
                 currentMana = maximumMana;
-            OnHealthChange();
+            OnManaChange(currentMana - old);
         }
     }
 
@@ -243,10 +246,10 @@ public class StatScript : MonoBehaviour
     /**
      * Notifies with this script as the object. We can't pass floats as objects
      */
-    public void OnHealthChange()
+    public void OnHealthChange(float f)
     {
         foreach (var sub in onHealthChangeSubscribers)
-            sub(this);
+            sub(this, new Float(f));
     }
 
     public bool IsDead => currentHealth <= 0;
@@ -262,6 +265,7 @@ public class StatScript : MonoBehaviour
     // Returns whether or not there was enough mana left
     public bool ModifyMana(float f)
     {
+        float old = currentMana;
         float mana = currentMana + f;
 
         if(mana < 0)
@@ -271,15 +275,15 @@ public class StatScript : MonoBehaviour
             mana = maximumMana;
 
         currentMana = mana;
-        OnManaChange();
+        OnManaChange(currentMana - old);
 
         return true;
     }
 
-    public void OnManaChange()
+    public void OnManaChange(float f)
     {
         foreach (Subscriber sub in onManaChangeSubscribers)
-            sub.Invoke(this);
+            sub.Invoke(this, new Float(f));
     }
 
     /*---- STUN METHODS ----*/
