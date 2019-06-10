@@ -337,9 +337,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 06df8af82fd310c45bdedbdff132a34c, type: 3}
   hell:
   - {fileID: 8300000, guid: 58e6f0b8f3a3a714cbe4e009240002f1, type: 3}
-  - {fileID: 8300000, guid: c57ed524e7d222841a7cd7dc012b2907, type: 3}
-  - {fileID: 8300000, guid: 752d3af55c2abad4b88fb3bc8af93faa, type: 3}
-  - {fileID: 8300000, guid: 61c23338b5566ca40a497e5a2159c1ae, type: 3}
   hellBoss:
   - {fileID: 8300000, guid: ff8fa86245e76934887c602152c8bd0d, type: 3}
   - {fileID: 8300000, guid: 99c46af292c0e3f44982a06152acc1c3, type: 3}
