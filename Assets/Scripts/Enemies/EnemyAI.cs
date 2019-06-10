@@ -319,9 +319,9 @@ public abstract class EnemyAI : MonoBehaviour
                         float rotationSpeed = Mathf.Lerp(minRotationSpeed, maxRotationSpeed, v2 / linearSpeed);
                         float t = Mathf.Abs(rotationSpeed * Time.deltaTime / Quaternion.Angle(transform.rotation, newRotation));
 
-                        Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t);
+                        Quaternion slerpedLook = Quaternion.Slerp(transform.rotation, newRotation, t).normalized;
                         //Quaternion slerpedLook = Quaternion.LookRotation(lookV);
-                        transform.rotation = Quaternion.Euler(new Vector3(0, slerpedLook.eulerAngles.y, 0)).normalized;
+                        transform.rotation = Quaternion.Euler(new Vector3(0, newRotation.eulerAngles.y, 0)).normalized;
 
                         if (Quaternion.Angle(transform.rotation, newRotation) <= 2)
                         {

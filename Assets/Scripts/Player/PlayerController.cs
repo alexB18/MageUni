@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerSceneChange sceneManager;
 
+    // LOCK and CAN ROTATE
+    private readonly object _lock = new object();
+    private bool canRotate = true;
+
     /* ------------------------  Player variables   ------------------- */
     public float moveSpeed = 3.5f;
     public float turnSpeed = 10;
@@ -231,15 +235,24 @@ public class PlayerController : MonoBehaviour
 
     private void CameraRotateKeys()
     {
-        if (Input.GetButtonDown("Camera Horizontal Left"))
+        if (canRotate)
         {
-            followCameraRotation.y -= cameraRotateSpeed;
-            followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
-        }
-        else if (Input.GetButtonDown("Camera Horizontal Right"))
-        {
-            followCameraRotation.y += cameraRotateSpeed;
-            followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+            if (Input.GetButtonDown("Camera Horizontal Left"))
+            {
+                lock (_lock)
+                    canRotate = false;
+                followCameraRotation.y -= cameraRotateSpeed;
+                followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+                StartCoroutine(KeyWait());
+            }
+            else if (Input.GetButtonDown("Camera Horizontal Right"))
+            {
+                lock (_lock)
+                    canRotate = false;
+                followCameraRotation.y += cameraRotateSpeed;
+                followCamera.transform.rotation = Quaternion.Euler(followCameraRotation);
+                StartCoroutine(KeyWait());
+            }
         }
         
         /*
@@ -355,5 +368,11 @@ public class PlayerController : MonoBehaviour
         Animator animator = gameObject.GetComponent<Animator>() as Animator;
         playerRb.freezeRotation = false;
         animator.enabled = false;
+    }
+
+    private IEnumerator KeyWait(float f = 0.10f)
+    {
+        yield return new WaitForSecondsRealtime(f);
+        lock (_lock) canRotate = true;
     }
 }

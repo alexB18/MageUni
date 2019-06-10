@@ -136,6 +136,32 @@ public class PlayerSceneChange : MonoBehaviour
         SceneManager.LoadScene(masterSceneName, LoadSceneMode.Single);
     }
 
+    public void DeathReload()
+    {
+        GetComponent<StatScript>().AIReset();
+        PlayerController pc = GetComponent<PlayerController>();
+        pc.numKeys = 0;
+        pc.healthPotionCount = 0;
+        pc.manaPotionCount = 0;
+        string sceneToLoad = "MasterScene";
+        switch(QuestStage.Quest)
+        {
+            case QuestStage.Quests.Rat:
+                sceneToLoad = "RatHouse";
+                break;
+            case QuestStage.Quests.Slime:
+                sceneToLoad = "SlimeCave";
+                break;
+            case QuestStage.Quests.Demon:
+                sceneToLoad = "Campus";
+                break;
+            case QuestStage.Quests.Hell:
+                sceneToLoad = "Hell";
+                break;
+        }
+        LoadScene(sceneToLoad);
+    }
+
     public bool CampusScene()
     {
         bool ret = false;
