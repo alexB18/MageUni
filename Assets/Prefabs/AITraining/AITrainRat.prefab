@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c929ceb37957fa947a008fad4f0c455c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  myAI: {fileID: 2518750839547180358}
 --- !u!1 &7516787244903296925
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +306,8 @@ MonoBehaviour:
   detectNoise: {fileID: 0}
   attackNoise: {fileID: 0}
   deathNoise: {fileID: 0}
+  xRange: {x: 0, y: 0}
+  yRange: {x: 0, y: 0}
 --- !u!65 &2529163916223433981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -331,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c929ceb37957fa947a008fad4f0c455c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  myAI: {fileID: 0}
 --- !u!1001 &4518463743637961917
 PrefabInstance:
   m_ObjectHideFlags: 0

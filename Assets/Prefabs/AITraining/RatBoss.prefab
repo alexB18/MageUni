@@ -203,6 +203,8 @@ MonoBehaviour:
   detectNoise: {fileID: 0}
   attackNoise: {fileID: 0}
   deathNoise: {fileID: 0}
+  xRange: {x: 0, y: 0}
+  yRange: {x: 0, y: 0}
 --- !u!1 &4456998740369239144
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c929ceb37957fa947a008fad4f0c455c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myAI: {fileID: 453703616129133077}
 --- !u!1 &6886509188689349901
 GameObject:
   m_ObjectHideFlags: 0

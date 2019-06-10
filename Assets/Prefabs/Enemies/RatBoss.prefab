@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d38dee72c3872f43b0e187615ac4029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   maxWanderTime: 5
   maxIdleTime: 2.5
   wanderChance: 0.4
@@ -198,6 +199,8 @@ MonoBehaviour:
   detectNoise: {fileID: 8300000, guid: f5a104ca282748d4ca65f728895e13d2, type: 3}
   attackNoise: {fileID: 8300000, guid: 9fd49171ee3c42f4eb9dd2f3d0ed0daa, type: 3}
   deathNoise: {fileID: 8300000, guid: 8b680bd18b1fed94b807f60f88664ff2, type: 3}
+  xRange: {x: 0, y: 0}
+  yRange: {x: 0, y: 0}
 --- !u!82 &1977638774384259997
 AudioSource:
   m_ObjectHideFlags: 0
@@ -400,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c929ceb37957fa947a008fad4f0c455c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  myAI: {fileID: 6184951418247911795}
 --- !u!1001 &6399224002865099244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -468,12 +471,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5766118190354464184, guid: 33333ff632c92ed4a81db4c8b7ba6a5a,
+    - target: {fileID: 5766118191625444350, guid: 33333ff632c92ed4a81db4c8b7ba6a5a,
         type: 3}
       propertyPath: m_Layer
       value: 29
       objectReference: {fileID: 0}
-    - target: {fileID: 5766118191625444350, guid: 33333ff632c92ed4a81db4c8b7ba6a5a,
+    - target: {fileID: 5766118190354464184, guid: 33333ff632c92ed4a81db4c8b7ba6a5a,
         type: 3}
       propertyPath: m_Layer
       value: 29

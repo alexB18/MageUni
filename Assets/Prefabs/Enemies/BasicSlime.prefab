@@ -12,7 +12,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.75
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &6632092964592923562
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +103,8 @@ MonoBehaviour:
   detectNoise: {fileID: 8300000, guid: 435fa26cfd732934882446138fa69c7d, type: 3}
   attackNoise: {fileID: 8300000, guid: 72a4e7793e005ab47849fe146d764f17, type: 3}
   deathNoise: {fileID: 8300000, guid: 852eb8a604ad68f4aa5d04c472feddc6, type: 3}
+  xRange: {x: 0, y: 0}
+  yRange: {x: 0, y: 0}
   slimeAttack: {fileID: 3758491018420207460, guid: b533e16b9447ff04289a404504eb6f74,
     type: 3}
 --- !u!54 &2586722378707340165
@@ -134,7 +136,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

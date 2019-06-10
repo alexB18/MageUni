@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c929ceb37957fa947a008fad4f0c455c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  myAI: {fileID: 1247960020787710417}
 --- !u!1 &1247960020787710431
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5510eee4a010c4f8f49120a47e8482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   maxWanderTime: 5
   maxIdleTime: 2.5
   wanderChance: 0.4
@@ -167,6 +168,8 @@ MonoBehaviour:
   detectNoise: {fileID: 8300000, guid: f5a104ca282748d4ca65f728895e13d2, type: 3}
   attackNoise: {fileID: 8300000, guid: 9fd49171ee3c42f4eb9dd2f3d0ed0daa, type: 3}
   deathNoise: {fileID: 8300000, guid: 8b680bd18b1fed94b807f60f88664ff2, type: 3}
+  xRange: {x: 0, y: 0}
+  yRange: {x: 0, y: 0}
 --- !u!114 &6941099070400866034
 MonoBehaviour:
   m_ObjectHideFlags: 0
