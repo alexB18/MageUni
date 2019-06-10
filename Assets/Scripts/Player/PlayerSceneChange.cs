@@ -79,6 +79,7 @@ public class PlayerSceneChange : MonoBehaviour
 
     public void LoadScene(string scene)
     {
+        BackgroundMusic.music.Pause();
         if (scene == "")
             scene = masterSceneName;
 
@@ -105,6 +106,7 @@ public class PlayerSceneChange : MonoBehaviour
         }
         else
         {
+            BackgroundMusic.music.SwitchBackground(true);
             doTransport = false;
         }
 

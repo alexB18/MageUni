@@ -370,7 +370,7 @@ public class PlayerController : MonoBehaviour
         animator.enabled = false;
     }
 
-    private IEnumerator KeyWait(float f = 0.10f)
+    private IEnumerator KeyWait(float f = 0.05f)
     {
         yield return new WaitForSecondsRealtime(f);
         lock (_lock) canRotate = true;

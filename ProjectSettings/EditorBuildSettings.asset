@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SlimeCave.unity
     guid: fbc55fa238f66e44684a6ba21c60bae3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BoneZone.unity
     guid: 26c665aa559a56046812ecdb51f1367a
   - enabled: 1
