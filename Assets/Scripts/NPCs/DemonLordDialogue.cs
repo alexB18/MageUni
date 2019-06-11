@@ -31,13 +31,17 @@ public class DemonLordDialogue : NPC
         {
             { QuestStage.QuestStages.HellBoss + "1", new List<Fragment>()
             {
-                () => BackgroundMusic.music.SwitchBackground(),
-                () => Exit()
+                () => {
+                    BackgroundMusic.music.SwitchBackground();
+                    Exit();
+                }
             } },
             { QuestStage.QuestStages.HellFinished + "1", new List<Fragment>()
             {
-                () => BackgroundMusic.music.Pause(),
-                () => Exit()
+                () => {
+                    BackgroundMusic.music.Pause();
+                    Exit();
+                }
             } },
         };
     }
