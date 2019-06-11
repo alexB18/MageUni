@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private readonly object _lock = new object();
     private bool canRotate = true;
 
+    private Coroutine coroutine = null;
+
     /* ------------------------  Player variables   ------------------- */
     public float moveSpeed = 3.5f;
     public float turnSpeed = 10;
@@ -157,8 +159,8 @@ public class PlayerController : MonoBehaviour
             interactionTrigger.SetActive(false);
 
             
-            StopCoroutine(interactionTimer);
-            interactionTimer = null;
+            if(interactionTimer != null)
+                StopCoroutine(coroutine);
 
             other.gameObject.GetComponent<Interactable>().Interact(gameObject);
             

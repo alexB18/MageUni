@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4542936292986510}
   - component: {fileID: 33931811688761010}
   - component: {fileID: 23261116310722714}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: liquid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4758470610091142}
   - component: {fileID: 33909841365935930}
   - component: {fileID: 23129269956758522}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: cork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 3042659579823931466}
   - component: {fileID: 1163022142}
   - component: {fileID: 8383382784082237607}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: bottlePotionHealth
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795102964167686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4665698130184402}
@@ -210,7 +210,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795102964167686}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.6
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 4665698130184402}
   - component: {fileID: 33068223142864856}
   - component: {fileID: 23167670778383576}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
