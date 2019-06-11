@@ -133,6 +133,7 @@ public class RoommateDialogue : NPC
             { QuestStage.QuestStages.RatDorm + "5", new List<Fragment>()
             {
                 () => { QuestStage.QS = QuestStage.QuestStages.RatLecture;
+                        SetGoodbyeFragment(OpenMenu.openMenu.MovementTutorial);
                         Exit(); }
             }},
             { QuestStage.QuestStages.RatLecture + "1", new List<Fragment>() },

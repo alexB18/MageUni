@@ -8,6 +8,7 @@ public abstract class NPC : Interactable
 {
     // Fragment class is used for player responses
     protected delegate void Fragment();
+    protected Fragment goodbyeFragment = null;
     // An NPC is anything that can be interacted with that brings up a dialogue window. Other interactables
     // such as chests or doors (potentially) should have a separate script.
     public string currentState;
@@ -132,6 +133,12 @@ public abstract class NPC : Interactable
         // Goodbye, so call the goodbye action
         if(playerResponsesAction.ContainsKey(currentState) && playerResponsesAction[currentState].Count == 1)
             playerResponsesAction[currentState][0]();
+        // If we have a goodbye fragment, call it
+        if(goodbyeFragment != null)
+        {
+            goodbyeFragment();
+            goodbyeFragment = null;
+        }
         currentPos = 0;
         state = 1;
         currentState = QuestStage.QS + "1";
@@ -146,7 +153,7 @@ public abstract class NPC : Interactable
             text.text = "";
         }
     }
-
+    protected void SetGoodbyeFragment(Fragment fragment) => goodbyeFragment = fragment;
     public void ShowResponses()
     {
         if (playerResponses.ContainsKey(currentState))

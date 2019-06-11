@@ -4,6 +4,10 @@ using UnityEngine;
 
 public static class QuestStage
 {
+    private static bool didMovement;
+    private static bool didLectureEnter;
+    private static bool didQuestStart;
+    private static bool didSpellCreation;
     public static QuestStages QS = QuestStages.RatDorm;
     internal class QuestDetails
     {
@@ -67,11 +71,20 @@ public static class QuestStage
         QS = QuestStages.HellStart;
         Score = 0;
         Pacifist = true;
+        didMovement = false;
+        didQuestStart = false;
+        didLectureEnter = false;
+        didSpellCreation = false;
 
 
         QS = QuestStages.RatDorm;
     }
     public static Quests Quest => QS_Q[QS];
+
+    public static bool DidMovement { get => didMovement; set => didMovement = value; }
+    public static bool DidQuestStart { get => didQuestStart; set => didQuestStart = value; }
+    public static bool DidLectureEnter { get => didLectureEnter; set => didLectureEnter = value; }
+    public static bool DidSpellCreation { get => didSpellCreation; set => didSpellCreation = value; }
 
 
     /**

@@ -9,9 +9,19 @@ public class OpenMenu : MonoBehaviour
     CurrentMenuScript currentMenu;
     public GameObject menu;
     private float startPhysicsStep;
+    public GameObject movement_tut;
+    public GameObject enter_tut;
+    public GameObject quest_tut;
+    public GameObject spell_creation_tut;
+    private bool canOpen = false;
 
     // Singleton!
     public static OpenMenu openMenu;
+
+    public void CanOpen(bool b)
+    {
+        canOpen = b;
+    }
 
     private void Awake()
     {
@@ -26,13 +36,14 @@ public class OpenMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Menu"))
+        if (Input.GetButtonDown("Menu") && canOpen)
         {
             if (!isPaused && !isDialogueOpen)
                 Pause();
             else
             {
-                currentMenu?.BackButton.onClick.Invoke();
+                if(currentMenu && currentMenu.BackButton.interactable)
+                    currentMenu?.BackButton.onClick.Invoke();
             }
         }
     }
@@ -52,6 +63,30 @@ public class OpenMenu : MonoBehaviour
         menu.SetActive(false);
         Time.timeScale = 1f;
         Time.fixedDeltaTime = startPhysicsStep;
+    }
+
+    public void MovementTutorial()
+    {
+        Pause(false);
+        movement_tut.SetActive(true);
+    }
+
+    public void LectureEnterTutorial()
+    {
+        Pause(false);
+        enter_tut.SetActive(true);
+    }
+
+    public void QuestTutorial()
+    {
+        Pause(false);
+        quest_tut.SetActive(true);
+    }
+
+    public void SpellCreationTutorial()
+    {
+        Pause(false);
+        spell_creation_tut.SetActive(true);
     }
 
     public void SetCurrentMenu(CurrentMenuScript value)

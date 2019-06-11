@@ -211,6 +211,7 @@ public class ProfessorTDialogue : NPC
             { QuestStage.QuestStages.RatLecture + "10", new List<Fragment>()
             {
                 () => { QuestStage.QS = QuestStage.QuestStages.RatStart;
+                        SetGoodbyeFragment(OpenMenu.openMenu.QuestTutorial);
                         Exit(); }
             } },
             { QuestStage.QuestStages.RatStart + "1", new List<Fragment>() },
