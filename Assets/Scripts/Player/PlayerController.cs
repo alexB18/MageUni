@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 3.5f;
     public float turnSpeed = 10;
     public float cameraRotateSpeed = 45f;
-    public int healthPotionCount = 0;
-    public int manaPotionCount = 0;
     private float maxPlayerSpeed = 3.5f;
     private float currentPlayerSpeed;
     private Animator anim;
@@ -55,15 +53,66 @@ public class PlayerController : MonoBehaviour
     public GameObject deathScreen;
     private const float timeUntilReload = 3f;
 
-    // Key Variables
-    public int numKeys;
-
     private void OnDeath(Object[] obj)
     {
         isAlive = false;
         ragdoll();
         StartCoroutine("DieAndRestart");
     }
+
+    // Pickup Variables
+    private int numKeys;
+    private int healthPotionCount = 0;
+    private int manaPotionCount = 0;
+    private List<Subscriber> onKeyChangeSubscribers = new List<Subscriber>();
+    private List<Subscriber> onHealthPotionChangeSubscribers = new List<Subscriber>();
+    private List<Subscriber> onManaPotionChangeSubscribers = new List<Subscriber>();
+
+    public void SubscribeToOnKeyChange(Subscriber sub)
+    {
+        onKeyChangeSubscribers.Add(sub);
+    }
+    public void UnsubscribeToOnKeyChange(Subscriber sub)
+    {
+        onKeyChangeSubscribers.Remove(sub);
+    }
+    public void SubscribeToOnHealthPotionChange(Subscriber sub)
+    {
+        onHealthPotionChangeSubscribers.Add(sub);
+    }
+    public void UnsubscribeToOnHealthPotionChange(Subscriber sub)
+    {
+        onHealthPotionChangeSubscribers.Remove(sub);
+    }
+    public void SubscribeToOnManaPotionChange(Subscriber sub)
+    {
+        onManaPotionChangeSubscribers.Add(sub);
+    }
+    public void UnsubscribeToOnManaPotionChange(Subscriber sub)
+    {
+        onManaPotionChangeSubscribers.Remove(sub);
+    }
+
+    private void OnKeyChange()
+    {
+        foreach (Subscriber sub in onKeyChangeSubscribers)
+            sub(this);
+    }
+    private void OnHealthPotionChange()
+    {
+        foreach (Subscriber sub in onHealthPotionChangeSubscribers)
+            sub(this);
+    }
+    private void OnManaPotionChange()
+    {
+        foreach (Subscriber sub in onManaPotionChangeSubscribers)
+            sub(this);
+    }
+
+    public int NumKeys { get => numKeys; set { numKeys = value; OnKeyChange(); } }
+    public int HealthPotionCount { get => healthPotionCount; set { healthPotionCount = value; OnHealthPotionChange(); } }
+    public int ManaPotionCount { get => manaPotionCount; set { manaPotionCount = value; OnManaPotionChange(); } }
+
 
     // Interaction trigger
     public GameObject interactionTrigger;

@@ -25,9 +25,9 @@ public class TransportPlayer : Interactable
                     PlayerController pc = actor.GetComponent<PlayerController>();
                     // Check if player has any keys
                     // If they do, use one on the door
-                    if (pc.numKeys > 0)
+                    if (pc.NumKeys > 0)
                     {
-                        pc.numKeys -= 1;
+                        pc.NumKeys -= 1;
                         isLocked = false;
                         actor.GetComponent<PlayerSceneChange>().Transport(connectedScene, connectedMarker);
 

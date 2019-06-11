@@ -142,9 +142,9 @@ public class PlayerSceneChange : MonoBehaviour
     {
         GetComponent<StatScript>().AIReset();
         PlayerController pc = GetComponent<PlayerController>();
-        pc.numKeys = 0;
-        pc.healthPotionCount = 0;
-        pc.manaPotionCount = 0;
+        pc.NumKeys = 0;
+        pc.HealthPotionCount = 0;
+        pc.ManaPotionCount = 0;
         string sceneToLoad = "MasterScene";
         switch(QuestStage.Quest)
         {

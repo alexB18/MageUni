@@ -7,7 +7,7 @@ public class KeyPickup : Interactable
     public override void Interact(GameObject actor)
     {
         PlayerController pc = actor.GetComponent<PlayerController>();
-        pc.numKeys += 1;
+        pc.NumKeys += 1;
         gameObject.SetActive(false);
     }
 }

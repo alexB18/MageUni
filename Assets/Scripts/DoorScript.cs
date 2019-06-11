@@ -12,9 +12,9 @@ public class DoorScript : Interactable
         {
             PlayerController pc = actor.GetComponent<PlayerController>();
             // Check if player has any keys
-            if (pc.numKeys > 0)
+            if (pc.NumKeys > 0)
             {
-                pc.numKeys-= 1;
+                pc.NumKeys-= 1;
                 gameObject.SetActive(false);
             }
 

@@ -7,7 +7,7 @@ public class ManaPotionPickup : Interactable
     public override void Interact(GameObject actor)
     {
         PlayerController pc = actor.GetComponent<PlayerController>();
-        pc.manaPotionCount += 1;
+        pc.ManaPotionCount += 1;
         gameObject.SetActive(false);
     }
 }

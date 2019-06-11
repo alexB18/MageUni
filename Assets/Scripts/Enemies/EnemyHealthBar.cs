@@ -31,6 +31,17 @@ public class EnemyHealthBar : MonoBehaviour
         healthbar.color = hb;
     }
 
+    private void Update()
+    {
+        if (Camera.main)
+        {
+            Vector3 look = Camera.main.transform.forward;
+            look.y = 0f;
+            look = -look;
+            transform.parent.rotation = Quaternion.LookRotation(look, transform.up);
+        }
+    }
+
     private void OnHealthChange(Object[] obj)
     {
         if (!stats.IsDead)

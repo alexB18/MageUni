@@ -8,7 +8,7 @@ public class HealthPotionPickup : Interactable
     public override void Interact(GameObject actor)
     {
         PlayerController pc = actor.GetComponent<PlayerController>();
-        pc.healthPotionCount += 1;
+        pc.HealthPotionCount += 1;
         gameObject.SetActive(false);
     }
 }
