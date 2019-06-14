@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: dc8708c629efc5d4eb2e525966933948
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: Assets/Prefabs/AITraining/Brains/AIBrain2_1.nn
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 83221ad3db87f4b3b91b041047cb2bc5, type: 3}

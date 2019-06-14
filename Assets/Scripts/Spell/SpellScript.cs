@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAgents;
 
 public class SpellScript : MonoBehaviour
 {
@@ -43,7 +44,7 @@ public class SpellScript : MonoBehaviour
         // Make sure we don't prematurely break
         if (other.CompareTag("Ground") || other.CompareTag("Detector"))
             return;
-
+        
         // If this returns true, we keep going. Otherwise, split off and destroy ourself
         bool continueSpell = spell.shape.Trigger(this, other.gameObject);
         foreach (var spellComponent in spell.components)
@@ -57,6 +58,12 @@ public class SpellScript : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
+        spell.shape.DestroyAndStartChildren(gameObject);
+    }
+    public IEnumerator AIDecay(Agent agent, float time)
+    {
+        yield return new WaitForSeconds(time);
+        agent.AddReward(SpellModifierAIScoreTracker.missScore);
         spell.shape.DestroyAndStartChildren(gameObject);
     }
 }

@@ -14,6 +14,7 @@ public static class AllSpellsAndGlyphs
     public static readonly SpellShape spellShapeBolt = new SpellShapeBolt();
     public static readonly SpellShape spellShapeBall = new SpellShapeBall();
     public static readonly SpellShape spellShapeSelf = new SpellShapeSelf();
+    public static readonly SpellShape spellShapeTarget = new SpellShapeTarget();
     public static readonly SpellEffect spellEffectFire = new SpellEffectFire();
     public static readonly SpellEffect spellEffectHeal = new SpellEffectHeal();
     public static readonly SpellEffect spellEffectStun = new SpellEffectStun();

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 0b525db54224458458d63841a25e2af1
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: Assets/Prefabs/AITraining/Brains/P_off_4.nn
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 83221ad3db87f4b3b91b041047cb2bc5, type: 3}

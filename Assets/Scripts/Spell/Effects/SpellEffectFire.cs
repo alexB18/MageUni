@@ -29,7 +29,7 @@ public class SpellEffectFire : SpellEffect
         
         StatScript ss = other.GetComponentInParent<StatScript>();
         if (ss != null)
-            ss.DamageHealth(Random.Range(minDamage, maxDamage) * self.effectMagnitudeScale, StatScript.DamageType.DTFire);
+            ss.DamageHealth(Random.Range(minDamage, maxDamage) * self.effectMagnitudeScale, self.parent, StatScript.DamageType.DTFire);
 
         // We don't care if we continue or not. That's for a modifier or shape to decide
         return false;

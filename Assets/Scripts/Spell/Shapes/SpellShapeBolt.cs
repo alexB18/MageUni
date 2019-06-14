@@ -29,7 +29,7 @@ public class SpellShapeBolt : SpellShape
         GameObject sphere = GameObject.Instantiate(Resources.Load<GameObject>("sphere"), self.transform);
 
         // Decay
-        self.StartCoroutine("Decay", 5f);
+        self.StartCoroutine("Decay", 3f);
     }
 
     public override bool Trigger(SpellScript self, GameObject other)

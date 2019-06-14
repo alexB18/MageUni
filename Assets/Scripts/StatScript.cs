@@ -130,6 +130,11 @@ public class StatScript : MonoBehaviour
 
     public void DamageHealth(float f, DamageType dt = DamageType.DTBludgeon)
     {
+        DamageHealth(f, null, dt);
+    }
+
+    public void DamageHealth(float f, GameObject source, DamageType dt = DamageType.DTBludgeon)
+    {
         if (!IsDead)
         {
             float old = currentHealth;
@@ -149,10 +154,10 @@ public class StatScript : MonoBehaviour
                 if (currentHealth <= 0)
                 {
                     currentHealth = 0;
-                    OnDeath();
+                    OnDeath(source);
                 }
             }
-            OnHealthChange(currentHealth - old);
+            OnHealthChange(currentHealth - old, source);
             Debug.Log(string.Format("Health at {0}", currentHealth));
         }
     }
@@ -221,7 +226,15 @@ public class StatScript : MonoBehaviour
         //Debug.Log("Dead");
         List<Subscriber> subscribers = new List<Subscriber>(onDeathSubscribers);
         foreach (var sub in subscribers)
-            sub(gameObject);
+            sub(gameObject, null);
+    }
+
+    public void OnDeath(GameObject source)
+    {
+        //Debug.Log("Dead");
+        List<Subscriber> subscribers = new List<Subscriber>(onDeathSubscribers);
+        foreach (var sub in subscribers)
+            sub(gameObject, source);
     }
 
     public void OnResurrect()
@@ -249,7 +262,15 @@ public class StatScript : MonoBehaviour
     public void OnHealthChange(float f)
     {
         foreach (var sub in onHealthChangeSubscribers)
-            sub(this, new Float(f));
+            sub(this, new Float(f), null);
+    }
+    /**
+     * Notifies with this script as the object. We can't pass floats as objects
+     */
+    public void OnHealthChange(float f,GameObject source)
+    {
+        foreach (var sub in onHealthChangeSubscribers)
+            sub(this, new Float(f), source);
     }
 
     public bool IsDead => currentHealth <= 0;

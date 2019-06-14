@@ -448,7 +448,7 @@ namespace MLAgents
         /// Increments the step and episode rewards by the provided value.
         /// </summary>
         /// <param name="increment">Incremental reward value.</param>
-        public void AddReward(float increment)
+        public virtual void AddReward(float increment)
         {
             reward += increment;
             cumulativeReward += increment;

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1733ce6a72b7ffa4091376f4ac7c5418
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: Assets/Demonstrations/AIPlayer2.demo
+  externalObjects: {}
+  userData: ' (MLAgents.Demonstration)'
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 7bd65ce151aaa4a41a45312543c56be1, type: 3}

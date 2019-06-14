@@ -16,9 +16,9 @@ public class RatBiteScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject == myAI.Target && canBite)
+        if ((collision.gameObject == myAI.Target || collision.gameObject.CompareTag("GoodGuy")) && canBite)
         {
             canBite = false;
             myAI.Target.GetComponent<StatScript>().DamageHealth(myAI.damage);

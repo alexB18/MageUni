@@ -109,7 +109,11 @@ public abstract class EnemyAI : MonoBehaviour
     private Quaternion startRot;
     public virtual void AIReset()
     {
+        if (!stats)
+            stats = GetComponent<StatScript>();
         stats?.AIReset();
+        if (!rb)
+            rb = GetComponent<Rigidbody>();
         if (rb)
         {
             rb.velocity = Vector3.zero;

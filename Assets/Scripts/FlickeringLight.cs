@@ -19,7 +19,7 @@ public class FlickeringLight : MonoBehaviour {
     [HideInInspector]public bool MakeSourceStationary;
     [HideInInspector]public float positionOffset;
 
-    new private Light light;
+    private Light l;
 
     private float intensityOrigin;
     private float intensityOffset;
@@ -40,10 +40,10 @@ public class FlickeringLight : MonoBehaviour {
 
     void Start ()
     {
-        light = GetComponent<Light>();
+        l = GetComponent<Light>();
 
-        intensityOrigin = light.intensity;
-        rangeOrigin = light.range;
+        intensityOrigin = l.intensity;
+        rangeOrigin = l.range;
         positionOrigin = transform.position;
 
         setNewTargets = true;
@@ -51,8 +51,8 @@ public class FlickeringLight : MonoBehaviour {
         scale *= 0.1f;
         speed *= 0.02f;
 
-        intensityOffset = light.intensity * scale;
-        rangeOffset = light.range * scale;
+        intensityOffset = l.intensity * scale;
+        rangeOffset = l.range * scale;
         positionOffset *= scale * 0.1f;
 
         mainLoop += IntensityAndRange;
@@ -73,20 +73,20 @@ public class FlickeringLight : MonoBehaviour {
 
         if (setNewTargets) ////////////////SETTING INTENSITY TARGET IS ENOUGH, AS WE ONLY USE IT TO CHECK IF EVERY PROPERTY HAS REACHED THEIR TARGET. WE CAN DO THIS BECAUSE WE KNOW THEY ALL REACH THEIR TARGETS AT THE SAME TIME.//////
         {
-            intensityDelta = (intensityOrigin + Random.Range(-intensityOffset, intensityOffset) - light.intensity) * speed;
+            intensityDelta = (intensityOrigin + Random.Range(-intensityOffset, intensityOffset) - l.intensity) * speed;
 
 
             rangeTarget = rangeOrigin + Random.Range(-rangeOffset, rangeOffset);
-            rangeDelta = (rangeTarget - light.range) * speed;
+            rangeDelta = (rangeTarget - l.range) * speed;
 
             setNewTargets = false;
         }
 
-        light.intensity += intensityDelta;
-        light.range += rangeDelta;
+        l.intensity += intensityDelta;
+        l.range += rangeDelta;
 
 
-        if (Mathf.Abs(light.range - rangeTarget) < 5f * scale) //////// CHECK IF TARGET IS NEAR ENOUGH. /////////
+        if (Mathf.Abs(l.range - rangeTarget) < 5f * scale) //////// CHECK IF TARGET IS NEAR ENOUGH. /////////
             setNewTargets = true;
 
 

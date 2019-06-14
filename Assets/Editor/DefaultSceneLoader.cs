@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 [InitializeOnLoadAttribute]
 public static class DefaultSceneLoader
 {
+#if GAME
     static DefaultSceneLoader()
     {
         EditorApplication.playModeStateChanged += LoadDefaultScene;
@@ -24,5 +25,6 @@ public static class DefaultSceneLoader
                 EditorSceneManager.LoadScene("Assets/Scenes/MasterScene.unity");
         }
     }
+#endif
 }
 #endif

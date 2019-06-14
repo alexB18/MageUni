@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4456998738630121101}
   - component: {fileID: 8210148225509412795}
   - component: {fileID: 453703616129133077}
+  - component: {fileID: 6249848123654241260}
   m_Layer: 31
   m_Name: RatBoss
   m_TagString: BadGuy
@@ -205,6 +206,20 @@ MonoBehaviour:
   deathNoise: {fileID: 0}
   xRange: {x: 0, y: 0}
   yRange: {x: 0, y: 0}
+--- !u!136 &6249848123654241260
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456998738630121103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.17
+  m_Height: 1.8
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.175, z: -0.4}
 --- !u!1 &4456998740369239144
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +414,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6886509188689349901}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 430.94302
   m_Height: 3878.3008
   m_Direction: 1
