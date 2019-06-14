@@ -5829,9 +5829,9 @@ GameObject:
   - component: {fileID: 1180343379}
   - component: {fileID: 1180343381}
   - component: {fileID: 1180343382}
-  m_Layer: 31
+  m_Layer: 0
   m_Name: Companion
-  m_TagString: GoodGuy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6020,13 +6020,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180343374}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50f710d360a49461cad67ff5e6bcefe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  record: 0
-  demonstrationName: C_Reinforce
+  record: 1
+  demonstrationName: C_off_bc
 --- !u!1 &1204736588
 GameObject:
   m_ObjectHideFlags: 0
@@ -8131,8 +8131,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 08782c46e43b4bd41bbf28071a695f9d, type: 2}
     - {fileID: 11400000, guid: fd9695ecccfb3b446b2fa0f9b2d5302f, type: 2}
     - {fileID: 11400000, guid: bbb7cbf7382ab704ab8892e844209611, type: 2}
-    _brainsToControl:
-    - {fileID: 11400000, guid: 08782c46e43b4bd41bbf28071a695f9d, type: 2}
+    _brainsToControl: []
   maxSteps: 0
   trainingConfiguration:
     width: 80
@@ -8639,7 +8638,7 @@ GameObject:
   - component: {fileID: 1746355492}
   - component: {fileID: 1746355494}
   - component: {fileID: 1746355493}
-  m_Layer: 31
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}

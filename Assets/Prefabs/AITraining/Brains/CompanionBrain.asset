@@ -26,5 +26,5 @@ MonoBehaviour:
     - Spell3
     - Spell4
     vectorActionSpaceType: 1
-  model: {fileID: 11400000, guid: 06a0f69b9c5ad454b934968262c19763, type: 3}
+  model: {fileID: 11400000, guid: a8a9482b9568fa04681ed3ac1e80396b, type: 3}
   inferenceDevice: 1
