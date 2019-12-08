@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
 
             
             if(interactionTimer != null)
-                StopCoroutine(coroutine);
+                StopCoroutine(interactionTimer);
 
             other.gameObject.GetComponent<Interactable>().Interact(gameObject);
             

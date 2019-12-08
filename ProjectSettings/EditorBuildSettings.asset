@@ -5,28 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MasterScene.unity
     guid: 07cf996350545524bbeacf10a34fcbe0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/AndrewTest.unity
     guid: 2b62e7594079bd1488b9da5a318cd70d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Campus_Environment.unity
     guid: 3818c4bd35fa580459ebcc572e7f350c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RatHouse.unity
     guid: 4c5a17ff29b5b1e4188301fc7fd1b4c3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SlimeCave.unity
     guid: fbc55fa238f66e44684a6ba21c60bae3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/BoneZone.unity
     guid: 26c665aa559a56046812ecdb51f1367a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Campus.unity
     guid: 26dbffc39b5f2a143a292722a91f3178
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Hell.unity
     guid: 87def732b5f05f646b6683ffd341ff0a
   - enabled: 0
@@ -35,7 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AITraining 1.unity
     guid: c35160cd56485b040be0c7d487c531e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AITraining 2.unity
     guid: b38139b21cac53148bd89f3036e6a73d
   m_configObjects: {}
